@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @web_space.name %>
+</p>
+
+<p>
+  <b>Teacher:</b>
+  <%= @web_space.teacher_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_web_space_path(@web_space) %> |
+<%= link_to 'Back', root_path %>

@@ -1,0 +1,13 @@
+
+<h1>Pàgina d'inici del professor: NAME XXX</h1>
+
+<h3>Directori de professors classificats per departaments:</h3>
+  <li><%= link_to('Teachers directory', :controller => 'directory')  %> </li>
+
+<h3>Llistat d'espais web que te el professor:</h3>
+         
+<% @teachers.each do |teacher| %>
+  <% teacher.web_space.each do |b| %>
+    <li><%= link_to(b.name, web_space_path(b)) %></h3></li>
+  <% end %>
+<% end %>
