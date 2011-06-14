@@ -7,8 +7,8 @@ class CreateTeachers < ActiveRecord::Migration
       t.date :birthday
       t.string :email
       t.integer :department_id
-      t.text :research_area
-      t.text :office
+      t.string :research_area
+      t.string :office
 
       t.timestamps
     end

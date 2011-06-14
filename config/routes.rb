@@ -1,12 +1,12 @@
 Web::Application.routes.draw do
-  
+
+  devise_for :users
+
   resources :web_spaces
 
   # get "home/index"
 
   root :to => "home#index"
-  
-  devise_for :users
 
   resources :teachers
 

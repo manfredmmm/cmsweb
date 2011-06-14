@@ -4,7 +4,8 @@
 #
 class HomeController < ApplicationController
   
-  #before_filter :authenticate_user!s
+  #before_filter :authenticate_user!
+  
   def index
     @teachers = Teacher.all
   end

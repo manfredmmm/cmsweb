@@ -8,6 +8,7 @@ gem 'rails', '3.0.7'
 gem 'mysql2','<0.3'
 gem 'devise'
 gem 'haml'
+gem 'rake','0.8.7'
 
 gem "rmagick"
 gem "carrierwave"
