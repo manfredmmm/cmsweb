@@ -7,11 +7,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
-  def admin?
-    self.type == "Admin"
-  end
-  
-  def teacher?
-    self.type == "Teacher"
+  ["Admin","Teacher"].each do |role|
+    define_method "#{role.downcase}?" do
+      self.type == role
+    end
   end
 end
