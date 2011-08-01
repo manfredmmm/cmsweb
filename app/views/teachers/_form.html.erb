@@ -25,10 +25,6 @@
     <%= date_select("teacher", "birthday", :order => [:day, :month, :year], :start_year => 1900, :use_month_numbers => true, :default => { :day => 1, :month => 1 } )	%>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.select :user_id, @users.collect{|u| [u.email, u.id]},{:include_blank => true} %>
-  </div>
-  <div class="field">
     <%= f.label :department_id %><br />
 		<%= f.select :department_id, @departments.collect{|d| [d.name, d.id]},{:include_blank => true} %>
   </div>

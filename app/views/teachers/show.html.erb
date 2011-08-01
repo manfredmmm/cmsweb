@@ -10,10 +10,6 @@
   <%= @teacher.surname %>
 </p>
 
-<p>
-  <b>Last surname:</b>
-  <%= @teacher.last_surname %>
-</p>
 
 <p>
   <b>Birthday:</b>
@@ -21,13 +17,8 @@
 </p>
 
 <p>
-  <b>Email:</b>
-  <%= @teacher.user_id %>
-</p>
-
-<p>
   <b>Department:</b>
-  <%= @teacher.department.name %>
+  <%= @teacher.department.try(:name) %>
 </p>
 
 <p>

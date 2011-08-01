@@ -23,7 +23,8 @@
 		<div id="user_nav">
 		  <% if user_signed_in? %>
 		    Has entrat com a <%= current_user.email %> - 
-		    <%= link_to "Sortir", destroy_user_session_path %>
+		    <%= link_to "Sortir", destroy_user_session_path %> / 
+		    <%= link_to "Editar perfil", edit_teacher_path(current_user) %>
 		  <% else %>
 		    <%= link_to "Registrar-se", new_user_registration_path %> or <%= link_to "Entrar", new_user_session_path %>
 		  <% end %>
