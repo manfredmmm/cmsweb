@@ -8,10 +8,11 @@ gem 'rails', '3.0.7'
 gem 'mysql2','<0.3'
 gem 'devise'
 gem 'haml'
-gem 'rake','0.8.7'
+#gem 'rake','0.8.7'
 
-gem "rmagick"
-gem "carrierwave"
+gem 'rmagick'
+gem 'carrierwave'
+gem "jquery-rails", "~> 1.0.11"
 
 
 # Use unicorn as the web server

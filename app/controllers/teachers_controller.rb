@@ -3,7 +3,8 @@ class TeachersController < ApplicationController
   # GET /teachers.xml
   def index
     @teachers = Teacher.all
-
+    @users = User.all
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @teachers }
@@ -26,6 +27,8 @@ class TeachersController < ApplicationController
   def new
     @teacher = Teacher.new
     @departments = Department.all
+    @users = User.all
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @teacher }
@@ -36,6 +39,7 @@ class TeachersController < ApplicationController
   def edit
     @departments = Department.all
     @teacher = Teacher.find(params[:id])
+    @users = User.all
   end
 
   # POST /teachers
@@ -58,6 +62,7 @@ class TeachersController < ApplicationController
   # PUT /teachers/1.xml
   def update
     @teacher = Teacher.find(params[:id])
+    @users = User.all
 
     respond_to do |format|
       if @teacher.update_attributes(params[:teacher])

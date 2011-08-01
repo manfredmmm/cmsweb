@@ -3,11 +3,7 @@
 # i als espais webs que hagi creat un professor
 #
 class HomeController < ApplicationController
-  
-  #before_filter :authenticate_user!
-  
   def index
     @teachers = Teacher.all
   end
-  
 end

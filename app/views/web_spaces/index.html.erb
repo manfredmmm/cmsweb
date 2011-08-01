@@ -12,7 +12,7 @@
 <% @web_spaces.each do |web_space| %>
   <tr>
     <td><%= web_space.name %></td>
-    <td><%= web_space.teacher_id %></td>
+    <td><%= web_space.teacher.name %></td>
     <td><%= link_to 'Show', web_space %></td>
     <td><%= link_to 'Edit', edit_web_space_path(web_space) %></td>
     <td><%= link_to 'Destroy', web_space, :confirm => 'Are you sure?', :method => :delete %></td>

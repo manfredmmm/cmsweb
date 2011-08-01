@@ -18,7 +18,10 @@
   <div class="field">
     <%= f.label :teacher_id %><br />
 		<%= f.select :teacher_id, @teachers.collect{|d| [d.name, d.id]},{:include_blank => true} %>
-    
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content, :class => "editor" %>
   </div>
   <div class="actions">
     <%= f.submit %>

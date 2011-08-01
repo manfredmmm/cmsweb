@@ -8,7 +8,7 @@
     <ul><li><%= image_tag b.avatar_url(:thumb).to_s  %> </li></ul>
     <ul>Name: <%= link_to b.name, teacher_path(b) %></ul>
     <ul>Research area: <%= b.research_area %></ul>
-    <ul>Email: <%= b.email %></ul>
+    <ul>Email: <%= b.user_id %></ul>
   <% end %>
 <% end %>
 

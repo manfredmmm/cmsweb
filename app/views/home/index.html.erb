@@ -1,11 +1,8 @@
-
 <h1>Pàgina d'inici del professor: 
   <% if user_signed_in? %>
     <%= current_user.email %>
   <% end %>
 </h1>
-
-
 
 <h3>Directori de professors classificats per departaments:</h3>
   <li><%= link_to('Teachers directory', :controller => 'directory')  %> </li>

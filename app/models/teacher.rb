@@ -8,6 +8,7 @@ class Teacher < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :department_id, :name, :avatar
   belongs_to :department
+  belongs_to :user
   has_many :web_space
   mount_uploader :avatar, AvatarUploader
   
