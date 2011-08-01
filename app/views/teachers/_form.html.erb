@@ -21,10 +21,6 @@
     <%= f.text_field :surname %>
   </div>
   <div class="field">
-    <%= f.label :last_surname %><br />
-    <%= f.text_field :last_surname %>
-  </div>
-  <div class="field">
     <%= f.label :birthday %><br />
     <%= date_select("teacher", "birthday", :order => [:day, :month, :year], :start_year => 1900, :use_month_numbers => true, :default => { :day => 1, :month => 1 } )	%>
   </div>

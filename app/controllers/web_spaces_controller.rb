@@ -1,4 +1,4 @@
-class WebSpacesController < ApplicationController
+class WebSpacesController < AuthorizedController
   # GET /web_spaces
   # GET /web_spaces.xml
   def index

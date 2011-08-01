@@ -4,7 +4,6 @@
   <tr>
     <th>Name</th>
     <th>Surname</th>
-    <th>Last surname</th>
     <th>Birthday</th>
     <th>Email</th>
     <th>Department</th>
@@ -20,10 +19,8 @@
   <tr>
     <td><%= teacher.name %></td>
     <td><%= teacher.surname %></td>
-    <td><%= teacher.last_surname %></td>
     <td><%= teacher.birthday %></td>
-    <td><%= teacher.user_id %></td>
-    <td><%= teacher.department.name %></td>
+    <td><%= teacher.department.try(:name) %></td>
     <td><%= teacher.research_area %></td>
     <td><%= teacher.office %></td>
     <td><%= image_tag teacher.avatar_url(:thumb).to_s %></td>

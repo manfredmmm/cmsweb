@@ -1,4 +1,4 @@
-class DepartmentsController < ApplicationController
+class DepartmentsController < AuthorizedController
   # GET /departments
   # GET /departments.xml
   def index
