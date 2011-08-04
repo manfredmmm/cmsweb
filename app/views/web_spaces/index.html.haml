@@ -11,9 +11,12 @@
       %td= web_space.teacher.name
       %td
         = link_to 'Show', teacher_web_space_path(@teacher, web_space)
-        = link_to 'Edit', edit_teacher_web_space_path(@teacher, web_space)
-        = link_to 'Destroy', teacher_web_space_path(@teacher, web_space), :confirm => 'Are you sure?', :method => :delete
+        - if @teacher == current_user
+          = link_to 'Edit', edit_teacher_web_space_path(@teacher, web_space)
+          = link_to 'Destroy', teacher_web_space_path(@teacher, web_space), :confirm => 'Are you sure?', :method => :delete
 
-= link_to 'New Web space', new_teacher_web_space_path(@teacher)
+- if @teacher == current_user
+  = link_to 'New Web space', new_teacher_web_space_path(@teacher)
+  
 = link_to 'Back', root_path
 

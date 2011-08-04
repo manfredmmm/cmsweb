@@ -10,7 +10,9 @@ class Ability
       can :manage, :all
     else
       if user.teacher?
-        can :manage, WebSpace
+        can :manage, WebSpace, :teacher_id => user.id
+        can :read, WebSpace
+        
         can :read, Teacher
         can :update, Teacher, :id => user.id
       else

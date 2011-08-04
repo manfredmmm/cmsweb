@@ -6,5 +6,6 @@
 
 = raw @web_space.content
 
-= link_to 'Edit', edit_teacher_web_space_path(@teacher, @web_space)
+- if @teacher == current_user
+  = link_to 'Edit', edit_teacher_web_space_path(@teacher, @web_space)
 = link_to 'Back', teacher_web_spaces_path(@teacher)
