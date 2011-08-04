@@ -1,0 +1,29 @@
+%h1 Listing teachers
+
+%table
+  %tr
+    %th Name
+    %th Surname
+    %th Birthday
+    %th Email
+    %th Department
+    %th Research area
+    %th Office
+    %th Avatar
+
+  - @teachers.each do |teacher|
+    %tr
+      %td= teacher.name
+      %td= teacher.surname
+      %td= teacher.birthday
+      %td= teacher.email
+      %td= teacher.department.try(:name)
+      %td= teacher.research_area
+      %td= teacher.office
+      %td= image_tag teacher.avatar_url.to_s
+      %td= link_to 'Show', admin_teacher_path(teacher)
+      %td= link_to 'Edit', edit_admin_teacher_path(teacher)
+      %td= link_to 'Destroy', admin_teacher_path(teacher), :confirm => 'Are you sure?', :method => :delete
+
+= link_to 'New Teacher', new_admin_teacher_path
+= link_to 'Back to home', root_path

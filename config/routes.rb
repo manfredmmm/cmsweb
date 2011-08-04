@@ -8,14 +8,12 @@ Web::Application.routes.draw do
 
   root :to => "home#index"
 
-  resources :teachers
-
-  resources :departments
+  resources :teachers, :except => [:new,:create]
   
-  resources :directory
-  
-  namespace
-  
+  namespace :admin do
+    resources :teachers
+    resources :departments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

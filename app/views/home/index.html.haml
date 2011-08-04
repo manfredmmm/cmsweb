@@ -3,7 +3,7 @@
   = current_user.email
 
 %h3 Directori de professors classificats per departaments:
-= link_to('Teachers directory', :controller => 'directory')
+= link_to 'Teachers directory', teachers_path
 
 %h3 Llistat d'espais web que te el professor
 - @teachers.each do |teacher|

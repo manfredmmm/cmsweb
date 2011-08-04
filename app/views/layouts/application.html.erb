@@ -23,8 +23,15 @@
 		<div id="user_nav">
 		  <% if user_signed_in? %>
 		    Has entrat com a <%= current_user.email %> - 
-		    <%= link_to "Sortir", destroy_user_session_path %> / 
-		    <%= link_to "Editar perfil", edit_teacher_path(current_user) %>
+		    <%= link_to "Sortir", destroy_user_session_path %>
+		    <% if current_user.admin? %>
+		      /
+		      <%= link_to "Teachers", admin_teachers_path %> /
+		      <%= link_to "Departments", admin_departments_path %>
+		    <% else %>
+		      /
+		      <%= link_to "Editar perfil", edit_teacher_path(current_user) %>
+		    <% end %>
 		  <% else %>
 		    <%= link_to "Registrar-se", new_user_registration_path %> or <%= link_to "Entrar", new_user_session_path %>
 		  <% end %>

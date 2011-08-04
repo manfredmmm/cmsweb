@@ -11,8 +11,8 @@ class Ability
     else
       if user.teacher?
         can :manage, WebSpace
-        can :update, Teacher, :id => user.id
         can :read, Teacher
+        can :update, Teacher, :id => user.id
       else
         can :read, WebSpace
       end

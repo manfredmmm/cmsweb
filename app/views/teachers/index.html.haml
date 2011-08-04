@@ -1,28 +1,12 @@
-%h1 Listing teachers
+%h1 Teachers directory
 
-%table
-  %tr
-    %th Name
-    %th Surname
-    %th Birthday
-    %th Email
-    %th Department
-    %th Research area
-    %th Office
-    %th Avatar
-
-- @teachers.each do |teacher|
-  %tr
-    %td= teacher.name
-    %td= teacher.surname
-    %td= teacher.birthday
-    %td= teacher.department.try(:name)
-    %td= teacher.research_area
-    %td= teacher.office
-    %td= image_tag teacher.avatar_url.to_s
-    %td= link_to 'Show', teacher
-    %td= link_to 'Edit', edit_teacher_path(teacher)
-    %td= link_to 'Destroy', teacher, :confirm => 'Are you sure?', :method => :delete
-
-= link_to 'New Teacher', new_teacher_path
-= link_to 'Back to home', root_path
+- @departments.each do |department|
+  %ul#profile
+  - if !department.teachers.empty?
+    %h3= department.name
+    - department.teachers.each do |t|
+      %li= link_to(image_tag(t.avatar_url.to_s, :title => t.email, :alt => t.email), teacher_path(t))
+      = link_to t.name + " " + t.surname, teacher_path(t)
+      = t.research_area
+      = t.email
+%p= link_to 'Back to home', root_path
