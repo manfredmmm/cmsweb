@@ -1,0 +1,18 @@
+%h1 Listing web_spaces
+
+%table
+  %tr
+    %th Name
+    %th Teacher
+
+= @web_spaces.each do |web_space|
+  %tr
+    %td= web_space.name
+    %td= web_space.teacher.name
+    = link_to 'Show', web_space
+    = link_to 'Edit', edit_web_space_path(web_space)
+    = link_to 'Destroy', web_space, :confirm => 'Are you sure?', :method => :delete
+    
+= link_to 'New Web space', new_web_space_path
+= link_to 'Back', root_path
+

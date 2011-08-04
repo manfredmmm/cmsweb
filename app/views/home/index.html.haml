@@ -1,0 +1,12 @@
+%h1 Pàgina d'inici:
+-if user_signed_in?
+  = current_user.email
+
+%h3 Directori de professors classificats per departaments:
+= link_to('Teachers directory', :controller => 'directory')
+
+%h3 Llistat d'espais web que te el professor
+- @teachers.each do |teacher|
+  %ul#teacher_webs
+  - teacher.web_space.each do |b|
+    %li= link_to(b.name, web_space_path(b))

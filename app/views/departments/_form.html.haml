@@ -4,7 +4,7 @@
       %h2= "#{pluralize(@department.errors.count, "error")} prohibited this item from being saved:"
 
       %ul
-        -@department.errors.full_messages.each do |msg|
+        - @department.errors.full_messages.each do |msg|
           %li= msg
         
   .field

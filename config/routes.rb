@@ -14,6 +14,7 @@ Web::Application.routes.draw do
   
   resources :directory
   
+  namespace
   
 
   # The priority is based upon order of creation:

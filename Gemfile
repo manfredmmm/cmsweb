@@ -13,6 +13,7 @@ gem 'haml'
 
 gem 'rmagick'
 gem 'carrierwave'
+gem 'mini_magick'
 gem "jquery-rails", "~> 1.0.11"
 
 

@@ -1,0 +1,31 @@
+
+%p#notice= notice
+%p
+  %b Name
+  = @teacher.name
+
+%p
+  %b Surname
+  = @teacher.surname
+
+%p
+  %b Birthday
+  = @teacher.birthday
+%p
+  %b Department
+  = @teacher.department.try(:name)
+
+%p
+  %b Research area
+  = @teacher.research_area
+
+%p
+  %b Office
+  = @teacher.office
+
+%p
+  %b Avatar
+  = image_tag @teacher.avatar_url.to_s
+
+= link_to 'Edit', edit_teacher_path(@teacher)
+= link_to 'Back', teachers_path
