@@ -4,11 +4,7 @@
   %b Name
   = @web_space.name
 
-%p
-  %b Teacher
-  = @web_space.teacher_id
-  
 = raw @web_space.content
 
-= link_to 'Edit', edit_web_space_path(@web_space)
-= link_to 'Back', root_path
+= link_to 'Edit', edit_teacher_web_space_path(@teacher, @web_space)
+= link_to 'Back', teacher_web_spaces_path(@teacher)

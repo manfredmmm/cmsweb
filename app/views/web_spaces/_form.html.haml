@@ -1,4 +1,4 @@
-= form_for(@web_space) do |f|
+= form_for [@teacher, @web_space] do |f|
   - if @web_space.errors.any?
     %div#error_explanation
       %h2= pluralize(@web_space.errors.count, "error")
@@ -9,10 +9,6 @@
   %div.field
     = f.label :name
     = f.text_field :name
-    
-  %div.field
-    = f.label :teacher_id
-    = f.select :teacher_id, @teachers.collect{|d| [d.name, d.id]},{:include_blank => true}
     
   %div.field
     = f.label :content

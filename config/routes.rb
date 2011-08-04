@@ -2,13 +2,14 @@ Web::Application.routes.draw do
 
   devise_for :users
 
-  resources :web_spaces
 
   # get "home/index"
 
   root :to => "home#index"
 
-  resources :teachers, :except => [:new,:create]
+  resources :teachers, :except => [:new,:create] do
+    resources :web_spaces
+  end
   
   namespace :admin do
     resources :teachers

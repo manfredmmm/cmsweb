@@ -1,5 +1,5 @@
-%h1 New web_space
+%h1= "New web_space for " + @teacher.name + " " + @teacher.surname
 
 = render 'form'
 
-= link_to 'Back', web_spaces_path
+= link_to 'Back', teacher_web_spaces_path(@teacher)

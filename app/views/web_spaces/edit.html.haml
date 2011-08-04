@@ -2,5 +2,5 @@
 
 = render 'form'
 
-= link_to 'Show', @web_space
-= link_to 'Back', web_spaces_path
+= link_to 'Show', teacher_web_space_path(@teacher, @web_space)
+= link_to 'Back', teacher_web_spaces_path(@teacher)

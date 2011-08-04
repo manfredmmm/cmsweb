@@ -30,7 +30,8 @@
 		      <%= link_to "Departments", admin_departments_path %>
 		    <% else %>
 		      /
-		      <%= link_to "Editar perfil", edit_teacher_path(current_user) %>
+		      <%= link_to "Editar perfil", edit_teacher_path(current_user) %> /
+		      <%= link_to "Web spaces", teacher_web_spaces_path(current_user) %>
 		    <% end %>
 		  <% else %>
 		    <%= link_to "Registrar-se", new_user_registration_path %> or <%= link_to "Entrar", new_user_session_path %>

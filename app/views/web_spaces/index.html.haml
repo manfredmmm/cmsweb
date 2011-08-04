@@ -5,14 +5,15 @@
     %th Name
     %th Teacher
 
-= @web_spaces.each do |web_space|
-  %tr
-    %td= web_space.name
-    %td= web_space.teacher.name
-    = link_to 'Show', web_space
-    = link_to 'Edit', edit_web_space_path(web_space)
-    = link_to 'Destroy', web_space, :confirm => 'Are you sure?', :method => :delete
-    
-= link_to 'New Web space', new_web_space_path
+  - @web_spaces.each do |web_space|
+    %tr
+      %td= web_space.name
+      %td= web_space.teacher.name
+      %td
+        = link_to 'Show', teacher_web_space_path(@teacher, web_space)
+        = link_to 'Edit', edit_teacher_web_space_path(@teacher, web_space)
+        = link_to 'Destroy', teacher_web_space_path(@teacher, web_space), :confirm => 'Are you sure?', :method => :delete
+
+= link_to 'New Web space', new_teacher_web_space_path(@teacher)
 = link_to 'Back', root_path
 
