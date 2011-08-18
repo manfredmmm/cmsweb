@@ -1,0 +1,19 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset"
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base"
+
+// To generate css equivalent to the blueprint css but with your
+// configuration applied, uncomment:
+//@include blueprint
+
+#wrapper
+  +container
+  height: 1000px
+  #user_nav
+    background: grey
+  #content
+    background: silver
+  #footer
+    background: grey 

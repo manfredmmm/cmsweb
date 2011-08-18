@@ -17,7 +17,8 @@ gem 'mini_magick'
 gem "jquery-rails", "~> 1.0.11"
 
 gem 'inherited_resources'
-
+gem 'compass'
+gem 'sass'
 
 # Use unicorn as the web server
 # gem 'unicorn'

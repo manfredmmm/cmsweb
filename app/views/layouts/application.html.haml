@@ -1,0 +1,35 @@
+!!! html
+%html
+  %head
+    %title PFC - Gestor de contingut
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults
+    = javascript_include_tag 'jquery'
+    = javascript_include_tag 'rails'
+    = javascript_include_tag 'ckeditor/ckeditor'
+    = javascript_include_tag 'application'
+    = csrf_meta_tag	
+    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+    /[if It IE 8]
+      = stylesheet_link_tag 'ie,css', :media => 'screen, projection'
+
+  %body
+    #wrapper
+      = flash[:error]
+      #user_nav
+        - if user_signed_in?
+          = "Has entrat com a #{current_user.email}"
+          = link_to "Sortir", destroy_user_session_path
+          - if current_user.admin?
+            = link_to "Teachers", admin_teachers_path
+            = link_to "Departments", admin_departments_path
+          - else
+            = link_to "Editar perfil", edit_teacher_path(current_user)
+            = link_to "Espais web", teacher_web_spaces_path(current_user)
+        - else
+          = link_to "Registrar-se", new_user_registration_path 
+          = link_to "Entrar", new_user_session_path
+
+      #content
+        = yield
+      #footer
