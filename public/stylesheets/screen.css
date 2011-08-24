@@ -72,14 +72,58 @@ body {
   height: 1000px;
 }
 /* line 14, ../../app/stylesheets/screen.sass */
-#wrapper #user_nav {
+#wrapper #header {
   background: grey;
-}
-/* line 16, ../../app/stylesheets/screen.sass */
-#wrapper #content {
-  background: silver;
+  height: 60px;
+  position: relative;
 }
 /* line 18, ../../app/stylesheets/screen.sass */
+#wrapper #header ul#user_nav {
+  height: 30px;
+  position: absolute;
+}
+/* line 21, ../../app/stylesheets/screen.sass */
+#wrapper #header ul#user_nav li {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 470px;
+}
+/* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #wrapper #header ul#user_nav li {
+  overflow-x: hidden;
+}
+/* line 23, ../../app/stylesheets/screen.sass */
+#wrapper #header ul#user_nav li:last-child {
+  margin-right: 0;
+}
+/* line 25, ../../app/stylesheets/screen.sass */
+#wrapper #header ul#menu {
+  height: 30px;
+  position: absolute;
+}
+/* line 28, ../../app/stylesheets/screen.sass */
+#wrapper #header ul#menu li {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 470px;
+}
+/* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #wrapper #header ul#menu li {
+  overflow-x: hidden;
+}
+/* line 30, ../../app/stylesheets/screen.sass */
+#wrapper #header ul#menu li:last-child {
+  margin-right: 0;
+}
+/* line 32, ../../app/stylesheets/screen.sass */
+#wrapper #content {
+  background: silver;
+  height: 910px;
+}
+/* line 35, ../../app/stylesheets/screen.sass */
 #wrapper #footer {
   background: grey;
+  height: 30px;
 }

@@ -15,21 +15,25 @@
 
   %body
     #wrapper
-      = flash[:error]
-      #user_nav
-        - if user_signed_in?
-          = "Has entrat com a #{current_user.email}"
-          = link_to "Sortir", destroy_user_session_path
-          - if current_user.admin?
-            = link_to "Teachers", admin_teachers_path
-            = link_to "Departments", admin_departments_path
+      - if flash[:error].nil?
+        %p= flash[:error]
+      #header
+        %ul#user_nav
+          - if user_signed_in?
+            %li= "Has entrat com a #{current_user.email}" 
+            %li= link_to "Sortir", destroy_user_session_path
           - else
-            = link_to "Editar perfil", edit_teacher_path(current_user)
-            = link_to "Espais web", teacher_web_spaces_path(current_user)
-        - else
-          = link_to "Registrar-se", new_user_registration_path 
-          = link_to "Entrar", new_user_session_path
-
+            %li= link_to "Registrar-se", new_user_registration_path 
+            %li= link_to "Entrar", new_user_session_path
+        %ul#menu
+          - if user_signed_in?
+            - if current_user.admin?
+              %li= link_to "Professors", admin_teachers_path
+              %li= link_to "Departaments", admin_departments_path
+            - else
+              %li= link_to "Editar perfil", edit_teacher_path(current_user)
+              %li= link_to "Espais web", teacher_web_spaces_path(current_user)
       #content
         = yield
       #footer
+        %p= Time.now.strftime("%d/%m/%Y - %I:%M%p")

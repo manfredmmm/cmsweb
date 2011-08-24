@@ -5,8 +5,9 @@
   - if !department.teachers.empty?
     %h3= department.name
     - department.teachers.each do |t|
-      %li= link_to(image_tag(t.avatar_url.to_s, :title => t.email, :alt => t.email), teacher_path(t))
-      = link_to t.name + " " + t.surname, teacher_path(t)
-      = t.research_area
-      = t.email
+      %li= image_tag(t.avatar_url.to_s, :title => t.email, :alt => t.email)
+      %li= "Nom: " + t.name
+      %li= "Cognom: " + t.surname
+      %li= "Àrea de recerca: " + t.research_area
+      %li= "Correu electrònic: " + t.email
 %p= link_to 'Back to home', root_path

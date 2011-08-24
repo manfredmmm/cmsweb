@@ -11,9 +11,29 @@
 #wrapper
   +container
   height: 1000px
-  #user_nav
+  #header
     background: grey
+    height: 60px
+    position: relative
+    ul#user_nav
+      height: 30px 
+      position: absolute
+      li
+        +column(12)
+        &:last-child
+          +last
+    ul#menu
+      height: 30px
+      position: absolute
+      li
+        +column(12)
+        &:last-child
+          +last
   #content
     background: silver
+    height: 910px
   #footer
     background: grey 
+    height: 30px 
+
+@import "partials/home"
