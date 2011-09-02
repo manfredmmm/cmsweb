@@ -3,6 +3,7 @@
 
 // To configure blueprint, edit the partials/base.sass file.
 @import "partials/base"
+@import "compass/css3/border-radius"
 
 // To generate css equivalent to the blueprint css but with your
 // configuration applied, uncomment:
@@ -12,8 +13,9 @@
   +container
   height: 1000px
   #header
-    background: grey
-    height: 60px
+    +border-top-radius($radius)
+    background: #9acd32
+    height: 50px
     position: relative
     ul#user_nav
       height: 30px 
@@ -30,10 +32,12 @@
         &:last-child
           +last
   #content
-    background: silver
+    background: #c0c0c0
     height: 910px
   #footer
-    background: grey 
+    background: #9acd32
     height: 30px 
+    +border-bottom-radius($radius)
+    
 
 @import "partials/home"
