@@ -1,44 +1,26 @@
 #sign_in
-  height: 950px
-  background: url(../images/login-page-bg.jpg) top center no-repeat #c4c4c4
-  color: #3a3a3a
+  height: 900px
+  position: absolute
   h2
-    font-size: 14px
-  form
-    width: 406px
-    margin: 170px auto
-  legend
-    display: none
-  fieldset
-    border: 0
-  label
-    width: 115px
-    text-align: right
-    float: left
-    margin: 0 10px 0 0
-    padding: 9px 0 0 0
-    font-size: 16px
-  input
-    width: 220px
-    display: block
-    padding: 4px
-    margin: 0 0 10px 0
-    font-size: 18px
-    color: #3a3a3a
-  input[type=checkbox]
-    width: 20px
-    margin: 0
-    display: inline-block
-  .button
-    background: url(../images/button-bg.png) repeat-x top center
-    border: 1px solid #999
-    -moz-border-radius: 5px
-    padding: 5px
-    color: black
-    font-weight: bold
-    -webkit-border-radius: 5px
+    +prepend(1)
+    +column(23,true)
+    margin-top: 10px
+    height: 20px
     font-size: 13px
-    width: 70px
-  .buton:hover
-    background: white
-    color: black
+  form
+    +single-box-shadow($green, $h-offset, $v-offset, $blur, $pread, $inset)
+    margin-left: 300px
+    margin-top: 150px 
+    +column(8)
+    font-size: 14px
+    +border-radius($radius)
+    background: $dark_green
+    padding: 20px
+    input
+      +column(7,true)
+      font-size: 14px
+    label
+      +column(2)
+      color: $white
+    input[type=submit]
+      +column(2,true)

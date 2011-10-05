@@ -4,6 +4,7 @@
 // To configure blueprint, edit the partials/base.sass file.
 @import "partials/base"
 @import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
 
 // To generate css equivalent to the blueprint css but with your
 // configuration applied, uncomment:
@@ -12,31 +13,32 @@
 #wrapper
   +container
   height: 1000px
+  font-family: Verdana, Arial, Helvetica, sans-serif
+  font-size: 12px
   #header
     +border-top-radius($radius)
-    background: #9acd32
+    background: $green
     height: 50px
-    position: relative
+    text-align: center
+    +prepend(1)
     ul#user_nav
       height: 30px 
-      position: absolute
       li
-        +column(12)
-        &:last-child
+        +column(11)
+        &.last
           +last
     ul#menu
-      height: 30px
-      position: absolute
+      height: 20px
       li
-        +column(12)
-        &:last-child
+        +column(11)
+        &.last
           +last
   #content
-    background: #c0c0c0
-    height: 910px
+    background: $silver
+    height: 900px
   #footer
-    background: #9acd32
-    height: 30px 
+    background: $green
+    height: 50px 
     +border-bottom-radius($radius)
     
 
