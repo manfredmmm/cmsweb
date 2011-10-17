@@ -1,5 +1,6 @@
-// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint"
 @import "blueprint/reset"
+@import "compass"
 
 // To configure blueprint, edit the partials/base.sass file.
 @import "partials/base"
@@ -20,19 +21,31 @@
     background: $green
     height: 50px
     text-align: center
-    +prepend(1)
     ul#user_nav
-      height: 30px 
+      +prepend(1)
+      +append(1)
+      height: 25px 
       li
-        +column(11)
+        +column(10)
         &.last
           +last
     ul#menu
-      height: 20px
+      +prepend(1)
+      +append(1)
+      height: 25px
       li
-        +column(11)
+        +column(6)
+        text-align: center
         &.last
           +last
+    a
+      text-decoration: none
+      &:hover
+        background: $dark_green
+        color: $silver
+        text-decoration: none
+        padding: 4px
+        +border-radius(3px)
   #content
     background: $silver
     height: 900px
@@ -40,6 +53,5 @@
     background: $green
     height: 50px 
     +border-bottom-radius($radius)
-    
 
 @import "partials/home"

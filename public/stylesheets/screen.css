@@ -57,13 +57,13 @@ a img {
   border: none;
 }
 
-/* line 25, ../../app/stylesheets/partials/_base.sass */
+/* line 26, ../../app/stylesheets/partials/_base.sass */
 body {
   font-family: Tahoma, "Tahoma", sans-serif;
   font-size: 13px;
 }
 
-/* line 13, ../../app/stylesheets/screen.sass */
+/* line 14, ../../app/stylesheets/screen.sass */
 #wrapper {
   width: 950px;
   margin: 0 auto;
@@ -73,7 +73,7 @@ body {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 12px;
 }
-/* line 18, ../../app/stylesheets/screen.sass */
+/* line 19, ../../app/stylesheets/screen.sass */
 #wrapper #header {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
@@ -90,52 +90,73 @@ body {
   background: #9acd32;
   height: 50px;
   text-align: center;
-  padding-left: 40px;
 }
 /* line 24, ../../app/stylesheets/screen.sass */
 #wrapper #header ul#user_nav {
-  height: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  height: 25px;
 }
-/* line 26, ../../app/stylesheets/screen.sass */
+/* line 28, ../../app/stylesheets/screen.sass */
 #wrapper #header ul#user_nav li {
   display: inline;
   float: left;
   margin-right: 10px;
-  width: 430px;
+  width: 390px;
 }
 /* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #wrapper #header ul#user_nav li {
   overflow-x: hidden;
 }
-/* line 28, ../../app/stylesheets/screen.sass */
+/* line 30, ../../app/stylesheets/screen.sass */
 #wrapper #header ul#user_nav li.last {
   margin-right: 0;
 }
-/* line 30, ../../app/stylesheets/screen.sass */
-#wrapper #header ul#menu {
-  height: 20px;
-}
 /* line 32, ../../app/stylesheets/screen.sass */
+#wrapper #header ul#menu {
+  padding-left: 40px;
+  padding-right: 40px;
+  height: 25px;
+}
+/* line 36, ../../app/stylesheets/screen.sass */
 #wrapper #header ul#menu li {
   display: inline;
   float: left;
   margin-right: 10px;
-  width: 430px;
+  width: 230px;
+  text-align: center;
 }
 /* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #wrapper #header ul#menu li {
   overflow-x: hidden;
 }
-/* line 34, ../../app/stylesheets/screen.sass */
+/* line 39, ../../app/stylesheets/screen.sass */
 #wrapper #header ul#menu li.last {
   margin-right: 0;
 }
-/* line 36, ../../app/stylesheets/screen.sass */
+/* line 41, ../../app/stylesheets/screen.sass */
+#wrapper #header a {
+  text-decoration: none;
+}
+/* line 43, ../../app/stylesheets/screen.sass */
+#wrapper #header a:hover {
+  background: #006400;
+  color: silver;
+  text-decoration: none;
+  padding: 4px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 49, ../../app/stylesheets/screen.sass */
 #wrapper #content {
   background: silver;
   height: 900px;
 }
-/* line 39, ../../app/stylesheets/screen.sass */
+/* line 52, ../../app/stylesheets/screen.sass */
 #wrapper #footer {
   background: #9acd32;
   height: 50px;
@@ -167,23 +188,20 @@ body {
   width: 910px;
   margin-top: 10px;
   height: 20px;
-  font-size: 13px;
+  font-size: 15px;
 }
 /* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #sign_in h2 {
   overflow-x: hidden;
 }
 /* line 10, ../../app/stylesheets/partials/_home.sass */
-#sign_in form {
-  -moz-box-shadow: 0px 0px 10px #9acd32;
-  -webkit-box-shadow: 0px 0px 10px #9acd32;
-  -o-box-shadow: 0px 0px 10px #9acd32;
-  box-shadow: 0px 0px 10px #9acd32;
+#sign_in form#user_new.user_new {
+  padding-left: 200px;
   margin-left: 300px;
   margin-top: 150px;
   display: inline;
   float: left;
-  margin-right: 10px;
+  margin-right: 0;
   width: 310px;
   font-size: 14px;
   -moz-border-radius: 10px;
@@ -192,27 +210,32 @@ body {
   -ms-border-radius: 10px;
   -khtml-border-radius: 10px;
   border-radius: 10px;
+  -moz-box-shadow: 0px 0px 10px #9acd32;
+  -webkit-box-shadow: 0px 0px 10px #9acd32;
+  -o-box-shadow: 0px 0px 10px #9acd32;
+  box-shadow: 0px 0px 10px #9acd32;
   background: #006400;
   padding: 20px;
 }
 /* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #sign_in form {
+* html #sign_in form#user_new.user_new {
   overflow-x: hidden;
 }
-/* line 19, ../../app/stylesheets/partials/_home.sass */
-#sign_in form input {
+/* line 20, ../../app/stylesheets/partials/_home.sass */
+#sign_in form#user_new.user_new input {
   display: inline;
   float: left;
   margin-right: 0;
   width: 270px;
   font-size: 14px;
+  margin-bottom: 5px;
 }
 /* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #sign_in form input {
+* html #sign_in form#user_new.user_new input {
   overflow-x: hidden;
 }
-/* line 22, ../../app/stylesheets/partials/_home.sass */
-#sign_in form label {
+/* line 24, ../../app/stylesheets/partials/_home.sass */
+#sign_in form#user_new.user_new label {
   display: inline;
   float: left;
   margin-right: 10px;
@@ -220,17 +243,36 @@ body {
   color: white;
 }
 /* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #sign_in form label {
+* html #sign_in form#user_new.user_new label {
   overflow-x: hidden;
 }
-/* line 25, ../../app/stylesheets/partials/_home.sass */
-#sign_in form input[type=submit] {
+/* line 27, ../../app/stylesheets/partials/_home.sass */
+#sign_in form#user_new.user_new input[type=submit] {
+  margin-left: 206px;
   display: inline;
   float: left;
   margin-right: 0;
   width: 70px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 14px;
+  height: 20px;
+  line-height: 10px;
+  border-top: 1px solid silver;
+  color: white;
 }
 /* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #sign_in form input[type=submit] {
+* html #sign_in form#user_new.user_new input[type=submit] {
   overflow-x: hidden;
+}
+
+/* line 37, ../../app/stylesheets/partials/_home.sass */
+#content {
+  height: 900px;
+  padding-left: 40px;
+  padding-right: 40px;
 }

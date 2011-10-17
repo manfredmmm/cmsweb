@@ -6,21 +6,35 @@
     +column(23,true)
     margin-top: 10px
     height: 20px
-    font-size: 13px
-  form
-    +single-box-shadow($green, $h-offset, $v-offset, $blur, $pread, $inset)
+    font-size: 15px
+  form#user_new.user_new
+    +prepend(5)
     margin-left: 300px
     margin-top: 150px 
-    +column(8)
+    +column(8,true)
     font-size: 14px
     +border-radius($radius)
+    +single-box-shadow($green, $h-offset, $v-offset, $blur, $pread, $inset)
     background: $dark_green
     padding: 20px
     input
       +column(7,true)
       font-size: 14px
+      margin-bottom: 5px
     label
       +column(2)
       color: $white
     input[type=submit]
+      margin-left: 206px
       +column(2,true)
+      +border-radius(3px)
+      font-size: 14px
+      height: 20px
+      line-height: 10px
+      border-top: 1px solid $silver
+      color: $white
+ 
+#content
+  height: 900px
+  +prepend(1)
+  +append(1)

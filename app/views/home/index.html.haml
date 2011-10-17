@@ -1,12 +1,7 @@
-%h1 Pàgina d'inici:
--if user_signed_in?
-  = current_user.email
-
 %h3 Directori de professors classificats per departaments:
 = link_to 'Teachers directory', teachers_path
 
 %h3 Llistat d'espais web que te el professor
-- @teachers.each do |teacher|
-  %ul#teacher_webs
-  - teacher.web_spaces.each do |b|
-    %li= link_to(b.name, teacher_web_space_path(teacher,b))
+%ul#teacher_webs
+  - current_user.web_spaces.each do |web|
+    %li= link_to(web.name, teacher_web_space_path(current_user,web))

@@ -20,7 +20,7 @@
       #header
         %ul#user_nav
           - if user_signed_in?
-            %li= "Has entrat com a #{current_user.email}" 
+            %li= link_to current_user.name + " " + current_user.surname + " | " + current_user.email, root_path
             %li= link_to "Sortir", destroy_user_session_path
           - else
             %li= link_to "Registrar-se", new_user_registration_path 
@@ -33,6 +33,7 @@
             - else
               %li= link_to "Editar perfil", edit_teacher_path(current_user)
               %li= link_to "Espais web", teacher_web_spaces_path(current_user)
+              %li= link_to "Directori de professors", teachers_path
       #content
         = yield
       #footer
