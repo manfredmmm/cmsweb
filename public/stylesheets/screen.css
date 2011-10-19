@@ -57,7 +57,7 @@ a img {
   border: none;
 }
 
-/* line 26, ../../app/stylesheets/partials/_base.sass */
+/* line 27, ../../app/stylesheets/partials/_base.sass */
 body {
   font-family: Tahoma, "Tahoma", sans-serif;
   font-size: 13px;
@@ -137,8 +137,9 @@ body {
 /* line 41, ../../app/stylesheets/screen.sass */
 #wrapper #header a {
   text-decoration: none;
+  color: black;
 }
-/* line 43, ../../app/stylesheets/screen.sass */
+/* line 44, ../../app/stylesheets/screen.sass */
 #wrapper #header a:hover {
   background: #006400;
   color: silver;
@@ -151,12 +152,12 @@ body {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 49, ../../app/stylesheets/screen.sass */
+/* line 50, ../../app/stylesheets/screen.sass */
 #wrapper #content {
   background: silver;
   height: 900px;
 }
-/* line 52, ../../app/stylesheets/screen.sass */
+/* line 53, ../../app/stylesheets/screen.sass */
 #wrapper #footer {
   background: #9acd32;
   height: 50px;

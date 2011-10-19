@@ -1,22 +1,20 @@
-%h1 Listing web_spaces
+%h1 Directori d'espais web
 
-%table
+%table#web_space
   %tr
-    %th Name
-    %th Teacher
+    %th Títul
+    %th Propietari
+    %th Email
 
   - @web_spaces.each do |web_space|
     %tr
-      %td= web_space.name
+      %td= link_to web_space.name, teacher_web_space_path(@teacher, web_space)
       %td= web_space.teacher.name
+      %td= web_space.teacher.email
       %td
-        = link_to 'Show', teacher_web_space_path(@teacher, web_space)
         - if @teacher == current_user
-          = link_to 'Edit', edit_teacher_web_space_path(@teacher, web_space)
-          = link_to 'Destroy', teacher_web_space_path(@teacher, web_space), :confirm => 'Are you sure?', :method => :delete
+          = link_to 'Editar', edit_teacher_web_space_path(@teacher, web_space)
+          = link_to 'Eliminar', teacher_web_space_path(@teacher, web_space), :confirm => 'Estàs segur?', :method => :delete
 
 - if @teacher == current_user
-  = link_to 'New Web space', new_teacher_web_space_path(@teacher)
-  
-= link_to 'Back', root_path
-
+  = link_to 'Crear Espai Web', new_teacher_web_space_path(@teacher)
