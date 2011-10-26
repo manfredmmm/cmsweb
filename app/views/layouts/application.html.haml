@@ -18,15 +18,14 @@
       - if flash[:error].nil?
         %p= flash[:error]
       #header
-        %ul#user_nav
+        #user_nav
           - if user_signed_in?
-            /%li= link_to current_user.name + " " + current_user.surname + " | " + current_user.email, edit_teacher_path(current_user)
-            %li= link_to "Sortir", destroy_user_session_path
+            = link_to "Sortir", destroy_user_session_path
           - else
-            %li= link_to "Registrar-se", new_user_registration_path 
-            %li= link_to "Entrar", new_user_session_path
+            = link_to "Registrar-se", new_user_registration_path 
         %ul#menu
           - if user_signed_in?
+            %li= link_to "Notícies", root_path
             %li= link_to "Gestionar les meves webs", teacher_web_spaces_path(current_user)
             %li= link_to "Directori web", teacher_web_spaces_path(current_user)
             %li= link_to "Directori del personal", teachers_path

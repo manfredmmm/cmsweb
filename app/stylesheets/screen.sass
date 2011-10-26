@@ -1,11 +1,13 @@
 @import "blueprint"
 @import "blueprint/reset"
 @import "compass"
+@import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
 
 // To configure blueprint, edit the partials/base.sass file.
 @import "partials/base"
-@import "compass/css3/border-radius"
-@import "compass/css3/box-shadow"
+@import "partials/home"
+@import "partials/teachers"
 
 // To generate css equivalent to the blueprint css but with your
 // configuration applied, uncomment:
@@ -16,25 +18,21 @@
   height: 1000px
   font-family: Verdana, Arial, Helvetica, sans-serif
   font-size: 12px
+  +single-box-shadow($green, $h-offset, $v-offset, $blur, $pread, $inset)
   #header
-    +border-top-radius($radius)
+    +border-top-radius(3px)
     background: $green
     height: 50px
-    text-align: center
-    ul#user_nav
-      +prepend(1)
-      +append(1)
+    #user_nav
+      +prepend(22)
+      +column(2,true)
       height: 25px 
-      li
-        +column(10)
-        &.last
-          +last
+      float: right
     ul#menu
-      +prepend(1)
-      +append(1)
       height: 25px
+      +prepend(1)
       li
-        +column(6)
+        +column(5)
         text-align: center
         &.last
           +last
@@ -50,9 +48,9 @@
   #content
     background: $silver
     height: 900px
+    +prepend(1)
+    +append(1)
   #footer
     background: $green
     height: 50px 
-    +border-bottom-radius($radius)
-
-@import "partials/home"
+    +border-bottom-radius(3px)

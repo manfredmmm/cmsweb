@@ -57,124 +57,6 @@ a img {
   border: none;
 }
 
-/* line 27, ../../app/stylesheets/partials/_base.sass */
-body {
-  font-family: Tahoma, "Tahoma", sans-serif;
-  font-size: 13px;
-}
-
-/* line 14, ../../app/stylesheets/screen.sass */
-#wrapper {
-  width: 950px;
-  margin: 0 auto;
-  overflow: hidden;
-  *zoom: 1;
-  height: 1000px;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
-  font-size: 12px;
-}
-/* line 19, ../../app/stylesheets/screen.sass */
-#wrapper #header {
-  -moz-border-radius-topleft: 10px;
-  -webkit-border-top-left-radius: 10px;
-  -o-border-top-left-radius: 10px;
-  -ms-border-top-left-radius: 10px;
-  -khtml-border-top-left-radius: 10px;
-  border-top-left-radius: 10px;
-  -moz-border-radius-topright: 10px;
-  -webkit-border-top-right-radius: 10px;
-  -o-border-top-right-radius: 10px;
-  -ms-border-top-right-radius: 10px;
-  -khtml-border-top-right-radius: 10px;
-  border-top-right-radius: 10px;
-  background: #9acd32;
-  height: 50px;
-  text-align: center;
-}
-/* line 24, ../../app/stylesheets/screen.sass */
-#wrapper #header ul#user_nav {
-  padding-left: 40px;
-  padding-right: 40px;
-  height: 25px;
-}
-/* line 28, ../../app/stylesheets/screen.sass */
-#wrapper #header ul#user_nav li {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 390px;
-}
-/* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #wrapper #header ul#user_nav li {
-  overflow-x: hidden;
-}
-/* line 30, ../../app/stylesheets/screen.sass */
-#wrapper #header ul#user_nav li.last {
-  margin-right: 0;
-}
-/* line 32, ../../app/stylesheets/screen.sass */
-#wrapper #header ul#menu {
-  padding-left: 40px;
-  padding-right: 40px;
-  height: 25px;
-}
-/* line 36, ../../app/stylesheets/screen.sass */
-#wrapper #header ul#menu li {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 230px;
-  text-align: center;
-}
-/* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html #wrapper #header ul#menu li {
-  overflow-x: hidden;
-}
-/* line 39, ../../app/stylesheets/screen.sass */
-#wrapper #header ul#menu li.last {
-  margin-right: 0;
-}
-/* line 41, ../../app/stylesheets/screen.sass */
-#wrapper #header a {
-  text-decoration: none;
-  color: black;
-}
-/* line 44, ../../app/stylesheets/screen.sass */
-#wrapper #header a:hover {
-  background: #006400;
-  color: silver;
-  text-decoration: none;
-  padding: 4px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -o-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -khtml-border-radius: 3px;
-  border-radius: 3px;
-}
-/* line 50, ../../app/stylesheets/screen.sass */
-#wrapper #content {
-  background: silver;
-  height: 900px;
-}
-/* line 53, ../../app/stylesheets/screen.sass */
-#wrapper #footer {
-  background: #9acd32;
-  height: 50px;
-  -moz-border-radius-bottomleft: 10px;
-  -webkit-border-bottom-left-radius: 10px;
-  -o-border-bottom-left-radius: 10px;
-  -ms-border-bottom-left-radius: 10px;
-  -khtml-border-bottom-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  -moz-border-radius-bottomright: 10px;
-  -webkit-border-bottom-right-radius: 10px;
-  -o-border-bottom-right-radius: 10px;
-  -ms-border-bottom-right-radius: 10px;
-  -khtml-border-bottom-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
 /* line 1, ../../app/stylesheets/partials/_home.sass */
 #sign_in {
   height: 900px;
@@ -264,16 +146,117 @@ body {
   height: 20px;
   line-height: 10px;
   border-top: 1px solid silver;
-  color: white;
 }
 /* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #sign_in form#user_new.user_new input[type=submit] {
   overflow-x: hidden;
 }
 
-/* line 37, ../../app/stylesheets/partials/_home.sass */
-#content {
+/* line 15, ../../app/stylesheets/screen.sass */
+#wrapper {
+  width: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+  height: 1000px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  -moz-box-shadow: 0px 0px 10px #9acd32;
+  -webkit-box-shadow: 0px 0px 10px #9acd32;
+  -o-box-shadow: 0px 0px 10px #9acd32;
+  box-shadow: 0px 0px 10px #9acd32;
+}
+/* line 21, ../../app/stylesheets/screen.sass */
+#wrapper #header {
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  -o-border-top-left-radius: 3px;
+  -ms-border-top-left-radius: 3px;
+  -khtml-border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -o-border-top-right-radius: 3px;
+  -ms-border-top-right-radius: 3px;
+  -khtml-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+  background: #9acd32;
+  height: 50px;
+}
+/* line 25, ../../app/stylesheets/screen.sass */
+#wrapper #header #user_nav {
+  padding-left: 880px;
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 70px;
+  height: 25px;
+  float: right;
+}
+/* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #wrapper #header #user_nav {
+  overflow-x: hidden;
+}
+/* line 30, ../../app/stylesheets/screen.sass */
+#wrapper #header ul#menu {
+  height: 25px;
+  padding-left: 40px;
+}
+/* line 33, ../../app/stylesheets/screen.sass */
+#wrapper #header ul#menu li {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 190px;
+  text-align: center;
+}
+/* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #wrapper #header ul#menu li {
+  overflow-x: hidden;
+}
+/* line 36, ../../app/stylesheets/screen.sass */
+#wrapper #header ul#menu li.last {
+  margin-right: 0;
+}
+/* line 38, ../../app/stylesheets/screen.sass */
+#wrapper #header a {
+  text-decoration: none;
+  color: black;
+}
+/* line 41, ../../app/stylesheets/screen.sass */
+#wrapper #header a:hover {
+  background: #006400;
+  color: silver;
+  text-decoration: none;
+  padding: 4px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 47, ../../app/stylesheets/screen.sass */
+#wrapper #content {
+  background: silver;
   height: 900px;
   padding-left: 40px;
   padding-right: 40px;
+}
+/* line 52, ../../app/stylesheets/screen.sass */
+#wrapper #footer {
+  background: #9acd32;
+  height: 50px;
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -o-border-bottom-left-radius: 3px;
+  -ms-border-bottom-left-radius: 3px;
+  -khtml-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -o-border-bottom-right-radius: 3px;
+  -ms-border-bottom-right-radius: 3px;
+  -khtml-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
