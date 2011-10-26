@@ -5,3 +5,4 @@ tmp/
 exec/
 public/uploads
 .sass/cache/*
+.DS_Store
