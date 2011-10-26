@@ -152,8 +152,44 @@ a img {
   overflow-x: hidden;
 }
 
-/* line 15, ../../app/stylesheets/screen.sass */
+/* line 2, ../../app/stylesheets/partials/_teachers.sass */
+#departments .department {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 390px;
+  background: red;
+}
+/* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #departments .department {
+  overflow-x: hidden;
+}
+/* line 6, ../../app/stylesheets/partials/_teachers.sass */
+#departments ul .image {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 110px;
+}
+/* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #departments ul .image {
+  overflow-x: hidden;
+}
+/* line 8, ../../app/stylesheets/partials/_teachers.sass */
+#departments ul dl {
+  display: inline;
+  float: left;
+  margin-right: 0;
+  width: 750px;
+}
+/* line 147, ../../exec/ruby/1.9.1/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #departments ul dl {
+  overflow-x: hidden;
+}
+
+/* line 16, ../../app/stylesheets/screen.sass */
 #wrapper {
+  margin-top: 10px;
   width: 950px;
   margin: 0 auto;
   overflow: hidden;
@@ -166,7 +202,7 @@ a img {
   -o-box-shadow: 0px 0px 10px #9acd32;
   box-shadow: 0px 0px 10px #9acd32;
 }
-/* line 21, ../../app/stylesheets/screen.sass */
+/* line 23, ../../app/stylesheets/screen.sass */
 #wrapper #header {
   -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;
@@ -183,7 +219,7 @@ a img {
   background: #9acd32;
   height: 50px;
 }
-/* line 25, ../../app/stylesheets/screen.sass */
+/* line 27, ../../app/stylesheets/screen.sass */
 #wrapper #header #user_nav {
   padding-left: 880px;
   display: inline;
@@ -197,12 +233,12 @@ a img {
 * html #wrapper #header #user_nav {
   overflow-x: hidden;
 }
-/* line 30, ../../app/stylesheets/screen.sass */
+/* line 32, ../../app/stylesheets/screen.sass */
 #wrapper #header ul#menu {
   height: 25px;
   padding-left: 40px;
 }
-/* line 33, ../../app/stylesheets/screen.sass */
+/* line 35, ../../app/stylesheets/screen.sass */
 #wrapper #header ul#menu li {
   display: inline;
   float: left;
@@ -214,16 +250,16 @@ a img {
 * html #wrapper #header ul#menu li {
   overflow-x: hidden;
 }
-/* line 36, ../../app/stylesheets/screen.sass */
+/* line 38, ../../app/stylesheets/screen.sass */
 #wrapper #header ul#menu li.last {
   margin-right: 0;
 }
-/* line 38, ../../app/stylesheets/screen.sass */
+/* line 40, ../../app/stylesheets/screen.sass */
 #wrapper #header a {
   text-decoration: none;
   color: black;
 }
-/* line 41, ../../app/stylesheets/screen.sass */
+/* line 43, ../../app/stylesheets/screen.sass */
 #wrapper #header a:hover {
   background: #006400;
   color: silver;
@@ -236,14 +272,14 @@ a img {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 47, ../../app/stylesheets/screen.sass */
+/* line 49, ../../app/stylesheets/screen.sass */
 #wrapper #content {
   background: silver;
   height: 900px;
   padding-left: 40px;
   padding-right: 40px;
 }
-/* line 52, ../../app/stylesheets/screen.sass */
+/* line 54, ../../app/stylesheets/screen.sass */
 #wrapper #footer {
   background: #9acd32;
   height: 50px;
