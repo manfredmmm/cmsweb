@@ -1,0 +1,28 @@
+#sign_in
+  height: 900px
+  position: absolute
+  h2
+    +prepend(1)
+    +column(23,true)
+    margin-top: 10px
+    height: 20px
+    font-size: 15px
+  form#user_new.user_new
+    +prepend(7)
+    +column(6)
+    margin-top: 50px
+    input
+      +column(6,true)
+      font-size: 14px
+      margin-bottom: 5px
+    label
+      +column(8)
+      color: $dark_green
+    input[type=submit]
+      +column(2,true)
+      float: right
+      padding: 0px
+      margin-right: -5px
+      +border-radius(3px)
+      +single-box-shadow($black, 0px, 0px, 1px, $pread, $inset)
+      font-size: 13px

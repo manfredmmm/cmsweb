@@ -1,26 +1,33 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem "rails", "3.1.0"
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'mysql2'
 
-gem 'mysql2','<0.3'
 gem 'devise'
 gem "cancan"
 gem 'haml'
-#gem 'rake','0.8.7'
 
 gem 'rmagick'
 gem 'carrierwave'
 gem 'mini_magick'
-gem "jquery-rails", "~> 1.0.11"
 
 gem 'inherited_resources'
 gem 'compass'
 gem 'sass'
 gem 'passenger'
 
+gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: 'a2b16bcdc9'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
+gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -6,7 +6,7 @@
 
 // To configure blueprint, edit the partials/base.sass file.
 @import "partials/base"
-@import "partials/home"
+@import "partials/login"
 @import "partials/teachers"
 
 // To generate css equivalent to the blueprint css but with your
@@ -24,11 +24,15 @@
     +border-top-radius(3px)
     background: $green
     height: 50px
-    #user_nav
-      +prepend(22)
-      +column(2,true)
-      height: 25px 
-      float: right
+    ul#user_nav
+      padding-top: 5px
+      height: 20px 
+      +prepend(17)
+      float: right 
+      li
+        +column(3)
+        &.last
+          +last
     ul#menu
       height: 25px
       +prepend(1)
