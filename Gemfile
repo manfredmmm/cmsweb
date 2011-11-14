@@ -3,19 +3,17 @@ source 'http://rubygems.org'
 gem "rails", "3.1.0"
 
 gem 'mysql2'
+gem 'passenger'
+gem 'haml'
 
 gem 'devise'
 gem "cancan"
-gem 'haml'
 
-gem 'rmagick'
 gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'inherited_resources'
-gem 'compass'
-gem 'sass'
-gem 'passenger'
+gem 'compass', "0.12.alpha.0"
 
 gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: 'a2b16bcdc9'
 

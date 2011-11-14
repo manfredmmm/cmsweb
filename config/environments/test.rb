@@ -38,5 +38,5 @@ Web::Application.configure do
   config.static_cache_control = "public, max-age=3600"
 
   # This config option was shown in the episode but is actually not used, so don't bother adding it.
-  # config.assets.allow_debugging = true
+  config.assets.allow_debugging = true
 end
