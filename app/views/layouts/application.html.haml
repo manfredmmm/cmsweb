@@ -2,15 +2,13 @@
 %html
   %head
     %title PFC - Gestor de contingut
-    = javascript_include_tag 'ckeditor/ckeditor'
-    = stylesheet_link_tag "application"
+    %meta{:charset => "utf-8"}
+    = csrf_meta_tag
     = javascript_include_tag "application"
-    = csrf_meta_tag	
-
+    = stylesheet_link_tag "application"
+    = javascript_include_tag 'ckeditor/ckeditor' 	
   %body
     #wrapper
-      - if flash[:error].nil?
-        %p= flash[:error]
       #header
         %ul#user_nav
           - if user_signed_in?
@@ -25,6 +23,8 @@
             %li= link_to "Espais webs", teacher_web_spaces_path(current_user)
             %li= link_to "Professors i investigadors", teachers_path
       #content
+        - unless flash[:notice].nil?
+          %p.flash= flash[:notice]
         = yield
       #footer
         - if user_signed_in? && current_user.admin?
