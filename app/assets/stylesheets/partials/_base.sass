@@ -1,3 +1,5 @@
+a
+  text-decoration: none
 #wrapper
   +container
   margin-top: 10px
@@ -9,23 +11,15 @@
     +border-top-radius(3px)
     background: $green
     height: 50px
-    ul#user_nav
-      padding-top: 5px
-      height: 20px 
-      +prepend(17)
-      float: right 
-      li
-        +column(3)
-        &.last
-          +last
     ul#menu
-      height: 25px
-      +prepend(1)
+      height: 20px
+      padding: 15px
       li
-        +column(5)
+        +column(4)
         text-align: center
         &.last
           +last
+          +column(3)
     a
       text-decoration: none
       color: $black
@@ -33,7 +27,6 @@
         background: $dark_green
         color: $silver
         text-decoration: none
-        padding: 4px
         +border-radius(3px)
   #content
     background: $silver
@@ -44,3 +37,21 @@
     background: $green
     height: 50px 
     +border-bottom-radius(3px)
+    ul
+      height: 20px
+      padding: 15px
+      li
+        +column(4)
+        text-align: center
+        &.last
+          +last
+          +column(3)
+    a
+      text-decoration: none
+      color: $black
+      &:hover
+        background: $dark_green
+        color: $silver
+        text-decoration: none
+        +border-radius(3px)
+
