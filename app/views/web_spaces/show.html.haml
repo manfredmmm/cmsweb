@@ -1,11 +1,9 @@
 %p#notice= notice
 
-%p
-  %b Name
-  = @web_space.name
+%h1
+  %span#page_name.mercury-region{:data => {:type => "editable"}}= raw @web_space.name
 
-= raw @web_space.content
+#page_content.mercury-region{:data => {:type => "editable"}}= raw @web_space.content
 
 - if @teacher == current_user
-  = link_to 'Edit', edit_teacher_web_space_path(@teacher, @web_space)
-= link_to 'Back', teacher_web_spaces_path(@teacher)
+  %p= link_to 'Editar', '/editor' + request.path, id: "edit_link", data: {save_url: mercury_update_teacher_web_space_path(@teacher, @web_space)}
