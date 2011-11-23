@@ -1,1 +1,9 @@
-%h1 LATEST UPDATES
+%h1 Últimes modificacions als Espais
+
+%ul.webs
+- @webspaces.each do |espai|
+  .espai{:id => espai.name}
+    %li
+      .espai= link_to espai.name, teacher_web_space_path(current_user, espai) 
+      .owner= " modificat per " + espai.teacher.name + " " + espai.teacher.surname
+      .date= espai.updated_at

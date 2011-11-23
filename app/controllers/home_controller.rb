@@ -8,5 +8,7 @@ class HomeController < ApplicationController
     if current_user.type.nil?
       current_user.update_attribute(:type, "Teacher")
     end
+
+    @webspaces = WebSpace.find(:all, :order => "updated_at")
   end
 end

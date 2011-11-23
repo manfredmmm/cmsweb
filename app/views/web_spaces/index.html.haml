@@ -13,7 +13,6 @@
       %td= web_space.teacher.email
       %td
         - if @teacher == current_user
-          = link_to 'Editar', edit_teacher_web_space_path(@teacher, web_space)
           = link_to 'Eliminar', teacher_web_space_path(@teacher, web_space), :confirm => 'Estàs segur?', :method => :delete
 
 - if @teacher == current_user
