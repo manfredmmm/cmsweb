@@ -1,14 +1,14 @@
-%h1 Listing teachers
+%h1 Llistat de professors
 
 %table
   %tr
-    %th Name
-    %th Surname
-    %th Birthday
+    %th Nom
+    %th Cognom
+    %th Data neixament
     %th Email
-    %th Department
-    %th Research area
-    %th Office
+    %th Departament
+    %th Àrea de recerca
+    %th Despatx
     %th Avatar
 
   - @teachers.each do |teacher|
@@ -21,9 +21,8 @@
       %td= teacher.research_area
       %td= teacher.office
       %td= image_tag teacher.avatar_url.to_s
-      %td= link_to 'Show', admin_teacher_path(teacher)
-      %td= link_to 'Edit', edit_admin_teacher_path(teacher)
-      %td= link_to 'Destroy', admin_teacher_path(teacher), :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Veure perfil', admin_teacher_path(teacher)
+      %td= link_to 'Editar', edit_admin_teacher_path(teacher)
+      %td= link_to 'Eliminar', admin_teacher_path(teacher), :confirm => 'Estàs segur?', :method => :delete
 
-= link_to 'New Teacher', new_admin_teacher_path
-= link_to 'Back to home', root_path
+= link_to 'Donar d\'alta un professor', new_admin_teacher_path

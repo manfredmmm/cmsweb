@@ -1,31 +1,23 @@
-
-%p#notice= notice
 %p
-  %b Name
-  = @teacher.name
-
-%p
-  %b Surname
-  = @teacher.surname
+  %b Nom i cognom
+  = @teacher.name + " " + @teacher.surname
+  %p= image_tag @teacher.avatar_url.to_s
 
 %p
-  %b Birthday
+  %b Data neixament
   = @teacher.birthday
+
 %p
-  %b Department
+  %b Departament
   = @teacher.department.try(:name)
 
 %p
-  %b Research area
+  %b Àrea de recerca
   = @teacher.research_area
 
 %p
-  %b Office
+  %b Despatx
   = @teacher.office
 
-%p
-  %b Avatar
-  = image_tag @teacher.avatar_url.to_s
-
-= link_to 'Edit', edit_admin_teacher_path(@teacher)
-= link_to 'Back', admin_teachers_path
+%p= link_to 'Editar', edit_admin_teacher_path(@teacher)
+%p= link_to 'Llistat de professors', admin_teachers_path

@@ -6,7 +6,7 @@ Web::Application.routes.draw do
 
   root :to => "home#index"
 
-  resources :teachers, :except => [:new,:create,:show] do
+  resources :teachers, :except => [:new,:create] do
     resources :web_spaces do
       member { post :mercury_update }
     end

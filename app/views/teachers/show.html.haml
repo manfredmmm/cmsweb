@@ -1,1 +1,20 @@
-%h2= @teacher.name
+%p
+  %b Nom i cognom
+  = @teacher.name + " " + @teacher.surname
+  %p= image_tag @teacher.avatar_url.to_s
+
+%p
+  %b Data neixament
+  = @teacher.birthday
+
+%p
+  %b Departament
+  = @teacher.department.try(:name)
+
+%p
+  %b Àrea de recerca
+  = @teacher.research_area
+
+%p
+  %b Despatx
+  = @teacher.office
