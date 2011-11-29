@@ -1,9 +1,19 @@
-%h1 Últimes modificacions als Espais
+%h1 Últimes Novetats
 
-%ul.webs
-- @webspaces.each do |espai|
-  .espai{:id => espai.name}
-    %li
-      .espai= link_to espai.name, teacher_web_space_path(current_user, espai) 
-      .owner= " modificat per " + espai.teacher.name + " " + espai.teacher.surname
-      .date= espai.updated_at
+#webspaces
+  %h3 Espais webs
+  %ul.webs
+  - @webspaces.each do |espai|
+    #web{:id => espai.name}
+      %li
+        .espai= link_to espai.name, teacher_web_space_path(current_user, espai)
+        .owner= " actualitzat per " + espai.teacher.name + " " + espai.teacher.surname + " " + espai.updated_at.to_s
+
+#teachers
+  %h3 Últims professors donats d'alta
+  %ul.teachers
+  - @teachers.each do |teacher|
+    #teacher{:id => teacher.name}
+      %li
+        .name= link_to teacher.name, teacher_path(teacher)
+        .date= " creat al " + teacher.created_at.to_s

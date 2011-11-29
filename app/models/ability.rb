@@ -17,6 +17,7 @@ class Ability
         can :update, Teacher, :id => user.id
       else
         can :read, WebSpace
+        can :read, Teacher
       end
     end
     #
