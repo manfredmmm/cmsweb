@@ -6,44 +6,44 @@
       =@teacher.errors.full_messages.each do |msg|
         %li= msg
   %div.field
-    = f.label :name
+    = f.label :Nom
     = f.text_field :name
 
   %div.field
-    = f.label :surname
+    = f.label :Cognoms
     = f.text_field :surname
     
   %div.field
-    = f.label :email
+    = f.label :Email
     = f.text_field :email
     
   %div.field
-    = f.label :password
+    = f.label :Contrasenya
     = f.password_field :password
     
   %div.field
-    = f.label :password_confirmation
+    = f.label :Confirmacio_contrasenya
     = f.password_field :password_confirmation
   
   %div.field
-    = f.label :birthday
+    = f.label :Data_neixament
     = date_select("teacher", "birthday", :order => [:day, :month, :year], :start_year => 1900, :use_month_numbers => true, :default => { :day => 1, :month => 1 } )
 
   %div.field
-    = f.label :department_id
+    = f.label :Departament
     = f.select :department_id, @departments.collect{|d| [d.name, d.id]},{:include_blank => true}
 
   %div.field
-    = f.label :research_area
+    = f.label :Area_de_recerca
     = f.text_field :research_area
 
   %div.field
-    = f.label :office
+    = f.label :Oficina
     = f.text_field :office
 
   %div.field
-    = f.label :avatar
+    = f.label :Foto_perfil
     = f.file_field :avatar
 
   %div.ations
-    = f.submit
+    = f.submit "Actualitzar dades"
