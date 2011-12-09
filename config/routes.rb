@@ -7,6 +7,7 @@ Web::Application.routes.draw do
   root :to => "home#index"
 
   resources :teachers, :except => [:new,:create] do
+    get :my_spaces
     resources :web_spaces do
       member { post :mercury_update }
     end

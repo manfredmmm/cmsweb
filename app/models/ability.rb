@@ -12,6 +12,8 @@ class Ability
       if user.teacher?
         can :manage, WebSpace, :teacher_id => user.id
         can :read, WebSpace
+
+        can :manage, Teacher, :id => user.id
         
         can :read, Teacher
         can :update, Teacher, :id => user.id

@@ -10,7 +10,4 @@ class WebSpacesController < AuthorizedController
     render text: ""
   end
 
-  def my_spaces
-    @web_spaces = WebSpace.where(:teacher_id => current_user)
-  end
 end
