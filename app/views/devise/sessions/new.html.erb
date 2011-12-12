@@ -1,13 +1,15 @@
 <div id="sign_in">
   <h2>Entrar al teu compte</h2>
 
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-    <%= f.label :email  %>
-    <%= f.email_field :email %>
+  <div id="in">
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+      <%= f.label :email  %>
+      <%= f.email_field :email %>
 
-    <%= f.label :contrasenya %>
-    <%= f.password_field :password %>
+      <%= f.label :contrasenya %>
+      <%= f.password_field :password %>
 
-    <%= f.submit "Entrar" %>
-  <% end %>
+      <%= f.submit "Entrar" %>
+    <% end %>
+  </div>
 </div>

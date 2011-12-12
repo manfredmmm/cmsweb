@@ -7,22 +7,35 @@
     margin-top: 10px
     height: 20px
     font-size: 15px
-  form#user_new.user_new
-    +prepend(7)
-    +column(6)
-    margin-top: 50px
+  #in
+    +column(8)
+    +border-radius(3px)
+    +single-box-shadow($dark_green, 1px, 1px, 5px, $pread, $inset)
+    margin-left: 300px
+    margin-top: 90px
+    padding: 10px
+    padding-right: 15px
+    font-size: 13px
     input
-      +column(6,true)
-      font-size: 14px
+      +column(7,true)
       margin-bottom: 5px
+      font-size: 13px      
+      padding: 5px
+      margin-left: 15px
     label
-      +column(8)
+      padding: 5px
+      margin-left: 10px
+      +column(7)
       color: $dark_green
+      font-size: 14px      
     input[type=submit]
+      margin-left: 230px
       +column(2,true)
-      float: right
-      padding: 0px
-      margin-right: -5px
+      margin-top: 5px
+      padding: 4px
       +border-radius(3px)
       +single-box-shadow($black, 0px, 0px, 1px, $pread, $inset)
-      font-size: 13px
+      font-size: 14px
+      &:hover
+        +single-box-shadow(#c0c0c0, 1px, 1px, 3px, $pread, $inset)
+        color: $dark_green
