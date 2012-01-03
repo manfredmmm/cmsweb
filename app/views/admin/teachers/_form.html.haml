@@ -12,19 +12,19 @@
   %div.field
     = f.label :cognoms
     = f.text_field :surname
-    
+
   %div.field
     = f.label :email
     = f.text_field :email
-    
+
   %div.field
     = f.label :password
     = f.password_field :password
-    
+
   %div.field
     = f.label :password_confirmation
     = f.password_field :password_confirmation
-  
+
   %div.field
     = f.label :data_neixament
     = date_select("teacher", "birthday", :order => [:day, :month, :year], :start_year => 1900, :use_month_numbers => true, :default => { :day => 1, :month => 1 } )
