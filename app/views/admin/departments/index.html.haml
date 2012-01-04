@@ -1,8 +1,8 @@
-%h1 Listing departments
+%h1 Llistat de departaments:
 %table
   %tr
-    %th Name
-    %th Description
+    %th Nom
+    %th Descripció
     %th
     %th
     %th
@@ -10,11 +10,8 @@
       %tr
         %td=department.name
         %td=department.description
-        %td=link_to 'Show', admin_department_path(department)
-        %td=link_to 'Edit', edit_admin_department_path(department)
-        %td=link_to 'Destroy', admin_department_path(department), :confirm => 'Are you sure?', :method => :delete
+        %td=link_to 'Mostrar', admin_department_path(department)
+        %td=link_to 'Editar', edit_admin_department_path(department)
+        %td=link_to 'Eliminar', admin_department_path(department), :confirm => 'Estàs segur?', :method => :delete
 %br
-=link_to 'New Department', new_admin_department_path
-%br 
-=link_to 'Back to home', root_path
-
+=link_to 'Crear un nou departament', new_admin_department_path

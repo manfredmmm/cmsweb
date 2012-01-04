@@ -1,13 +1,17 @@
+%h1 Dades del departament:
+
 %p
 #notice
   =notice
 %p
-  %b Name:
+  %b Nom:
   =@department.name
 
 %p
-  %b Description:
+  %b Descripció:
   = @department.description
 
-=link_to 'Edit', edit_admin_department_path(@department)
-=link_to 'Back', admin_departments_path
+%br
+=link_to 'Editar', edit_admin_department_path(@department)
+%br
+=link_to 'Tornar', admin_departments_path

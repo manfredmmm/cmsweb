@@ -20,7 +20,10 @@
       %td= teacher.department.try(:name)
       %td= teacher.research_area
       %td= teacher.office
-      %td= image_tag teacher.avatar_url.to_s
+      - unless teacher.avatar_url.nil?
+        %td= image_tag teacher.avatar_url.to_s
+      - else
+        %td
       %td= link_to 'Veure perfil', admin_teacher_path(teacher)
       %td= link_to 'Editar', edit_admin_teacher_path(teacher)
       %td= link_to 'Eliminar', admin_teacher_path(teacher), :confirm => 'Estàs segur?', :method => :delete

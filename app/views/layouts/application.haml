@@ -17,9 +17,6 @@
               %li= link_to "Espais webs", teacher_web_spaces_path(current_user)
             %li= link_to "Professors i investigadors", teachers_path
             %li= link_to "Sortir", destroy_user_session_path
-          - else
-            %li= link_to "Registrar-se", new_user_registration_path 
-            %li= link_to "Entrar", new_user_session_path
       #content
         - unless flash[:notice].nil?
           %p.flash= flash[:notice]

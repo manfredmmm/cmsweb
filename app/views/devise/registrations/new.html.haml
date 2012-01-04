@@ -1,0 +1,17 @@
+%h1 Crear el teu compte
+
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  = devise_error_messages!
+
+  %p
+    = f.label :email
+    = f.email_field :email
+  %p
+    = f.label :password
+    = f.password_field :password
+
+  %p
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+
+  = f.submit "Crear"

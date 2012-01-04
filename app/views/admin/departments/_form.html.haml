@@ -6,14 +6,14 @@
       %ul
         - @department.errors.full_messages.each do |msg|
           %li= msg
-        
+
   .field
-    =f.label :name
+    =f.label :nom
     %br
     =f.text_field :name
   .field
-    =f.label :description
+    =f.label :descripcio
     %br
     =f.text_field :description
   .actions
-    =f.submit
+    =f.submit 'Crear/Modificar'

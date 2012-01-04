@@ -1,7 +1,8 @@
 %p
   %b Nom i cognom
   = @teacher.name + " " + @teacher.surname
-  %p= image_tag @teacher.avatar_url.to_s
+  - unless @teacher.avatar_url.nil?
+    %p= image_tag @teacher.avatar_url.to_s
 
 %p
   %b Data neixament
