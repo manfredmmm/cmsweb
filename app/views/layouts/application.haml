@@ -17,6 +17,9 @@
               %li= link_to "Espais webs", teacher_web_spaces_path(current_user)
             %li= link_to "Professors i investigadors", teachers_path
             %li= link_to "Sortir", destroy_user_session_path
+            #search_bar
+              = form_tag root_path, :method => :get do
+                = text_field_tag :search, params[:search], :placeholder => "Buscar"
       #content
         - unless flash[:notice].nil?
           %p.flash= flash[:notice]

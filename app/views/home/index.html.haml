@@ -17,3 +17,11 @@
       %li
         .name= link_to "#{teacher.name} #{teacher.surname}", teacher_path(teacher)
         .date= " donat d'alta " + teacher.created_at.strftime('%H:%M - %D').to_s
+
+- unless @search.nil?
+  #search_bar
+    %h3 Search
+    %ul
+    - @search.each do |s|
+      %li= link_to "#{s.name} #{s.surname}", teacher_path(s)
+         

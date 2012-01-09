@@ -15,6 +15,9 @@ gem 'mini_magick'
 gem 'inherited_resources'
 gem 'compass', "0.12.alpha.0"
 
+gem 'sunspot_rails'
+gem 'progress_bar'
+
 gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: 'a2b16bcdc9'
 
 # Gems used only for assets and not required
@@ -23,6 +26,10 @@ group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
+end
+
+group :development do
+  gem 'sunspot_solr'
 end
 
 gem 'jquery-rails'
