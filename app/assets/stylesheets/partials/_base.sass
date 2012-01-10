@@ -10,12 +10,14 @@ a
   #header
     +border-top-radius(3px)
     background: $green
-    height: 50px
+    height: 80px
     ul#menu
       height: 20px
       padding: 15px
       li
-        +column(4)
+        padding: 5px
+        margin-right: 5px
+        +column(5)
         text-align: center
         &.last
           +last
@@ -24,10 +26,19 @@ a
       text-decoration: none
       color: $black
       &:hover
+        padding: 3px
         background: $dark_green
         color: $silver
         text-decoration: none
         +border-radius(3px)
+    #search_bar
+      +prepend(18)
+      background: $dark_green
+      input#search
+        +border-radius(5px)
+        width: 200px
+        height: 20px
+        text-align: center
   #content
     +clearfix
     padding: 10px
@@ -54,17 +65,13 @@ a
       font-weight: bold
   #footer
     background: $green
-    height: 50px 
+    height: 50px
     +border-bottom-radius(3px)
     ul
       height: 20px
       padding: 15px
       li
         +column(4)
-        text-align: center
-        &.last
-          +last
-          +column(3)
     a
       text-decoration: none
       color: $black
