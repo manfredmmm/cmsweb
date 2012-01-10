@@ -5,5 +5,5 @@
 //= require_directory .
 
 $(function() {
-  setTimeout(function(){ $('.flash').hide("fade", {}, 1000) }, 2000);
+  setTimeout(function(){ $('.flash').hide("slow"); }, 2000);
 });
