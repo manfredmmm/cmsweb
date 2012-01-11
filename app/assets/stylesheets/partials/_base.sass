@@ -10,18 +10,27 @@ a
   #header
     +border-top-radius(3px)
     background: $green
-    height: 80px
+    height: 50px
     ul#menu
       height: 20px
-      padding: 15px
+      margin-left: 25px
+      padding: 10px
       li
+        +single-box-shadow($black, $h-offset, $v-offset, $blur, $pread, $inset)
+        +column(4)
         padding: 5px
-        margin-right: 5px
-        +column(5)
         text-align: center
-        &.last
-          +last
-          +column(3)
+      li.last
+        +column(5)
+        padding: 3px
+        #search_bar
+          float: right
+          input#search
+            +border-radius(5px)
+            font-size: 11px
+            +column(4)
+            height: 13px
+            text-align: center
     a
       text-decoration: none
       color: $black
@@ -31,14 +40,7 @@ a
         color: $silver
         text-decoration: none
         +border-radius(3px)
-    #search_bar
-      +prepend(18)
-      background: $dark_green
-      input#search
-        +border-radius(5px)
-        width: 200px
-        height: 20px
-        text-align: center
+
   #content
     +clearfix
     padding: 10px
@@ -72,6 +74,13 @@ a
       padding: 15px
       li
         +column(4)
+        text-align: center
+      li.edit
+        +column(3)
+        text-align: center
+      li.out
+        +column(3)
+        text-align: center
     a
       text-decoration: none
       color: $black
