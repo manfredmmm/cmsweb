@@ -14,32 +14,34 @@ a
     ul#menu
       height: 20px
       margin-left: 25px
-      padding: 10px
+      padding-top: 2px
       li
-        +single-box-shadow($black, $h-offset, $v-offset, $blur, $pread, $inset)
         +column(4)
-        padding: 5px
         text-align: center
+        padding: 8px
       li.last
-        +column(5)
-        padding: 3px
+        margin-left: 45px
+        padding-top: 13px
         #search_bar
           float: right
           input#search
+            background: $white image-url('lupa.png') left center no-repeat
             +border-radius(5px)
             font-size: 11px
             +column(4)
-            height: 13px
+            height: 15px
             text-align: center
-    a
-      text-decoration: none
-      color: $black
-      &:hover
-        padding: 3px
-        background: $dark_green
-        color: $silver
+      a
         text-decoration: none
-        +border-radius(3px)
+        +single-box-shadow($dark_green, $h-offset, $v-offset, $blur, $pread, $inset)
+        +border-radius
+        color: $black
+        +column(4)
+        padding: 8px
+        &:hover
+          background: $dark_green
+          color: $silver
+          text-decoration: none
 
   #content
     +clearfix
