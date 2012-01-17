@@ -4,7 +4,7 @@ a
   +container
   margin-top: 10px
   min-height: 1000px
-  font-family: Verdana, Arial, Helvetica, sans-serif
+  font-family: "Lucida Grande",Helvetica, Verdana, Arial, sans-serif
   font-size: 12px
   +single-box-shadow($dark_silver, $h-offset, $v-offset, $blur, $pread, $inset)
   #header
@@ -31,6 +31,8 @@ a
             +column(4)
             height: 15px
             text-align: center
+      li.selected
+        font-weight: bold
       a
         text-decoration: none
         +single-box-shadow($dark_green, $h-offset, $v-offset, $blur, $pread, $inset)
@@ -74,6 +76,8 @@ a
     ul
       height: 20px
       padding: 15px
+      li.current
+        font-weight: bold
       li
         +column(4)
         text-align: center
