@@ -74,7 +74,7 @@ SimpleNavigation::Configuration.run do |navigation|
     unless current_user.nil?
       primary.dom_id = 'menu'
 
-      primary.item :news, 'Noticies', root_path
+      primary.item :news, 'Notícies', root_path
 
       unless current_user.admin?
         primary.item :my_spaces, 'Els meus espais webs', teacher_my_spaces_path(current_user)

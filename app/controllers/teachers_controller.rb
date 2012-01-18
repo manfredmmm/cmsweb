@@ -8,7 +8,7 @@ class TeachersController < AuthorizedController
     # Don't update password if it is blank
     params[:teacher][:password] = nil if params[:teacher][:password].blank?
     params[:teacher][:password_confirmation] = nil if params[:teacher][:password].blank?
-    update! { root_path }
+    update!(:notice => "S'ha actualitzat correctament el perfil.") { root_path }
   end
 
   def my_spaces

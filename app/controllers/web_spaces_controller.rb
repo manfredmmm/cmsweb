@@ -10,4 +10,11 @@ class WebSpacesController < AuthorizedController
     render text: ""
   end
 
+  def create
+    create!(:notice => "L'espai web s'ha creat correctament.")
+  end
+
+  def destroy
+    destroy!(:notice => "L'espai web ha estat eliminat.")
+  end
 end

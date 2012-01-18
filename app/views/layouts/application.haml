@@ -10,11 +10,14 @@
     #wrapper
       #header
         = render_navigation
-        #search_bar
-          = form_tag root_path, :method => :get do
-            = text_field_tag :search, params[:search], :placeholder => "Buscar"
+        - unless current_user.nil?
+          #search_bar
+            = form_tag root_path, :method => :get do
+              = text_field_tag :search, params[:search], :placeholder => "Buscar"
       #content
         - unless flash[:notice].nil?
+          %p.flash= flash[:notice]
+        - unless flash[:error].nil?
           %p.flash= flash[:notice]
         = yield
       #footer
