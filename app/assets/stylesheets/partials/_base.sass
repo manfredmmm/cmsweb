@@ -19,18 +19,6 @@ a
         +column(4)
         text-align: center
         padding: 8px
-      li.last
-        margin-left: 45px
-        padding-top: 13px
-        #search_bar
-          float: right
-          input#search
-            background: $white image-url('lupa.png') left center no-repeat
-            +border-radius(5px)
-            font-size: 11px
-            +column(4)
-            height: 15px
-            text-align: center
       li.selected
         font-weight: bold
       a
@@ -44,6 +32,19 @@ a
           background: $dark_green
           color: $silver
           text-decoration: none
+    #search_bar
+      margin-top: -7px
+      margin-left: 45px
+      float: right
+      input#search
+        background: $white image-url('lupa.png') left center no-repeat
+        +border-radius(5px)
+        font-size: 11px
+        +column(4)
+        height: 15px
+        text-align: center
+        .placeholder
+          text-align: center
 
   #content
     +clearfix
@@ -75,16 +76,19 @@ a
     +border-bottom-radius(3px)
     ul
       height: 20px
-      padding: 15px
+      padding: 14px
       li.current
         font-weight: bold
       li
         +column(4)
+        padding: 5px
         text-align: center
       li.edit
         +column(3)
+        padding: 5px
         text-align: center
       li.out
+        padding: 5px
         +column(3)
         text-align: center
     a
@@ -94,5 +98,6 @@ a
         background: $dark_green
         color: $silver
         text-decoration: none
+        padding: 5px
         +border-radius(3px)
 
