@@ -71,16 +71,18 @@ SimpleNavigation::Configuration.run do |navigation|
     # You can turn off auto highlighting for a specific level
     # primary.auto_highlight = false
 
-    primary.dom_id = 'menu'
+    unless current_user.nil?
+      primary.dom_id = 'menu'
 
-    primary.item :news, 'Noticies', root_path
+      primary.item :news, 'Noticies', root_path
 
-    unless current_user.admin?
-      primary.item :my_spaces, 'Els meus espais webs', teacher_my_spaces_path(current_user)
-      primary.item :spaces, 'Espais webs', teacher_web_spaces_path(current_user)
+      unless current_user.admin?
+        primary.item :my_spaces, 'Els meus espais webs', teacher_my_spaces_path(current_user)
+        primary.item :spaces, 'Espais webs', teacher_web_spaces_path(current_user)
+      end
+
+      primary.item :teachers, 'Professors/investigadors', teachers_path
     end
-
-    primary.item :teachers, 'Professors/investigadors', teachers_path
   end
 
 end
