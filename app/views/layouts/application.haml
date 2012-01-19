@@ -14,11 +14,16 @@
           #search_bar
             = form_tag root_path, :method => :get do
               = text_field_tag :search, params[:search], :placeholder => "Buscar"
+        - else
+          #nil_title
+            %h1= "PFC ETSE UAB | CMS - Portal web per investigados i professors universitaris"
       #content
         - unless flash[:notice].nil?
           %p.flash= flash[:notice]
         - unless flash[:error].nil?
-          %p.flash= flash[:notice]
+          %p.error= flash[:error]
+        - unless flash[:alert].nil?
+          %p.error= flash[:alert]
         = yield
       #footer
         %ul.footer_nav

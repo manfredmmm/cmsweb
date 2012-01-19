@@ -45,7 +45,11 @@ a
         text-align: center
         .placeholder
           text-align: center
-
+    #nil_title
+      font-size: 20px
+      padding: 10px
+      font-weight: bold
+      text-align: center
   #content
     +clearfix
     padding: 10px
@@ -60,6 +64,18 @@ a
       +box-shadow($shadows 0 0 5px)
       +border-radius
       border: 2px solid $white
+      z-index: 9000
+      width: 300px
+      text-align: center
+      left: 50%
+      margin-left: -150px
+    .error
+      position: absolute
+      padding: 10px
+      background: $pale_yellow
+      +box-shadow($shadows 0 0 5px)
+      +border-radius
+      border: 2px solid red
       z-index: 9000
       width: 300px
       text-align: center
