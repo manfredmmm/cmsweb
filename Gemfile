@@ -34,7 +34,7 @@ group :development do
   gem 'sunspot_solr'
 end
 
-gem 'jquery-rails'
+gem "jquery-rails"
 
 # Use unicorn as the web server
 # gem 'unicorn'

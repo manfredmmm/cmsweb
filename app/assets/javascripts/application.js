@@ -5,6 +5,7 @@
 //= require_directory .
 
 $(function() {
-  // Hide flash messages
   setTimeout(function(){ $('.flash').hide("slow"); }, 2000);
+  setTimeout(function(){ $('.notice').hide("slow"); }, 2000);
+  setTimeout(function(){ $('.error').hide("slow"); }, 2000);
 });

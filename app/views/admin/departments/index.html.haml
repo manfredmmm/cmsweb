@@ -1,17 +1,19 @@
 %h1 Llistat de departaments
-%table
-  %tr
-    %th.title Nom
-    %th.title Descripció
-    %th
-    %th
-    %th
-    - @departments.each do |department|
-      %tr
-        %td=department.name
-        %td=department.description
-        %td=link_to 'Mostrar', admin_department_path(department)
-        %td=link_to 'Editar', edit_admin_department_path(department)
-        %td=link_to 'Eliminar', admin_department_path(department), :confirm => 'Estàs segur?', :method => :delete
-%br
-=link_to 'Crear un nou departament', new_admin_department_path
+
+#departments_admin
+  %table
+    %tr
+      %th.title Nom
+      %th.title Descripció
+      %th
+      %th
+      %th
+      - @departments.each do |department|
+        %tr
+          %td=department.name
+          %td=department.description
+          %td=link_to 'Mostrar', admin_department_path(department)
+          %td=link_to 'Editar', edit_admin_department_path(department)
+          %td=link_to 'Eliminar', admin_department_path(department), :confirm => 'Estàs segur?', :method => :delete
+  %br
+  =link_to 'Crear un nou departament', new_admin_department_path

@@ -13,7 +13,7 @@
       %th Avatar
 
     - @teachers.each do |teacher|
-      %tr
+      %tr.class= cycle('odd', 'even')
         %td= teacher.name
         %td= teacher.surname
         %td= teacher.birthday

@@ -1,49 +1,62 @@
-= form_for @teacher, :html => { :multipart => true} do |f|
-  -if @teacher.errors.any?
-    %div#error_explanation
-      %h2= pluralize(@teacher.errors.count, "error")
-      %ul
-      =@teacher.errors.full_messages.each do |msg|
-        %li= msg
-  %div.field
-    = f.label :Nom
-    = f.text_field :name
+%h1 Edita el teu perfil
 
-  %div.field
-    = f.label :Cognoms
-    = f.text_field :surname
-    
-  %div.field
-    = f.label :Email
-    = f.text_field :email
-    
-  %div.field
-    = f.label :Contrasenya
-    = f.password_field :password
-    
-  %div.field
-    = f.label :Confirmacio_contrasenya
-    = f.password_field :password_confirmation
-  
-  %div.field
-    = f.label :Data_neixament
-    = date_select("teacher", "birthday", :order => [:day, :month, :year], :start_year => 1900, :use_month_numbers => true, :default => { :day => 1, :month => 1 } )
+#edit_teacher
+  = form_for @teacher, :html => { :multipart => true} do |f|
+    -if @teacher.errors.any?
+      %div#error_explanation
+        %h2= pluralize(@teacher.errors.count, "error")
+        %ul
+        =@teacher.errors.full_messages.each do |msg|
+          %li= msg
+    %div.field
+      = f.label :Nom
+      %br
+      = f.text_field :name
 
-  %div.field
-    = f.label :Departament
-    = f.select :department_id, @departments.collect{|d| [d.name, d.id]},{:include_blank => true}
+    %div.field
+      = f.label :Cognoms
+      %br
+      = f.text_field :surname
 
-  %div.field
-    = f.label :Area_de_recerca
-    = f.text_field :research_area
+    %div.field
+      = f.label :Email
+      %br
+      = f.text_field :email
 
-  %div.field
-    = f.label :Oficina
-    = f.text_field :office
+    %div.field
+      = f.label :Contrasenya
+      %br
+      = f.password_field :password
 
-  %div.field
-    = f.label :Foto_perfil
-    = f.file_field :avatar
+    %div.field
+      = f.label :Confirmacio_contrasenya
+      %br
+      = f.password_field :password_confirmation
 
-  %div.ations
-    = f.submit "Actualitzar dades"
+    %div.field
+      = f.label :Data_neixament
+      %br
+      = date_select("teacher", "birthday", :order => [:day, :month, :year], :start_year => 1900, :use_month_numbers => true, :default => { :day => 1, :month => 1 } )
+
+    %div.field
+      = f.label :Departament
+      %br
+      = f.select :department_id, @departments.collect{|d| [d.name, d.id]},{:include_blank => true}
+
+    %div.field
+      = f.label :Area_de_recerca
+      %br
+      = f.text_field :research_area
+
+    %div.field
+      = f.label :Oficina
+      %br
+      = f.text_field :office
+
+    %div.field
+      = f.label :Foto_perfil
+      %br
+      = f.file_field :avatar
+
+    %div.ations
+      = f.submit "Actualitzar dades"
