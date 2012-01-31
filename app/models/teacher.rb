@@ -12,6 +12,8 @@ class Teacher < User
   # Virtual Attributes
   validates :name,    :presence => true
   validates :surname, :presence => true
+  validates :email,   :presence => true
+  validates :department, :presence => true
 
   # Searchable
   searchable do

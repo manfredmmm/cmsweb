@@ -1,13 +1,7 @@
 %h1 Edita el teu perfil
 
 #edit_teacher
-  = form_for @teacher, :html => { :multipart => true} do |f|
-    -if @teacher.errors.any?
-      %div#error_explanation
-        %h2= pluralize(@teacher.errors.count, "error")
-        %ul
-        =@teacher.errors.full_messages.each do |msg|
-          %li= msg
+  = form_for @teacher, :validate => true do |f|
     %div.field
       = f.label :Nom
       %br
@@ -41,7 +35,7 @@
     %div.field
       = f.label :Departament
       %br
-      = f.select :department_id, @departments.collect{|d| [d.name, d.id]},{:include_blank => true}
+      = f.select :department_id, @departments.collect{|d| [d.name, d.id]}
 
     %div.field
       = f.label :Area_de_recerca
