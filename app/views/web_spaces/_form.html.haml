@@ -1,11 +1,9 @@
-= form_for [@teacher, @web_space] do |f|
+= form_for [@teacher, @web_space], :validate => true do |f|
   %div.field
     = f.label :Nom_espai
     = f.text_field :name
-    
   %div.field
     = f.label :Contingut
     = f.text_area :content
-    
   %div.actions
     = f.submit "Crear Espai"
