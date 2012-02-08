@@ -13,6 +13,11 @@ class HomeController < ApplicationController
         fulltext params[:search]
       end
       @search = @search.results
+
+      @web_search = WebSpace.search do
+        fulltext params[:search]
+      end
+      @web_search = @web_search.results
     end
   end
 end

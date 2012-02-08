@@ -4,4 +4,10 @@ class WebSpace < ActiveRecord::Base
 
   #Validations
   validates :name, :presence => true
+
+  # Searchable
+  searchable do
+    text :name
+    text :content
+  end
 end

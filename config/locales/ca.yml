@@ -2,29 +2,66 @@ ca:
   errors:
     format: ! '%{attribute} %{message}'
     messages:
-      accepted: ha de ser acceptat
-      blank: no pot estar en blanc
-      confirmation: no coincideix
-      empty: no pot estar buit
-      equal_to: ha de ser igual a %{count}
-      even: ha de ser parell
-      exclusion: està reservat
-      greater_than: ha de ser més gran que %{count}
-      greater_than_or_equal_to: ha de ser més gran o igual a %{count}
-      inclusion: no està inclós a la llista
-      invalid: no és vàlid
-      less_than: ha de ser menor que %{count}
-      less_than_or_equal_to: ha de ser menor o igual a %{count}
-      not_a_number: no és un número
-      not_an_integer: ha de ser un enter
-      odd: ha de ser imparell
+      accepted: Ha de ser acceptat
+      blank: No pot estar en blanc
+      confirmation: No coincideix
+      empty: No pot estar buit
+      equal_to: Ha de ser igual a %{count}
+      even: Ha de ser parell
+      exclusion: Està reservat
+      greater_than: Ha de ser més gran que %{count}
+      greater_than_or_equal_to: Ha de ser més gran o igual a %{count}
+      inclusion: No està inclós a la llista
+      invalid: No és vàlid
+      less_than: Ha de ser menor que %{count}
+      less_than_or_equal_to: Ha de ser menor o igual a %{count}
+      not_a_number: No és un número
+      not_an_integer: Ha de ser un enter
+      odd: Ha de ser imparell
       record_invalid: ! 'La validació ha fallat: %{errors}'
-      taken: no està disponible
-      too_long: és massa llarg (%{count} caràcters màxim)
-      too_short: és massa curt (%{count} caràcters mínim)
-      wrong_length: no té la longitud correcte (%{count} caràcters exactament)
+      taken: No està disponible
+      too_long: És massa llarg (%{count} caràcters màxim)
+      too_short: És massa curt (%{count} caràcters mínim)
+      wrong_length: No té la longitud correcte (%{count} caràcters exactament)
     template:
       body: ! 'Hi ha hagut problemes amb els següents camps:'
       header:
         one: No s'ha pogut desar aquest/a %{model} perquè hi ha 1 error
         other: No s'ha pogut desar aquest/a %{model} perquè hi ha hagut %{count} errors
+  devise:
+    failure:
+      already_authenticated: 'You are already signed in.'
+      unauthenticated: 'Entra al teu compte abans de seguir.'
+      unconfirmed: 'You have to confirm your account before continuing.'
+      locked: 'Your account is locked.'
+      invalid: 'Email o contrasenya incorrectes'
+      invalid_token: 'Invàlid authentication token.'
+      timeout: 'La teva sessió ha expirat, si us plau torna a entrar.'
+      inactive: 'El teu compte encara no ha estat activat.'
+    sessions:
+      signed_in: 'Has entrat correctament al Gestor de Contingut.'
+      signed_out: 'Has sortit del Gestor de Contingut.'
+    passwords:
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Your password was changed successfully. You are now signed in.'
+    confirmations:
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+    registrations:
+      signed_up: 'Benvingut! Completi el seu perfil abans de realitzar qualsevol pas.'
+      inactive_signed_up: 'You have signed up successfully. However, we could not sign you in because your account is %{reason}.'
+      updated: 'El teu compte ha estat actualitzat correctament.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+    omniauth_callbacks:
+      success: 'Successfully authorized from %{kind} account.'
+      failure: 'Could not authorize you from %{kind} because "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Confirmation instructions'
+      reset_password_instructions:
+        subject: 'Reset password instructions'
+      unlock_instructions:
+        subject: 'Unlock Instructions'

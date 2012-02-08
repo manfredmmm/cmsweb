@@ -1,16 +1,25 @@
-%h1 Últimes Novetats
-
-
 - unless @search.nil?
+  %h1 Resultats de la búsqueda
+
   #search_bar
-    %h3 Resultats
+    %h3 Professors
     - if @search.empty?
-      %p No hi ha resultats amb la búsqueda realitzada.
+      %p No hi ha resultats de professors amb la búsqueda realitzada.
     - else
       %ul
       - @search.each do |s|
         %li= link_to "#{s.name} #{s.surname}", teacher_path(s)
+    %h3 Espais web
+    - if @web_search.empty?
+      %p No hi ha resultats d'espais webs amb la búsqueda realitzada.
+    - else
+      %ul
+        - @web_search.each do |w|
+          %li= link_to "#{w.name}", teacher_web_space_path(w.teacher.id,w)
+
 - else
+  %h1 Últimes Novetats
+
   #webspaces
     %h3 Espais webs
     %ul

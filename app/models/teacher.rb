@@ -19,16 +19,8 @@ class Teacher < User
   searchable do
     text :name
     text :surname
-    text :web_spaces do
-      #web_spaces.map { |web| web.title }
-      web_spaces.map(&:title)
-    end
+    text :email
+    text :department
+    text :research_area
   end
-
-  #text :user do
-  #  user.name
-  #end
-  #text :tags do
-  #  tags.map(&:name)
-  #end
 end
