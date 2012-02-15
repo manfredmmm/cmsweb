@@ -1,18 +1,14 @@
+%h1 Professors i investagadors
+
 #departments
   - @departments.each do |department|
     .department{:id => department.name}
       - if !department.teachers.empty?
-        %h3= department.name
+        %h2= department.name
         - department.teachers.each do |t|
-          .image= image_tag(t.avatar_url.to_s, :title => t.email, :alt => t.email)
-          %dl
-            %dt Nom:
-            %dd= t.name
-            %dt Cognoms:
-            %dd= t.surname
-            %dt Àrea de recerca:
-            %dd= t.research_area
-            %dt Correu electrònic:
-            %dd= t.email
-            %dt Despatx:
-            %dd= t.office
+          %ul.teacher{:id => t.id}
+            .avatar=  image_tag(t.avatar_url.to_s, :title => t.name + " " + t.surname, :alt => t.name + " " + t.surname)
+            %li= t.name.to_s + " " + t.surname.to_s
+            %li= t.email.to_s
+            %li= "Despatx: " + t.office.to_s
+            %li= "Recerca: " + t.research_area.to_s
