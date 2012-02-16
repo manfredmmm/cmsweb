@@ -26,8 +26,11 @@
     - @webspaces.each do |espai|
       #web{:id => espai.name}
         %li
-          .espai= link_to espai.name, teacher_web_space_path(current_user, espai)
-          .owner= " actualitzat per " + espai.teacher.name + " " + espai.teacher.surname + " " + espai.updated_at.strftime('%H:%M - %d/%m/%Y').to_s
+          .espai= link_to espai.name, teacher_web_space_path(espai.teacher, espai)
+          .owner
+            = "[  "
+            = link_to "#{espai.teacher.name} " "  #{espai.teacher.surname}", teacher_path(espai.teacher)
+            = " #{espai.updated_at.strftime('%H:%M - %d/%m/%Y')} ]"
 
   #teachers
     %h3 Últims professors donats d'alta
@@ -35,5 +38,5 @@
     - @teachers.each do |teacher|
       #teacher{:id => teacher.name}
         %li
-          .name= link_to "#{teacher.name} #{teacher.surname}", teacher_path(teacher)
-          .date= " donat d'alta " + teacher.created_at.strftime('%H:%M - %d/%m/%Y').to_s
+          = link_to "#{teacher.name} #{teacher.surname}", teacher_path(teacher) + " donat d'alta " + teacher.created_at.strftime('%H:%M - %d/%m/%Y').to_s
+          .date= " [ " + teacher.created_at.strftime('%H:%M - %d/%m/%Y').to_s + " ]"
