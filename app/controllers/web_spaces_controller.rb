@@ -1,3 +1,4 @@
+#encoding: utf-8
 class WebSpacesController < AuthorizedController
   inherit_resources
   belongs_to :teacher
@@ -8,10 +9,16 @@ class WebSpacesController < AuthorizedController
     page.content = params[:content][:page_content][:value]
     page.save!
     render text: ""
+    flash[:notice] = "L'espai web s'ha actualitzat correctament."
+  end
+
+  def new
+    flash[:notice] = "Pas 1: Posi un títol per l'espai web."
   end
 
   def create
-    create!(:notice => "L'espai web s'ha creat correctament.")
+    flash[:notice] = "Pas 2: Apreti Editar per insertar el contigut de l'espai web."
+    create!(:notice => "Pas 2: Insereixi el contigut de l'espai web.")
   end
 
   def destroy

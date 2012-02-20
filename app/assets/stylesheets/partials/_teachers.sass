@@ -12,14 +12,17 @@
     margin-bottom: 5px
 
 #departments
-  .department
+  //.department
     +column(10)
     display: inline-block
-  .avatar
+  //.avatar
     float: left
     +column(3)
   ul
-    display: inline
+    display: inline-block
+    .avatar
+      +column(3)
     li
-      font-weight: bold
-      +column(7,true)
+      +column(5)
+      float: left
+
