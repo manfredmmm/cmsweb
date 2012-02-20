@@ -23,12 +23,12 @@ a
         font-weight: bold
       a
         text-decoration: none
-        +single-box-shadow($dark_green, $h-offset, $v-offset, $blur, $pread, $inset)
-        +border-radius
         color: $black
         +column(4)
         padding: 8px
         &:hover
+          +single-box-shadow($dark_green, $h-offset, $v-offset, $blur, $pread, $inset)
+          +border-radius
           background: $dark_green
           color: $silver
           text-decoration: none
@@ -125,4 +125,5 @@ a
         text-decoration: none
         padding: 5px
         +border-radius(3px)
-
+        +single-box-shadow($dark_green, $h-offset, $v-offset, $blur, $pread, $inset)
+        +border-radius
