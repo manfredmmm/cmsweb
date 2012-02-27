@@ -1,4 +1,4 @@
-Deparment.destroy_all
+Department.destroy_all
 # Departments seeds
 5.times {|n| Department.create(:name => 'Departament' + n.to_s, :description => 'Departament numero ' + n.to_s) }
 
