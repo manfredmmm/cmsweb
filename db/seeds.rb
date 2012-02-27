@@ -1,6 +1,8 @@
+Deparment.destroy_all
 # Departments seeds
 5.times {|n| Department.create(:name => 'Departament' + n.to_s, :description => 'Departament numero ' + n.to_s) }
 
+User.destroy_all
 # Teachers seeds
 6.times {|n| Teacher.create(
     :email => 'teacher' + (n+1).to_s + '@example.com',
@@ -33,4 +35,4 @@ Admin.create(
     :name => 'Admin',
     :surname => 'Surname',
     :birthday => '1986-12-26'.to_date,
-    :avatar => File.new(Rails.root.to_s+"/examples/1.jpg")) }
+    :avatar => File.new(Rails.root.to_s+"/examples/1.jpg"))
