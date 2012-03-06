@@ -14,7 +14,7 @@ puts "Creating teachers..."
     :password_confirmation => 'example',
     :name => 'Teacher' + (n).to_s,
     :surname => 'Surname' + (n).to_s,
-    :department_id =>  Department.all[n],
+    :department_id =>  Department.all[n].id,
     :birthday => '1986-12-26'.to_date,
     :research_area => 'Web developers',
     :office => 'Q3/1011',
@@ -26,11 +26,23 @@ puts "Creating teachers..."
     :password_confirmation => 'example',
     :name => 'Teacher' + (n+5).to_s,
     :surname => 'Surname' + (n+5).to_s,
-    :department_id =>  Department.all[n],
+    :department_id =>  Department.all[n].id,
     :birthday => '1986-12-26'.to_date,
     :research_area => 'Web design',
-    :office => 'Q3/1011',
+    :office => 'Q5/0011',
     :avatar => File.new(Rails.root.to_s+"/examples/" + (n+5).to_s + ".jpg")) }
+
+3.times {|n| Teacher.create(
+    :email => 'teacher' + (n+10).to_s + '@example.com',
+    :password => 'example',
+    :password_confirmation => 'example',
+    :name => 'Teacher' + (n+10).to_s,
+    :surname => 'Surname' + (n+10).to_s,
+    :department_id => Department.first,
+    :birthday => '1986-12-26'.to_date,
+    :research_area => 'Game developers',
+    :office => 'Q1/3011',
+    :avatar => File.new(Rails.root.to_s+"/examples/" + (n).to_s + ".jpg")) }
 
 # Admin seed
 puts "Creating administrator user..."
@@ -50,5 +62,5 @@ puts "Sunspot solr start"
 system "rake sunspot:solr:start"
 
 # localhost:3000
-system "passenger start"
 puts "GREAT! localhost:3000 is listening!"
+system "passenger start"
