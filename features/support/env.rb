@@ -39,6 +39,8 @@ Spork.prefork do
   #
   ActionController::Base.allow_rescue = false
 
+  include Warden::Test::Helpers
+
   # Remove/comment out the lines below if your app doesn't have a database.
   # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
   begin

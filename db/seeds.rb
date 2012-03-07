@@ -1,20 +1,23 @@
 # Destroy all database, create and migrate
 puts "Creating database..."
-system "rake db:drop && rake db:create && rake db:migrate && rake db:test:prepare"
 
 # Departments seeds
 puts "Creating departments..."
+Department.destroy_all
 5.times {|n| Department.create(:name => 'Departament' + n.to_s, :description => 'Departament numero ' + n.to_s) }
 
 # Teachers seeds
 puts "Creating teachers..."
+
+departments = Department.all
+Teacher.destroy_all
 5.times {|n| Teacher.create(
     :email => 'teacher' + (n).to_s + '@example.com',
     :password => 'example',
     :password_confirmation => 'example',
     :name => 'Teacher' + (n).to_s,
     :surname => 'Surname' + (n).to_s,
-    :department_id =>  Department.all[n].id,
+    :department_id =>  departments.shuffle.first.id,
     :birthday => '1986-12-26'.to_date,
     :research_area => 'Web developers',
     :office => 'Q3/1011',
@@ -26,7 +29,7 @@ puts "Creating teachers..."
     :password_confirmation => 'example',
     :name => 'Teacher' + (n+5).to_s,
     :surname => 'Surname' + (n+5).to_s,
-    :department_id =>  Department.all[n].id,
+    :department_id =>  departments.shuffle.first.id,
     :birthday => '1986-12-26'.to_date,
     :research_area => 'Web design',
     :office => 'Q5/0011',
@@ -46,6 +49,7 @@ puts "Creating teachers..."
 
 # Admin seed
 puts "Creating administrator user..."
+Admin.destroy_all
 Admin.create(
     :email => 'admin@example.com',
     :password => 'example',

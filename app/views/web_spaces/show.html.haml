@@ -3,5 +3,8 @@
 
 #page_content.mercury-region{:data => {:type => "editable"}}= raw @web_space.content
 
+%ul
+  %li= link_to "Portada", '#'
+
 - if @teacher == current_user
   %p= link_to 'Editar', '/editor' + request.path, id: "edit_link", data: {save_url: mercury_update_teacher_web_space_path(@teacher, @web_space)}

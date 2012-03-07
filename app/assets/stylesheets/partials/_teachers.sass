@@ -12,12 +12,6 @@
     margin-bottom: 5px
 
 #departments
-  //.department
-    +column(10)
-    display: inline-block
-  //.avatar
-    float: left
-    +column(3)
   ul
     display: inline-block
     .avatar
@@ -25,4 +19,7 @@
     li
       +column(5)
       float: left
-
+      .name
+        font-weight: bold
+      .email
+        font-style: italic

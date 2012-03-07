@@ -17,8 +17,12 @@ class WebSpacesController < AuthorizedController
   end
 
   def create
-    flash[:notice] = "Pas 2: Apreti Editar per insertar el contigut de l'espai web."
-    create!(:notice => "Pas 2: Insereixi el contigut de l'espai web.")
+    create! do |format|
+      format.html do
+        flash[:notice] = "Pas 2: Insereixi el contigut de l'espai web."
+        redirect_to '/editor' + teacher_web_space_path(@teacher, @web_space)
+      end
+    end
   end
 
   def destroy
