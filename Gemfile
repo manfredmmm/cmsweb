@@ -1,11 +1,10 @@
 source 'http://rubygems.org'
 
+gem 'sqlite3'
 gem "rails", "3.1.0"
 
 gem "simple-navigation"
 
-gem 'mysql2'
-gem 'passenger'
 gem 'haml'
 
 gem 'devise'
@@ -24,8 +23,6 @@ gem 'client_side_validations'
 
 gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: 'a2b16bcdc9'
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
@@ -38,25 +35,24 @@ end
 
 gem "jquery-rails"
 
-# Use unicorn as the web server
-# gem 'unicorn'
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'cucumber-rails'
+  gem 'spork'
+  gem 'passenger'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+  gem 'guard-bundler'
+  gem 'guard-spork'
+  gem 'guard-cucumber'
+  gem 'guard-rspec'
+  gem 'guard-passenger'
 
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'capybara-webkit'
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+  gem 'database_cleaner'
+  gem 'launchy'
+end
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+group :production do
+  gem 'mysql2'
+end

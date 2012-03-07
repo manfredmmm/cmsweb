@@ -1,6 +1,6 @@
 # Destroy all database, create and migrate
 puts "Creating database..."
-system "rake db:drop && rake db:create && rake db:migrate"
+system "rake db:drop && rake db:create && rake db:migrate && rake db:test:prepare"
 
 # Departments seeds
 puts "Creating departments..."
@@ -54,13 +54,3 @@ Admin.create(
     :surname => 'Surname',
     :birthday => '1986-12-26'.to_date,
     :avatar => File.new(Rails.root.to_s+"/examples/0.jpg"))
-
-# Sunspot tasks
-puts "Sunspot solr stop"
-system "rake sunspot:solr:stop"
-puts "Sunspot solr start"
-system "rake sunspot:solr:start"
-
-# localhost:3000
-puts "GREAT! localhost:3000 is listening!"
-system "passenger start"
