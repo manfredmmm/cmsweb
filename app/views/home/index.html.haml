@@ -8,14 +8,20 @@
     - else
       %ul
       - @search.each do |s|
-        %li= link_to "#{s.name} #{s.surname}", teacher_path(s)
+        %li
+          = image_tag(s.avatar_url.to_s, :title => s.name + " " + s.surname, :alt => s.name + " " + s.surname)
+          = link_to "#{s.name} #{s.surname}", teacher_path(s)
     %h3 Espais web
     - if @web_search.empty?
       %p No hi ha resultats d'espais webs amb la búsqueda realitzada.
     - else
       %ul
         - @web_search.each do |w|
-          %li= link_to "#{w.name}", teacher_web_space_path(w.teacher.id,w)
+          %li
+            =link_to "#{w.name}", teacher_web_space_path(w.teacher.id,w)
+            = " ("
+            =link_to "#{w.teacher.name} #{w.teacher.surname}", teacher_path(w.teacher.id)
+            = ")"
 
 - else
   %h1 Últimes Novetats
@@ -30,7 +36,7 @@
           .owner
             = "[  "
             = link_to "#{espai.teacher.name} " "  #{espai.teacher.surname}", teacher_path(espai.teacher)
-            = " #{espai.updated_at.strftime('%H:%M - %d/%m/%Y')} ]"
+            = "  - #{espai.updated_at.strftime('%H:%M - %d/%m/%Y')} ]"
 
   #teachers
     %h3 Últims professors donats d'alta
@@ -38,5 +44,5 @@
     - @teachers.each do |teacher|
       #teacher{:id => teacher.name}
         %li
-          = link_to "#{teacher.name} #{teacher.surname}", teacher_path(teacher) + " donat d'alta " + teacher.created_at.strftime('%H:%M - %d/%m/%Y').to_s
+          .teacher= link_to("#{teacher.name} #{teacher.surname}", teacher_path(teacher))
           .date= " [ " + teacher.created_at.strftime('%H:%M - %d/%m/%Y').to_s + " ]"

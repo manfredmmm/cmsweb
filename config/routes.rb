@@ -10,6 +10,7 @@ Web::Application.routes.draw do
     get :my_spaces
     resources :web_spaces do
       member { post :mercury_update }
+      get :page
     end
   end
 

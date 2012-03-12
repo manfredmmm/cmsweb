@@ -339,7 +339,7 @@ window.Mercury = {
     // and
     // Mercury.Toolbar.ButtonGroup.contexts
 
-    
+
     // ## Region Class
     //
     // Mercury identifies editable regions by a region class.  This class has to be added in your HTML in advance, and
@@ -349,7 +349,7 @@ window.Mercury = {
     // class with '-preview' appended (so, mercury-region-preview by default)
     regionClass: 'mercury-region',
 
-    
+
     // ## Styles
     //
     // Mercury tries to stay as much out of your code as possible, but because regions appear within your document we

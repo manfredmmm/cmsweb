@@ -1,6 +1,7 @@
 class WebSpace < ActiveRecord::Base
   #Associations
   belongs_to :teacher
+  has_many :pages
 
   #Validations
   validates :name, :presence => true

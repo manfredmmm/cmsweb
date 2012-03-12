@@ -3,7 +3,8 @@ a
 #wrapper
   +container
   margin-top: 10px
-  min-height: 1000px
+  width: 1024px
+  height: 100%
   font-family: "Lucida Grande", Helvetica, Verdana, Arial, sans-serif
   font-size: 12px
   +single-box-shadow($dark_silver, $h-offset, $v-offset, $blur, $pread, $inset)
@@ -54,7 +55,6 @@ a
     +clearfix
     padding: 10px
     background: $silver
-    height: 900px
     +prepend(1)
     +append(1)
     .flash
@@ -87,14 +87,24 @@ a
       margin-bottom: 30px
       font-size: 16px
       font-weight: bold
+      color: $black
     h2
       margin-bottom: 10px
       font-size: 14px
       font-weight: bold
+      color: $black
+    h3
+      color: $black
     .field_with_errors
       .message
         margin-left: 10px
         color: $dark_red
+    color: $letters
+    a
+      color: $letters
+      &:hover
+        text-decoration: underline
+
   #footer
     background: $green
     height: 50px

@@ -9,11 +9,5 @@
   - @web_spaces.each do |web_space|
     %tr
       %td= link_to web_space.name, teacher_web_space_path(@teacher, web_space)
-      %td= web_space.teacher.name
+      %td= link_to web_space.teacher.name, teacher_path(web_space.teacher)
       %td= web_space.teacher.email
-      %td
-        - if @teacher == current_user
-          = link_to 'Eliminar', teacher_web_space_path(@teacher, web_space), :confirm => 'Estàs segur?', :method => :delete
-
-- if @teacher == current_user
-  = link_to 'Crear Espai Web', new_teacher_web_space_path(@teacher)

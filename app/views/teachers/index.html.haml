@@ -14,3 +14,7 @@
               = "Despatx: " + t.office.to_s
               %br
               = "Recerca: " + t.research_area.to_s
+              %br
+              .spaces
+                = link_to("Espais web", teacher_web_spaces_path(t.id))
+                = "(#{t.web_spaces.count})"
