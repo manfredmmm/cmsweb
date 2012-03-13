@@ -12,6 +12,8 @@ coverage
 public/uploads/*
 public/stylesheets/*.css
 solr/data/*
+solr/pids/*
+.pid
 .sass-cache/
 backup/*
 public/assets
