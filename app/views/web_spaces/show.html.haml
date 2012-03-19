@@ -14,4 +14,4 @@
 %ul
   - @web_space.pages.each do |p|
     %li
-      = link_to("#{p.name}", '/editor' + request.path, id: "edit_link", data: {save_url: mercury_update_teacher_web_space_page_path(@teacher, @web_space, @page)})
+      = link_to("#{p.name}", '/editor' + request.path, id: "edit_link", data: {save_url: mercury_update_teacher_web_space_page_path(@teacher, @web_space, p)})
