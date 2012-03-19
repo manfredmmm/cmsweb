@@ -1,0 +1,10 @@
+%h1
+  %span#page_name.mercury-region{:data => {:type => "editable"}}= raw @page.name
+
+#page_content.mercury-region{:data => {:type => "editable"}}= raw @page.content
+
+%ul
+  %li= @page.name
+
+- if @teacher == current_user
+  %p= link_to 'Editar', '/editor' + request.path, id: "edit_link", data: {save_url: mercury_update_teacher_web_space_page_path(@teacher, @web_space, @page)}

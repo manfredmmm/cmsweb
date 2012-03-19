@@ -1,0 +1,6 @@
+%h1 Editar pàgina
+
+= render 'form'
+
+= link_to 'Mostrar', teacher_web_space_path(@teacher, @web_space, @web_space.pages.first)
+= link_to 'Tornar', teacher_web_spaces_path(@teacher)

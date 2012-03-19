@@ -4,12 +4,12 @@ class WebSpacesController < AuthorizedController
   belongs_to :teacher
 
   def mercury_update
-    page = WebSpace.find(params[:id])
+    page = Page.find(params[:id])
     page.name = params[:content][:page_name][:value]
     page.content = params[:content][:page_content][:value]
     page.save!
     render text: ""
-    flash[:notice] = "L'espai web s'ha actualitzat correctament."
+    flash[:notice] = "Pàgina actualitzada correctament."
   end
 
   def new
@@ -19,8 +19,9 @@ class WebSpacesController < AuthorizedController
   def create
     create! do |format|
       format.html do
-        flash[:notice] = "Pas 2: Insereixi el contigut de l'espai web."
-        redirect_to '/editor' + teacher_web_space_path(@teacher, @web_space)
+        #flash[:notice] = "Pas 2: Insereixi el contigut de l'espai web."
+        #redirect_to '/editor' + teacher_web_space_path(@teacher, @web_space)
+        redirect_to '/editor' + teacher_web_space_page_path(@teacher, @web_space, @web_space.pages.first)
       end
     end
   end

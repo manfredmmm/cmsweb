@@ -1,0 +1,6 @@
+= form_for [@teacher, @web_space, @page], :validate => true do |f|
+  %div.field
+    = f.label :Contingut
+    = f.text_area :content
+  %div.actions
+    = f.submit "Crear pàgina"
