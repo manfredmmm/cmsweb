@@ -1,7 +1,7 @@
 class TeachersController < AuthorizedController
-  inherit_resources 
+  inherit_resources
   before_filter :load_departments, :only => [:index,:edit,:update]
-  
+
   actions :index, :show, :edit, :update
 
   def update

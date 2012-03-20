@@ -3,6 +3,8 @@ class PagesController < AuthorizedController
   inherit_resources
   belongs_to :web_spaces
 
+  actions :create, :new, :show, :edit, :update
+
   def mercury_update
     page = Page.find(params[:id])
     page.name = params[:content][:page_name][:value]
@@ -11,5 +13,4 @@ class PagesController < AuthorizedController
     render text: ""
     flash[:notice] = "Pàgina actualitzada correctament."
   end
-
 end

@@ -3,7 +3,7 @@
 %ul#my_web_spaces
   - @my_web_spaces.each do |web_space|
     %li
-      = link_to(web_space.name, teacher_web_space_page_path(@teacher, web_space, web_space.pages.first)) + " - "
+      = link_to(web_space.name, '/editor' + request.path, id: "edit_link", data: { save_url: mercury_update_teacher_web_space_page_path(@teacher, web_space, web_space.pages.first)}) + " - "
       - if @teacher == current_user
         = link_to 'Eliminar', teacher_web_space_path(@teacher, web_space), :confirm => "Estàs segur?", :method => :delete
 

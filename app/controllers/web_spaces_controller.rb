@@ -18,6 +18,11 @@ class WebSpacesController < AuthorizedController
   end
 
   def destroy
-    destroy!(:notice => "L'espai web ha estat eliminat.")
+    destroy! do |format|
+      format.html do
+        flash[:notice] = "L'espai web ha estat eliminat."
+        redirect_to teacher_my_spaces_path(@teacher)
+      end
+    end
   end
 end
