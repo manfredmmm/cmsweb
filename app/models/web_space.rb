@@ -18,6 +18,6 @@ class WebSpace < ActiveRecord::Base
   private
 
   def create_default_page
-    self.pages.create(:name => "Index")
+    self.pages.create(:name => "Index", :content => "")
   end
 end

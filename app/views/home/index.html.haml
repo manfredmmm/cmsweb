@@ -18,7 +18,7 @@
       %ul
         - @web_search.each do |w|
           %li
-            =link_to "#{w.name}", teacher_web_space_path(w.teacher.id,w)
+            =link_to "#{w.name}", teacher_web_space_page_path(w.teacher.id,w,w.pages.first)
             = " ("
             =link_to "#{w.teacher.name} #{w.teacher.surname}", teacher_path(w.teacher.id)
             = ")"
