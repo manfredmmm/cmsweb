@@ -8,7 +8,7 @@ class Ability
       can :manage, :all
     else
       if user.teacher?
-        #can :manage, Page, :teacher_id => user.id
+        can :manage, Page, :web_space => {:teacher_id => user.id}
 
         can :manage, WebSpace, :teacher_id => user.id
         can :read, WebSpace

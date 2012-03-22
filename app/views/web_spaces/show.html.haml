@@ -9,9 +9,7 @@
 //- if @teacher == current_user
 //  %p= link_to 'Editar', '/editor' + request.path, id: "edit_link", data: {save_url: mercury_update_teacher_web_space_path(@teacher, @web_space)}
 
-%h1= "Pages"
-
-%ul
-  - @web_space.pages.each do |p|
-    %li
-      = link_to("#{p.name}", '/editor' + request.path, id: "edit_link", data: {save_url: mercury_update_teacher_web_space_page_path(@teacher, @web_space, p)})
+//%ul
+//  - @web_space.pages.each do |p|
+//    %li
+//      = link_to("#{p.name}", '/editor' + request.path, id: "edit_link", data: {save_url: mercury_update_teacher_web_space_page_path(@teacher, @web_space, p)})

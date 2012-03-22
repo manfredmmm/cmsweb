@@ -1,6 +1,7 @@
 class TeachersController < AuthorizedController
   inherit_resources
   before_filter :load_departments, :only => [:index,:edit,:update]
+  #load_and_authorize_resource :teacher
 
   actions :index, :show, :edit, :update
 

@@ -2,6 +2,8 @@
 class WebSpacesController < AuthorizedController
   inherit_resources
   belongs_to :teacher
+  #load_and_authorize_resource :teacher
+  #load_and_authorize_resource :web_space, :through => :teacher
 
   def new
     flash[:notice] = "Pas 1: Posi un títol per l'espai web."
