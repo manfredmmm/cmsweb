@@ -32,7 +32,7 @@
     - @webspaces.each do |espai|
       #web{:id => espai.name}
         %li
-          .espai= link_to espai.name, teacher_web_space_path(espai.teacher, espai)
+          .espai= link_to espai.name, teacher_web_space_page_path(espai.teacher, espai, espai.pages.first)
           .owner
             = "[  "
             = link_to "#{espai.teacher.name} " "  #{espai.teacher.surname}", teacher_path(espai.teacher)
