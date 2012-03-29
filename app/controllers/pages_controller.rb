@@ -17,6 +17,14 @@ class PagesController < AuthorizedController
     flash[:notice] = "Pàgina actualitzada correctament."
   end
 
+  def create
+    create! do |format|
+      format.html do
+        redirect_to '/editor' + teacher_web_space_page_path(@teacher, @web_space, @web_space.pages.first)
+      end
+    end
+  end
+
   private
 
   def load_parents
