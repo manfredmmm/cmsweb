@@ -1,7 +1,8 @@
 #encoding: utf-8
 class PagesController < AuthorizedController
-  before_filter :load_parents
   inherit_resources
+  before_filter :load_parents
+  belongs_to :web_space
   #nested_belongs_to :teacher, :web_spaces
 
   load_and_authorize_resource :teacher
@@ -20,7 +21,7 @@ class PagesController < AuthorizedController
   def create
     create! do |format|
       format.html do
-        redirect_to '/editor' + teacher_web_space_page_path(@teacher, @web_space, @web_space.pages.first)
+        redirect_to '/editor' + teacher_web_space_page_path(@teacher, @web_space, @web_space.pages.last)
       end
     end
   end
@@ -31,5 +32,4 @@ class PagesController < AuthorizedController
     @teacher = Teacher.find(params[:teacher_id])
     @web_space = @teacher.web_spaces.find(params[:web_space_id])
   end
-
 end
