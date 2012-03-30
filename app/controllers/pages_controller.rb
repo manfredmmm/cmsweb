@@ -21,7 +21,17 @@ class PagesController < AuthorizedController
   def create
     create! do |format|
       format.html do
+        flash[:notice] = "Posi un títol i contingut de la pàgina."
         redirect_to '/editor' + teacher_web_space_page_path(@teacher, @web_space, @web_space.pages.last)
+      end
+    end
+  end
+
+  def destroy
+    destroy! do |format|
+      format.html do
+        flash[:notice] = "La pàgina ha estat eliminada"
+        redirect_to teacher_my_web_spaces_path(@teacher)
       end
     end
   end
