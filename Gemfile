@@ -19,6 +19,8 @@ gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: 'a2b1
 gem 'meta_search'
 gem 'will_paginate'
 gem 'omniauth-twitter'
+gem 'sunspot_solr'
+gem "jquery-rails"
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
@@ -26,13 +28,7 @@ group :assets do
   gem 'uglifier'
 end
 
-group :development do
-  gem 'sunspot_solr'
-end
-
-gem "jquery-rails"
-
-group :development, :test do
+group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'spork'

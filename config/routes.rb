@@ -2,6 +2,11 @@ Web::Application.routes.draw do
 
   Mercury::Engine.routes
 
+  # Support both GET and POST for callbacks
+  %w(get post).each do |method|
+    send method, "/auth/:provider/callback" => "teachers#update"
+  end
+
   devise_for :users
 
   root :to => "home#index"
