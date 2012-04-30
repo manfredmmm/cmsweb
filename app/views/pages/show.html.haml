@@ -1,15 +1,16 @@
 %h1
   %span#page_name.mercury-region{:data => {:type => "editable"}}= raw @page.name
 
-#page_content.mercury-region{:data => {:type => "editable"}}= raw @page.content
+#show_section
+  #page_content.mercury-region{:data => {:type => "editable"}}= raw @page.content
 
-- if @teacher == current_user
-  #options
-    = link_to "Afegir pàgina", new_teacher_web_space_page_path(@teacher, @web_space)
-    = " - "
-    = link_to 'Editar', '/editor' + request.path, id: "edit_link", data: {save_url: mercury_update_teacher_web_space_page_path(@teacher, @web_space, @page)}
-    = " - "
-    = link_to "Eliminar", teacher_web_space_page_path(@teacher, @web_space, @page), :confirm => "Estàs segur?", :method => :delete, :notice => "La pàgina s'ha eliminat."
-%ul#pages
-  - @web_space.pages.each do |page|
-    %li= link_to page.name, teacher_web_space_page_path(@teacher, @web_space, page)
+  - if @teacher == current_user
+    %ul#options
+      %li= link_to "Afegir pàgina", new_teacher_web_space_page_path(@teacher, @web_space)
+      %li= link_to 'Editar', '/editor' + request.path, id: "edit_link", data: {save_url: mercury_update_teacher_web_space_page_path(@teacher, @web_space, @page)}
+      - unless @web_space.pages.count == 1
+        %li= link_to "Eliminar", teacher_web_space_page_path(@teacher, @web_space, @page), :confirm => "Estàs segur?", :method => :delete, :notice => "La pàgina s'ha eliminat."
+
+  %ul#pages
+    - @web_space.pages.each do |page|
+      %li= link_to page.name, teacher_web_space_page_path(@teacher, @web_space, page)

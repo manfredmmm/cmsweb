@@ -2,12 +2,13 @@
 class PagesController < AuthorizedController
   inherit_resources
   before_filter :load_parents
-  belongs_to :web_space
-  #nested_belongs_to :teacher, :web_spaces
+  nested_belongs_to :teacher, :web_space
 
   load_and_authorize_resource :teacher
   load_and_authorize_resource :web_space, :through => :teacher
   load_and_authorize_resource :page, :through => :web_space
+
+  before_filter :last_page?, :only => [:destroy]
 
   def mercury_update
     page = Page.find(params[:id])
@@ -31,7 +32,7 @@ class PagesController < AuthorizedController
     destroy! do |format|
       format.html do
         flash[:notice] = "La pàgina ha estat eliminada"
-        redirect_to teacher_my_web_spaces_path(@teacher)
+        redirect_to teacher_my_spaces_path(@teacher)
       end
     end
   end
@@ -41,5 +42,11 @@ class PagesController < AuthorizedController
   def load_parents
     @teacher = Teacher.find(params[:teacher_id])
     @web_space = @teacher.web_spaces.find(params[:web_space_id])
+  end
+
+  def last_page?
+    if @web_space.pages.count == 1
+      redirect_to teacher_my_spaces_path(@teacher), :notice => "Esborra l'espai web."
+    end
   end
 end
