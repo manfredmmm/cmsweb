@@ -13,7 +13,7 @@
         - unless current_user.nil?
           #search_bar
             = form_tag root_path, :method => :get do
-              = text_field_tag :search, params[:search], :placeholder => "Buscar"
+              = text_field_tag :search, params[:search], :placeholder => "Buscar", value: ""
         - else
           #nil_title
             %h1= "PFC ETSE UAB | CMS - Portal web per investigados i professors universitaris"

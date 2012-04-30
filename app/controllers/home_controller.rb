@@ -9,15 +9,15 @@ class HomeController < ApplicationController
     @search = nil
 
     if params[:search]
-      @search = Teacher.search do
+      @search = Teacher.solr_search do
         fulltext params[:search]
       end
-      @search = @search.results.limit(15)
+      @search = @search.results
 
-      @web_search = WebSpace.search do
+      @web_search = WebSpace.solr_search do
         fulltext params[:search]
       end
-      @web_search = @web_search.results.limit(15)
+      @web_search = @web_search.results
     end
   end
 end
