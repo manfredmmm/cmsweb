@@ -1,20 +1,39 @@
 %h1 Professors i investigadors
 
-#departments
-  - @departments.each do |department|
-    %ul.department{:id => department.name}
-      - if !department.teachers.empty?
-        %h2= department.name
-        - department.teachers.each do |t|
-          %ul.teacher{:id => t.id}
-            .avatar=  image_tag(t.avatar_url.to_s, :title => t.name + " " + t.surname, :alt => t.name + " " + t.surname)
-            %li
-              .name= link_to("#{t.name.to_s} " " #{t.surname.to_s}", teacher_path(t))
-              .email= t.email.to_s
-              = "Despatx: " + t.office.to_s
-              %br
-              = "Recerca: " + t.research_area.to_s
-              %br
-              .spaces
-                = link_to("Espais web", teacher_web_spaces_path(t.id))
-                = "(#{t.web_spaces.count})"
+= form_for @search do |f|
+  %p
+    = f.label :name
+    = f.text_field :name_contains
+
+  %p.button= f.submit "Search"
+
+  %p
+    = sort_link @search, :avatar
+    = sort_link @search, :name
+    = sort_link @search, :surname
+    = sort_link @search, :email
+    = sort_link @search, :office
+    = sort_link @search, :research_area
+
+%table#departments
+  %thead
+    //%tr
+    //  %th Avatar
+    //  %th Name
+    //  %th Surname
+    //  %th Email
+    //  %th Recerca
+    //  %th Accions
+  %tbody
+    - @teachers.each do |teacher|
+      %tr
+        %td= image_tag teacher.avatar_url
+        %td= teacher.name
+        %td= teacher.surname
+        %td= teacher.email
+        %td= teacher.research_area
+        %td
+          %ul
+            %li= link_to "Veure perfil", teacher
+            - if teacher == current_user
+              %li= link_to "Modificar dades", edit_teacher_path(current_user)

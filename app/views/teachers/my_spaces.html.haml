@@ -3,9 +3,11 @@
 %ul#my_web_spaces
   - @my_web_spaces.each do |web_space|
     %li
-      = link_to(web_space.name, teacher_web_space_page_path(web_space.teacher, web_space, web_space.pages.first)) + " - "
+      = link_to(web_space.name, teacher_web_space_page_path(web_space.teacher, web_space, web_space.pages.first))
       - if @teacher == current_user
-        = link_to 'Eliminar', teacher_web_space_path(@teacher, web_space), :confirm => "Estàs segur?", :method => :delete
+        %ul#options
+          %li= link_to 'Eliminar', teacher_web_space_path(@teacher, web_space), :confirm => "Estàs segur?", :method => :delete
+          %li= link_to 'Canviar nom', edit_teacher_web_space_path(@teacher, web_space)
 
 - if @teacher == current_user
   .new_space= link_to 'Crear Espai Web', new_teacher_web_space_path(@teacher)

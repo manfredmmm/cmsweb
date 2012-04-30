@@ -16,6 +16,7 @@ gem 'sunspot_rails'
 gem 'progress_bar'
 gem 'client_side_validations'
 gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: 'a2b16bcdc9'
+gem 'meta_search'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"

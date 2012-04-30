@@ -5,6 +5,11 @@ class TeachersController < AuthorizedController
 
   actions :index, :show, :edit, :update
 
+  def index
+    @search = Teacher.search(params[:search])
+    @teachers = @search.all
+  end
+
   def update
     # Don't update password if it is blank
     params[:teacher][:password] = nil if params[:teacher][:password].blank?
