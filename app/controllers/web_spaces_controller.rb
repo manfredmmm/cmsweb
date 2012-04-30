@@ -5,6 +5,11 @@ class WebSpacesController < AuthorizedController
   #load_and_authorize_resource :teacher
   #load_and_authorize_resource :web_space, :through => :teacher
 
+  def index
+    @search = WebSpace.search(params[:search])
+    @web_spaces = @search.all
+  end
+
   def new
     flash[:notice] = "Posi un títol per l'espai web."
   end

@@ -1,30 +1,16 @@
 %h1 Professors i investigadors
 
-= form_for @search do |f|
-  %p
-    = f.label :name
-    = f.text_field :name_contains
-
-  %p.button= f.submit "Search"
-
-  %p
-    = sort_link @search, :avatar
-    = sort_link @search, :name
-    = sort_link @search, :surname
-    = sort_link @search, :email
-    = sort_link @search, :office
-    = sort_link @search, :research_area
-
 %table#departments
   %thead
-    //%tr
-    //  %th Avatar
-    //  %th Name
-    //  %th Surname
-    //  %th Email
-    //  %th Recerca
-    //  %th Accions
-  %tbody
+    %tr
+      %td= "Perfil"
+      %td= sort_link @search, :name
+      %td= sort_link @search, :surname
+      %td= sort_link @search, :email
+      %td= sort_link @search, :research_area
+      %td= "Accions"
+
+    %tbody
     - @teachers.each do |teacher|
       %tr
         %td= image_tag teacher.avatar_url

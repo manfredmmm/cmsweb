@@ -1,13 +1,21 @@
 %h1 Directori d'espais web
 
 %table#web_space
-  %tr
-    %th Títol
-    %th Propietari
-    %th Email
-
-  - @web_spaces.each do |web_space|
+  %thead
     %tr
-      %td= link_to web_space.name, teacher_web_space_path(@teacher, web_space)
-      %td= link_to web_space.teacher.name, teacher_path(web_space.teacher)
-      %td= web_space.teacher.email
+      %td= sort_link @search, :name
+      %td= "Propietari"
+      %td= "Area recerca"
+      %td= "Contingut"
+
+  %tbody
+    - @web_spaces.each do |web_space|
+      %tr
+        %td= web_space.name
+        %td= web_space.teacher.email
+        %td= web_space.teacher.research_area
+        %td
+          %ul
+            %li=link_to "Mostrar", teacher_web_space_page_path(@teacher, web_space, web_space.pages.first)
+            - if web_space.teacher == current_user
+              %li= link_to "Administrar espai", teacher_web_space_page_path(current_user, web_space, web_space.pages.first)
