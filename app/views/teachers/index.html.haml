@@ -23,3 +23,5 @@
             %li= link_to "Veure perfil", teacher
             - if teacher == current_user
               %li= link_to "Modificar dades", edit_teacher_path(current_user)
+
+  = will_paginate @teachers

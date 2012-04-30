@@ -1,3 +1,4 @@
+#encoding: utf-8
 class TeachersController < AuthorizedController
   inherit_resources
   before_filter :load_departments, :only => [:index,:edit,:update]
@@ -7,7 +8,7 @@ class TeachersController < AuthorizedController
 
   def index
     @search = Teacher.search(params[:search])
-    @teachers = @search.all
+    @teachers = @search.paginate(:page => params[:page], :per_page => 10)
   end
 
   def update

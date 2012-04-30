@@ -7,7 +7,7 @@ class WebSpacesController < AuthorizedController
 
   def index
     @search = WebSpace.search(params[:search])
-    @web_spaces = @search.all
+    @web_spaces = @search.paginate(:page => params[:page], :per_page => 10)
   end
 
   def new

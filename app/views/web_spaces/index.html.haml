@@ -19,3 +19,5 @@
             %li=link_to "Mostrar", teacher_web_space_page_path(@teacher, web_space, web_space.pages.first)
             - if web_space.teacher == current_user
               %li= link_to "Administrar espai", teacher_web_space_page_path(current_user, web_space, web_space.pages.first)
+
+  = will_paginate @web_spaces
