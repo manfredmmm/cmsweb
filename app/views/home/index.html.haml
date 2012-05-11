@@ -24,10 +24,10 @@
             = ")"
 
 - else
-  %h1 Últimes Novetats
+  %h1= t('.title')
 
   #webspaces
-    %h3 Espais webs
+    %h3= t('.webspaces')
     %ul
     - @webspaces.each do |espai|
       #web{:id => espai.name}
@@ -38,7 +38,7 @@
           .date= " [ #{espai.updated_at.strftime('%d/%m/%Y')} ]"
 
   #teachers
-    %h3 Últims professors donats d'alta
+    %h3= t('.latest')
     %ul
     - @teachers.each do |teacher|
       #teacher{:id => teacher.name}

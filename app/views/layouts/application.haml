@@ -36,3 +36,8 @@
           - if user_signed_in? && current_user.teacher?
             %li.edit= link_to("Editar perfil", edit_teacher_path(current_user))
             %li.out= link_to("Sortir", destroy_user_session_path)
+          #languages
+            = link_to_unless_current "Català", locale: "ca"
+            = link_to_unless_current "English", locale: "en"
+            = link_to_unless_current "Español", locale: "es"
+

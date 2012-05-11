@@ -65,3 +65,8 @@ ca:
         subject: 'Reset password instructions'
       unlock_instructions:
         subject: 'Unlock Instructions'
+  home:
+    index:
+      title: Novetats
+      webspaces: Últims espais modificats
+      latest: Últims usuaris donats d'alta
