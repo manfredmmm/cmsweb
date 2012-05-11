@@ -74,14 +74,14 @@ SimpleNavigation::Configuration.run do |navigation|
     unless current_user.nil?
       primary.dom_id = 'menu'
 
-      primary.item :news, 'Notícies', root_path
+      primary.item :news, t('menu.news'), root_path
 
       unless current_user.admin?
-        primary.item :my_spaces, 'Els meus espais webs', teacher_my_spaces_path(current_user)
-        primary.item :spaces, 'Espais webs', teacher_web_spaces_path(current_user)
+        primary.item :my_spaces, t('menu.my_spaces'), teacher_my_spaces_path(current_user)
+        primary.item :spaces, t('menu.spaces'), teacher_web_spaces_path(current_user)
       end
 
-      primary.item :teachers, 'Professors/investigadors', teachers_path
+      primary.item :teachers, t('menu.personal'), teachers_path
     end
   end
 

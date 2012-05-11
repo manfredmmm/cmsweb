@@ -1,4 +1,17 @@
 es:
+  menu:
+    nil_title: PFC ETSE UAB | CMS - Portal web para personal universitario
+    find: Buscar
+    teachers: Teacher
+    departments: Departamentos
+    exit: Desconectar
+    edit: Editar perfil
+    news: Noticias
+    my_spaces: Mis espacios web
+    spaces: Espacios web
+    personal: Personal universitario
+    language: Selecciona idioma
+
   home:
     index:
       title: Novedades

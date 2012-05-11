@@ -65,6 +65,19 @@ ca:
         subject: 'Reset password instructions'
       unlock_instructions:
         subject: 'Unlock Instructions'
+  menu:
+    nil_title: PFC ETSE UAB | CMS - Portal web per personal universitari
+    find: Buscar
+    teachers: Professors
+    departments: Departaments
+    exit: Desconnectar
+    edit: Editar perfil
+    news: Notícies
+    my_spaces: Els meus espais web
+    spaces: Espais web
+    personal: Personal universiari
+    language: Selecciona idioma
+
   home:
     index:
       title: Novetats

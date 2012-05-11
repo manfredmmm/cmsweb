@@ -1,7 +1,7 @@
 !!! html
 %html
   %head
-    %title PFC - Gestor de contingut
+    %title PFC - CMS
     %meta{:charset => "utf-8"}
     = csrf_meta_tag
     = javascript_include_tag 'application'
@@ -13,10 +13,10 @@
         - unless current_user.nil?
           #search_bar
             = form_tag root_path, :method => :get do
-              = text_field_tag :search, params[:search], :placeholder => "Buscar", value: ""
+              = text_field_tag :search, params[:search], :placeholder => t('menu.find'), value: ""
         - else
           #nil_title
-            %h1= "PFC ETSE UAB | CMS - Portal web per investigados i professors universitaris"
+            %h1= t('menu.nil_title')
       #content
         - unless flash[:notice].nil?
           %p.flash= flash[:notice]
@@ -30,13 +30,14 @@
           - if user_signed_in?
             %li.current= current_user.email.truncate(20)
           - if user_signed_in? && current_user.admin?
-            %li= link_to("Professors", admin_teachers_path)
-            %li= link_to("Departaments", admin_departments_path)
-            %li.out= link_to("Sortir", destroy_user_session_path)
+            %li= link_to(t('menu.teachers'), admin_teachers_path)
+            %li= link_to(t('menu.departments'), admin_departments_path)
+            %li.out= link_to(t('menu.exit'), destroy_user_session_path)
           - if user_signed_in? && current_user.teacher?
-            %li.edit= link_to("Editar perfil", edit_teacher_path(current_user))
-            %li.out= link_to("Sortir", destroy_user_session_path)
+            %li.edit= link_to(t('menu.edit'), edit_teacher_path(current_user))
+            %li.out= link_to(t('menu.exit'), destroy_user_session_path)
           #languages
+            = t('menu.language') + ":"
             = link_to_unless_current "Català", locale: "ca"
             = link_to_unless_current "English", locale: "en"
             = link_to_unless_current "Español", locale: "es"

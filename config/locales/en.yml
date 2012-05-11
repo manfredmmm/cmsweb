@@ -1,4 +1,17 @@
 en:
+  menu:
+    nil_title: PFC ETSE UAB | CMS - Web portal for university staff
+    find: Search
+    teachers: Teachers
+    departments: Departments
+    exit: Logout
+    edit: Edit profile
+    news: News
+    my_spaces: My web spaces
+    spaces: Web spaces
+    personal: University staff
+    language: Select language
+
   home:
     index:
       title: News
