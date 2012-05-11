@@ -12,13 +12,15 @@ class TeachersController < AuthorizedController
   end
 
   def update
-    unless params[:oauth_token]?
+    unless params[:oauth_token].nil?
       # Don't update password if it is blank
       params[:teacher][:password] = nil if params[:teacher][:password].blank?
       params[:teacher][:password_confirmation] = nil if params[:teacher][:password].blank?
       update!(:notice => "S'ha actualitzat correctament el perfil.") { root_path }
     else
-      omniauth_hash = ENV['omniauth.auth']['info']
+      #ENV['omniauth.auth']['info'].inspect
+      #current_user.update_attribute(uid, ENV['omniauth.auth']['uid'])
+      #current_user.update_attribute(access_token, ENV['omniauth.auth']['credentials']['token'])
     end
   end
 

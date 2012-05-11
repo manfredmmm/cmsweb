@@ -7,6 +7,7 @@
   - if @teacher == current_user
     %ul#options
       %li= link_to "Afegir pàgina", new_teacher_web_space_page_path(@teacher, @web_space)
+      %li= twitter_share_button(request.url)
 
   %ul#pages
     - @web_space.pages.each do |page|
