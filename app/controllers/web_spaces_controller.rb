@@ -11,13 +11,13 @@ class WebSpacesController < AuthorizedController
   end
 
   def new
-    flash[:notice] = "Posi un títol per l'espai web."
+    flash[:notice] = t('alerts.new_web')
   end
 
   def create
     create! do |format|
       format.html do
-        flash[:notice] = "Posa el títol i contingut de la pàgina."
+        flash[:notice] = t('alerts.insert')
         redirect_to '/editor' + teacher_web_space_page_path(@teacher, @web_space, @web_space.pages.first)
       end
     end
@@ -26,7 +26,7 @@ class WebSpacesController < AuthorizedController
   def destroy
     destroy! do |format|
       format.html do
-        flash[:notice] = "L'espai web ha estat eliminat."
+        flash[:notice] = t('alerts.deleted_web')
         redirect_to teacher_my_spaces_path(@teacher)
       end
     end
