@@ -16,13 +16,13 @@ class PagesController < AuthorizedController
     page.content = params[:content][:page_content][:value]
     page.save!
     render text: ""
-    flash[:notice] = "Pàgina actualitzada correctament."
+    flash[:notice] = t('alerts.updated')
   end
 
   def create
     create! do |format|
       format.html do
-        flash[:notice] = "Posi un títol i contingut de la pàgina."
+        flash[:notice] = t('alerts.insert')
         redirect_to '/editor' + teacher_web_space_page_path(@teacher, @web_space, @web_space.pages.last)
       end
     end
@@ -31,7 +31,7 @@ class PagesController < AuthorizedController
   def destroy
     destroy! do |format|
       format.html do
-        flash[:notice] = "La pàgina ha estat eliminada"
+        flash[:notice] = t('alerts.deleted')
         redirect_to teacher_my_spaces_path(@teacher)
       end
     end
@@ -46,7 +46,7 @@ class PagesController < AuthorizedController
 
   def last_page?
     if @web_space.pages.count == 1
-      redirect_to teacher_my_spaces_path(@teacher), :notice => "Esborra l'espai web."
+      redirect_to teacher_my_spaces_path(@teacher), :notice => t('alerts.delete')
     end
   end
 end

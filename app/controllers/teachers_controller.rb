@@ -16,7 +16,7 @@ class TeachersController < AuthorizedController
       # Don't update password if it is blank
       params[:teacher][:password] = nil if params[:teacher][:password].blank?
       params[:teacher][:password_confirmation] = nil if params[:teacher][:password].blank?
-      update!(:notice => "S'ha actualitzat correctament el perfil.") { root_path }
+      update!(:notice => t('alerts.profile_updated')) { root_path }
     else
       #ENV['omniauth.auth']['info'].inspect
       #current_user.update_attribute(uid, ENV['omniauth.auth']['uid'])

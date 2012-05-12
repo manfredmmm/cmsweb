@@ -142,3 +142,8 @@ ca:
 
   alerts:
     sure: Estàs segur?
+    updated: Pàgina actualitzada correctament
+    insert: Posi un títol i contingut per la pàgina
+    deleted: Pàgina ha estat eliminada
+    delete: Esborra l'espai web
+    profile_updated: El perfil s'ha actualitzat correctament
