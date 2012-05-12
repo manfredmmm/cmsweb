@@ -6,7 +6,7 @@
 
   - if @teacher == current_user
     %ul#options
-      %li= link_to "Afegir pàgina", new_teacher_web_space_page_path(@teacher, @web_space)
+      %li= link_to t('.add'), new_teacher_web_space_page_path(@teacher, @web_space)
       %li= twitter_share_button(request.url)
 
   %ul#pages
@@ -14,6 +14,6 @@
       %li
         = link_to_unless_current page.name, teacher_web_space_page_path(@teacher, @web_space, page)
         %ul
-          %li= link_to 'Editar', '/editor' + teacher_web_space_page_path(@teacher, @web_space, page), id: "#{page == @page ? 'edit_link' : ''}", data: {save_url: mercury_update_teacher_web_space_page_path(@teacher, @web_space, page)}
+          %li= link_to t('.edit'), '/editor' + teacher_web_space_page_path(@teacher, @web_space, page), id: "#{page == @page ? 'edit_link' : ''}", data: {save_url: mercury_update_teacher_web_space_page_path(@teacher, @web_space, page)}
           - unless @web_space.pages.count == 1
-            %li= link_to "Eliminar", teacher_web_space_page_path(@teacher, @web_space, page), :confirm => "Estàs segur?", :method => :delete, :notice => "La pàgina s'ha eliminat."
+            %li= link_to t('.delete'), teacher_web_space_page_path(@teacher, @web_space, page), :confirm => t('alerts.sure'), :method => :delete, :notice => t('.doit')

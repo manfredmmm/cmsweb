@@ -1,14 +1,14 @@
-%h1 Professors i investigadors
+%h1= t('.title')
 
 %table#departments
   %thead
     %tr
-      %td= "Perfil"
-      %td= sort_link @search, :name
-      %td= sort_link @search, :surname
-      %td= sort_link @search, :email
-      %td= sort_link @search, :research_area
-      %td= "Accions"
+      %td= t('.profile')
+      %td= sort_link @search, t('.name')
+      %td= sort_link @search, t('.surname')
+      %td= sort_link @search, t('.email')
+      %td= sort_link @search, t('.research')
+      %td= t('.actions')
 
     %tbody
     - @teachers.each do |teacher|
@@ -20,8 +20,8 @@
         %td= teacher.research_area
         %td
           %ul
-            %li= link_to "Veure perfil", teacher
+            %li= link_to t('.see'), teacher
             - if teacher == current_user
-              %li= link_to "Modificar dades", edit_teacher_path(current_user)
+              %li= link_to t('.update'), edit_teacher_path(current_user)
 
   = will_paginate @teachers

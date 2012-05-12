@@ -75,7 +75,7 @@ ca:
     news: Notícies
     my_spaces: Els meus espais web
     spaces: Espais web
-    personal: Personal universiari
+    personal: Personal universitari
     language: Selecciona idioma
 
   home:
@@ -83,3 +83,62 @@ ca:
       title: Novetats
       webspaces: Últims espais modificats
       latest: Últims usuaris donats d'alta
+
+  teachers:
+    my_spaces:
+      title: Gestionar els meus espais webs
+      delete: Eliminar
+      change: Canviar el títol
+      create: Crear espai web
+    index:
+      title: Directori de professors i investigadors
+      profile: Perfil
+      name: Nom
+      surname: Cognom
+      email: Email
+      research: Àrea recerca
+      actions: Accions
+      see: Veure perfil
+      update: Modificar dades
+    edit:
+      title: Edita el teu perfil
+      name: Nom
+      surname: Cognoms
+      email: Email
+      password: Contrasenya
+      confirmation: Repeteix contrasenya
+      birthday: Data naixement
+      department: Departament
+      research: Àrea de recerca
+      office: Oficina
+      avatar: Foto de perfil
+      update: Actualitzar dades
+      twitter: Enllaça amb Twitter
+    show:
+      birthday: Data naixement
+      department: Departament
+      research: Àrea de recerca
+      office: Oficina
+      contact: Contacta-hi!
+      webspaces: Espais webs
+      subject: PFC CMS - Contacte
+
+  web_spaces:
+    index:
+      title: Directori d'espais web
+      owner: Propietari
+      research: Àrea de recerca
+      content: Contingut
+      show: Mostrar
+      administration: Administrar espai
+      name: Títol
+
+  pages:
+    show:
+      add: Afegir pàgina
+      edit: Editar
+      delete: Eliminar
+      doit: La pàgina s'ha eliminat
+
+  alerts:
+    sure: Estàs segur?

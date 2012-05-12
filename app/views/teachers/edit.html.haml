@@ -1,57 +1,57 @@
-%h1 Edita el teu perfil
+%h1= t('.title')
 
 #edit_teacher
   = form_for @teacher, :validate => true do |f|
     %div.field
-      = f.label :Nom
+      = f.label t('.name')
       %br
       = f.text_field :name
 
     %div.field
-      = f.label :Cognoms
+      = f.label t('.surname')
       %br
       = f.text_field :surname
 
     %div.field
-      = f.label :Email
+      = f.label t('.email')
       %br
       = f.text_field :email
 
     %div.field
-      = f.label :Contrasenya
+      = f.label t('.password')
       %br
       = f.password_field :password
 
     %div.field
-      = f.label :Confirmacio_contrasenya
+      = f.label t('.confirmation')
       %br
       = f.password_field :password_confirmation
 
     %div.field
-      = f.label :Data_neixament
+      = f.label t('.birthday')
       %br
       = date_select("teacher", "birthday", :order => [:day, :month, :year], :start_year => 1900, :use_month_numbers => true, :default => { :day => 1, :month => 1 } )
 
     %div.field
-      = f.label :Departament
+      = f.label t('.department')
       %br
       = f.select :department_id, @departments.collect{|d| [d.name, d.id]}
 
     %div.field
-      = f.label :Area_de_recerca
+      = f.label t('.research')
       %br
       = f.text_field :research_area
 
     %div.field
-      = f.label :Oficina
+      = f.label t('.office')
       %br
       = f.text_field :office
 
     %div.field
-      = f.label :Foto_perfil
+      = f.label t('.avatar')
       %br
       = f.file_field :avatar
 
     %div.ations
-      = f.submit "Actualitzar dades", :class => :btn
-      = link_to "Enllaçar Twitter", '/auth/twitter'
+      = f.submit t('.update'), :class => :btn
+      = link_to t('.twitter'), '/auth/twitter'

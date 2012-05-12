@@ -1,4 +1,4 @@
-%h1 Gestionar els meus espais webs
+%h1= t('teachers.my_spaces.title')
 
 %ul#my_web_spaces
   - @my_web_spaces.each do |web_space|
@@ -6,8 +6,8 @@
       = link_to(web_space.name, teacher_web_space_page_path(web_space.teacher, web_space, web_space.pages.first))
       - if @teacher == current_user
         %ul#options
-          %li= link_to 'Eliminar', teacher_web_space_path(@teacher, web_space), :confirm => "Estàs segur?", :method => :delete
-          %li= link_to 'Canviar nom', edit_teacher_web_space_path(@teacher, web_space)
+          %li= link_to t('teachers.my_spaces.delete'), teacher_web_space_path(@teacher, web_space), :confirm => t('alerts.sure'), :method => :delete
+          %li= link_to t('teachers.my_spaces.change'), edit_teacher_web_space_path(@teacher, web_space)
 
 - if @teacher == current_user
-  .new_space= link_to 'Crear Espai Web', new_teacher_web_space_path(@teacher)
+  .new_space= link_to t('teachers.my_spaces.create'), new_teacher_web_space_path(@teacher)

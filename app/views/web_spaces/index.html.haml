@@ -1,12 +1,12 @@
-%h1 Directori d'espais web
+%h1= t('.title')
 
 %table#web_space
   %thead
     %tr
-      %td= sort_link @search, :name
-      %td= "Propietari"
-      %td= "Area recerca"
-      %td= "Contingut"
+      %td= sort_link @search, t('.name')
+      %td= t('.owner')
+      %td= t('.research')
+      %td= t('.content')
 
   %tbody
     - @web_spaces.each do |web_space|
@@ -16,8 +16,8 @@
         %td= web_space.teacher.research_area
         %td
           %ul
-            %li=link_to "Mostrar", teacher_web_space_page_path(@teacher, web_space, web_space.pages.first)
+            %li=link_to t('.show'), teacher_web_space_page_path(@teacher, web_space, web_space.pages.first)
             - if web_space.teacher == current_user
-              %li= link_to "Administrar espai", teacher_web_space_page_path(current_user, web_space, web_space.pages.first)
+              %li= link_to t('.administration'), teacher_web_space_page_path(current_user, web_space, web_space.pages.first)
 
   = will_paginate @web_spaces

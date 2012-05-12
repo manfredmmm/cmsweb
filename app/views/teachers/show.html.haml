@@ -1,20 +1,27 @@
+%h1=@teacher.name + " " + @teacher.surname
 %p
-  %b Nom i cognom
-  = @teacher.name + " " + @teacher.surname
   %p= image_tag @teacher.avatar_url.to_s
 
 %p
-  %b Data neixament
-  = @teacher.birthday
+  %b= t('.birthday')
+  = @teacher.birthday.strftime('%d/%m/%Y')
 
 %p
-  %b Departament
+  %b= t('.department')
   = @teacher.department.try(:name)
 
 %p
-  %b Àrea de recerca
+  %b= t('.research')
   = @teacher.research_area
 
 %p
-  %b Despatx
+  %b= t('.office')
   = @teacher.office
+
+%p= mail_to @teacher.email, t('.contact'), :subject => t('.subject'),:target => "_blank"
+
+- unless @teacher.web_spaces.empty?
+  %h2= t('.webspaces')
+  %ul
+  - @teacher.web_spaces.each do |web_space|
+    %li= link_to web_space.name, teacher_web_space_page_path(@teacher, web_space, web_space.pages.first)
