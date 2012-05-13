@@ -3,12 +3,12 @@
 %table{:class => "table table-bordered table-striped"}
   %thead
     %tr
-      %td= t('.profile')
+      %td
       %td= sort_link @search, t('.name')
       %td= sort_link @search, t('.surname')
       %td= sort_link @search, t('.email')
       %td= sort_link @search, t('.research')
-      %td= t('.actions')
+      %td
 
     %tbody
     - @teachers.each do |teacher|
@@ -19,9 +19,7 @@
         %td= teacher.email
         %td= teacher.research_area
         %td
-          %ul
-            %li= link_to t('.see'), teacher
-            - if teacher == current_user
-              %li= link_to t('.update'), edit_teacher_path(current_user)
+          = link_to t('.see'), teacher, :class => "btn btn-small"
 
+.pagination
   = will_paginate @teachers

@@ -2,47 +2,80 @@
   %h1 Resultats de la búsqueda
 
   #search_bar
-    %h3 Professors
-    - if @search.empty?
-      %p No hi ha resultats de professors amb la búsqueda realitzada.
-    - else
-      %ul
-      - @search.each do |s|
-        %li
-          = image_tag(s.avatar_url.to_s, :title => s.name + " " + s.surname, :alt => s.name + " " + s.surname)
-          = link_to "#{s.name} #{s.surname}", teacher_path(s)
-    %h3 Espais web
-    - if @web_search.empty?
-      %p No hi ha resultats d'espais webs amb la búsqueda realitzada.
-    - else
-      %ul
-        - @web_search.each do |w|
-          %li
-            =link_to "#{w.name}", teacher_web_space_page_path(w.teacher.id,w,w.pages.first)
-            = " ("
-            =link_to "#{w.teacher.name} #{w.teacher.surname}", teacher_path(w.teacher.id)
-            = ")"
+    - unless @search.empty?
+      .span5
+        %h3 Professors
+        %table{:class => "table table-striped"}
+          %thead
+            %td
+            %td NOM
+            %td AREA
+            %td EMAIL
+          %tbody
+            - @search.each do |s|
+              %tr
+                %td= image_tag(s.avatar_url.to_s, :title => s.name + " " + s.surname, :alt => s.name + " " + s.surname)
+                %td= link_to "#{s.name} #{s.surname}", teacher_path(s)
+                %td= s.research_area
+                %td= s.email
 
+    - unless @web_search.empty?
+      .span5
+        %h3 Espais web
+        %table{:class => "table table-striped"}
+          %thead
+            %td NOM
+            %td DESCRIPCIO
+            %td PROPIETARI
+          %tbody
+            - @web_search.each do |w|
+              %tr
+                %td=link_to "#{w.name.upcase}", teacher_web_space_page_path(w.teacher.id,w,w.pages.first)
+                %td= w.content
+                %td=link_to "#{w.teacher.name} #{w.teacher.surname}", teacher_path(w.teacher.id)
 - else
   %h1= t('.title')
 
-  #webspaces
+  #webspaces.span5
     %h3= t('.webspaces')
-    %ul
-    - @webspaces.each do |espai|
-      #web{:id => espai.name}
-        %li
-          .web= link_to espai.name, teacher_web_space_page_path(espai.teacher, espai, espai.pages.first)
-          .avatar= image_tag espai.teacher.avatar_url
-          .teacher= link_to "#{espai.teacher.name} " "  #{espai.teacher.surname}", teacher_path(espai.teacher)
-          .date= " [ #{espai.updated_at.strftime('%d/%m/%Y')} ]"
 
-  #teachers
+    %table{:class => "table table-striped"}
+      %tbody
+        - @webspaces.each do |espai|
+          %tr
+            %td= link_to espai.name.upcase, teacher_web_space_page_path(espai.teacher, espai, espai.pages.first)
+            %td= image_tag espai.teacher.avatar_url
+            %td= link_to "#{espai.teacher.name} " "  #{espai.teacher.surname}", teacher_path(espai.teacher)
+            %td= " [ #{espai.updated_at.strftime('%d/%m/%Y')} ]"
+
+  #teachers.span5
     %h3= t('.latest')
-    %ul
-    - @teachers.each do |teacher|
-      #teacher{:id => teacher.name}
-        %li
-          .avatar= image_tag teacher.avatar_url
-          .teacher= link_to("#{teacher.name} #{teacher.surname}", teacher_path(teacher))
-          .date= " [ " + teacher.created_at.strftime('%d/%m/%Y').to_s + " ]"
+
+    %table{:class => "table table-striped"}
+      %tbody
+        - @teachers.each do |teacher|
+          %tr
+            %td= image_tag teacher.avatar_url
+            %td= link_to("#{teacher.name} #{teacher.surname}", teacher_path(teacher))
+            %td= " [ " + teacher.created_at.strftime('%d/%m/%Y').to_s + " ]"
+
+  #tweets.span10
+    %h3 Latests tweets
+    %table{:class => "table table-bordered"}
+      %tbody
+        %tr
+          %td= "Mireu aquest article! www.cmsweb.com"
+          %td= "Teacher0 Surname0"
+        %tr
+          %td= "Molt útil i fàcil!"
+          %td= "Teacher1 Surname1"
+        %tr
+          %td= "Llegiu aquest article, és molt convincent!"
+          %td= "Teacher2 Surname2"
+        %tr
+          %td= "Això marcarà un abans i un després"
+          %td= "Teacher1 Surname1"
+        %tr
+          %td= "Mireu aquest article! www.cmsweb.com"
+          %td= "Teacher0 Surname0"
+

@@ -4,20 +4,20 @@
   %thead
     %tr
       %td= sort_link @search, t('.name')
-      %td= t('.owner')
-      %td= t('.research')
-      %td= t('.content')
+      %td= sort_link @search, "Descripcio"
+      %td= sort_link @search, t('.owner')
+      %td= sort_link @search, t('.research')
+      %td
 
   %tbody
     - @web_spaces.each do |web_space|
       %tr
-        %td= web_space.name
+        %td= web_space.name.upcase
+        %td= web_space.content
         %td= web_space.teacher.email
         %td= web_space.teacher.research_area
         %td
           =link_to t('.show'), teacher_web_space_page_path(@teacher, web_space, web_space.pages.first), :class => "btn btn-small"
-          - if web_space.teacher == current_user
-            = link_to t('.administration'), teacher_web_space_page_path(current_user, web_space, web_space.pages.first), :class => "btn btn-small btn-info"
 
 .pagination
   = will_paginate(@web_spaces, :renderer => WillPaginate::ActionView::LinkRenderer)

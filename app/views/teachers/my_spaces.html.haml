@@ -1,13 +1,17 @@
 %h1= t('teachers.my_spaces.title')
 
-%ul#my_web_spaces
-  - @my_web_spaces.each do |web_space|
-    %li
-      = link_to(web_space.name, teacher_web_space_page_path(web_space.teacher, web_space, web_space.pages.first))
-      - if @teacher == current_user
-        %ul#options
-          %li= link_to t('teachers.my_spaces.delete'), teacher_web_space_path(@teacher, web_space), :confirm => t('alerts.sure'), :method => :delete
-          %li= link_to t('teachers.my_spaces.change'), edit_teacher_web_space_path(@teacher, web_space)
+%table{:class => "table table-striped"}
+  %thead
+    %td Title
+    %td Description
+    %td Actions
+  %tbody
+    - @my_web_spaces.each do |web_space|
+      %tr
+        %td= link_to(web_space.name.upcase, teacher_web_space_page_path(web_space.teacher, web_space, web_space.pages.first))
+        %td= web_space.content
+        %td
+          = link_to t('teachers.my_spaces.delete'), teacher_web_space_path(@teacher, web_space), :confirm => t('alerts.sure'), :method => :delete, :class => "btn btn-danger"
+          = link_to t('teachers.my_spaces.change'), edit_teacher_web_space_path(@teacher, web_space), :class => "btn btn-info"
 
-- if @teacher == current_user
-  .new_space= link_to t('teachers.my_spaces.create'), new_teacher_web_space_path(@teacher)
+= link_to t('teachers.my_spaces.create'), new_teacher_web_space_path(@teacher), :class => "btn btn-primary"

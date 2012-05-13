@@ -1,9 +1,11 @@
 %h1= "Creació d'un nou espai web per #{@teacher.name} #{@teacher.surname}"
 
 = form_for [@teacher, @web_space], :validate => true do |f|
-  %div.name
-    = f.label :name, "Nom espai"
-    %br
-    = f.text_field :name
-  %div.actions
-    = f.submit "Seguir"
+  = f.label :name, "Nom espai"
+  = f.text_field :name
+
+  = f.label :content, "Descripcio"
+  = f.text_field :content
+
+  %br
+  = f.submit "Crear Espai", :class => "btn btn-primary"

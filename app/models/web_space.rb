@@ -5,6 +5,7 @@ class WebSpace < ActiveRecord::Base
 
   #Validations
   validates :name, :presence => true
+  validates :content, :presence => true
 
   # Callbacks
   after_create :create_default_page

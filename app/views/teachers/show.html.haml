@@ -22,6 +22,9 @@
 
 - unless @teacher.web_spaces.empty?
   %h2= t('.webspaces')
-  %ul
-  - @teacher.web_spaces.each do |web_space|
-    %li= link_to web_space.name, teacher_web_space_page_path(@teacher, web_space, web_space.pages.first)
+  %table{:class => "table table-striped"}
+    %tdbody
+      - @teacher.web_spaces.each do |web_space|
+        %tr
+          %td= link_to web_space.name, teacher_web_space_page_path(@teacher, web_space, web_space.pages.first)
+          %td= "HI FALTA EL CONTENT!!!!!!!!!!!!!! COM A DESCRIPCIÓ"
