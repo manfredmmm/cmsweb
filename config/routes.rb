@@ -7,6 +7,8 @@ Web::Application.routes.draw do
     send method, "/auth/:provider/callback" => "teachers#update"
   end
 
+  #scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+
   devise_for :users
 
   root :to => "home#index"
@@ -24,4 +26,8 @@ Web::Application.routes.draw do
     resources :teachers
     resources :departments
   end
+  #end
+
+  #match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  #match '', to: redirect("/#{I18n.default_locale}")
 end

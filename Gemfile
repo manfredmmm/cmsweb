@@ -17,7 +17,8 @@ gem 'progress_bar'
 gem 'client_side_validations'
 gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: 'a2b16bcdc9'
 gem 'meta_search'
-gem 'will_paginate'
+#gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 gem 'omniauth-twitter'
 gem 'sunspot_solr'
 gem "jquery-rails"
@@ -26,6 +27,7 @@ group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
+  gem 'twitter-bootstrap-rails'
 end
 
 group :test do

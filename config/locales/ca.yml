@@ -72,11 +72,12 @@ ca:
     departments: Departaments
     exit: Desconnectar
     edit: Editar perfil
-    news: Notícies
+    news: Novetats
     my_spaces: Els meus espais web
     spaces: Espais web
     personal: Personal universitari
-    language: Selecciona idioma
+    language: Idioma
+    actions: Accions
 
   home:
     index:

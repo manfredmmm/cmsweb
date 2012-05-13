@@ -1,6 +1,6 @@
 %h1= t('.title')
 
-%table#web_space
+%table{:class => "table table-bordered table-striped"}
   %thead
     %tr
       %td= sort_link @search, t('.name')
@@ -15,9 +15,9 @@
         %td= web_space.teacher.email
         %td= web_space.teacher.research_area
         %td
-          %ul
-            %li=link_to t('.show'), teacher_web_space_page_path(@teacher, web_space, web_space.pages.first)
-            - if web_space.teacher == current_user
-              %li= link_to t('.administration'), teacher_web_space_page_path(current_user, web_space, web_space.pages.first)
+          =link_to t('.show'), teacher_web_space_page_path(@teacher, web_space, web_space.pages.first), :class => "btn btn-small"
+          - if web_space.teacher == current_user
+            = link_to t('.administration'), teacher_web_space_page_path(current_user, web_space, web_space.pages.first), :class => "btn btn-small btn-info"
 
-  = will_paginate @web_spaces
+.pagination
+  = will_paginate(@web_spaces, :renderer => WillPaginate::ActionView::LinkRenderer)

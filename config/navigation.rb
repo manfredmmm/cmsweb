@@ -72,8 +72,6 @@ SimpleNavigation::Configuration.run do |navigation|
     # primary.auto_highlight = false
 
     unless current_user.nil?
-      primary.dom_id = 'menu'
-
       primary.item :news, t('menu.news'), root_path
 
       unless current_user.admin?
