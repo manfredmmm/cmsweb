@@ -7,7 +7,8 @@
   .span2
     - if @teacher == current_user
       .nav
-        = link_to t('.add'), new_teacher_web_space_page_path(@teacher, @web_space), :class => "btn btn-primary btn-mini"
+        = link_to t('.add'), new_teacher_web_space_page_path(@teacher, @web_space), :class => "btn btn-primary btn-small"
+        %br= ""
         = twitter_share_button(request.url)
 
     %ul{:class => "nav nav-list"}
@@ -18,4 +19,8 @@
             %i.icon-pencil
             = t('.edit')
         - unless @web_space.pages.count == 1
-          %li= link_to t('.delete'), teacher_web_space_page_path(@teacher, @web_space, page), :confirm => t('alerts.sure'), :method => :delete, :notice => t('.doit')
+          //%li= link_to t('.delete'), teacher_web_space_page_path(@teacher, @web_space, page), :confirm => t('alerts.sure'), :method => :delete, :notice => t('.doit')
+          %li
+            %a{:href => teacher_web_space_page_path(@teacher, @web_space, page), :method => :delete, :confirm => t('alerts.sure')}
+              %i.icon-remove
+              = t('.delete')

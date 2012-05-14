@@ -8,38 +8,39 @@
     = stylesheet_link_tag 'application'
   %body
     #wrapper
-      #header{:class => "navbar navbar-inner"}
-        .container
-          .nav-collapse
-            %ul.nav
-              %li= link_to t('menu.news'), root_path
-              %li.divider-vertical
-              %li= link_to t('menu.spaces'), teacher_web_spaces_path(current_user)
-              %li.divider-vertical
-              %li= link_to t('menu.personal'), teachers_path
-              %li.divider-vertical
-              %li{:class => "dropdown", :id =>"menu1"}
-                %a{:class => 'btn-mini dropdown-toggle', "data-toggle" => 'dropdown', :href => '#'}
-                  = current_user.name + " " + current_user.surname
-                  %i{:class => 'icon-chevron-down'}
-                %ul{:class => "dropdown-menu"}
-                  %li{:class => "nav-header"}= t('menu.actions')
-                  %li= link_to t('menu.edit'), edit_teacher_path(current_user)
-                  %li= link_to t('menu.my_spaces'), teacher_my_spaces_path(current_user)
-                  %li= link_to t('menu.exit'), destroy_user_session_path
-                  %li.divider
-                  %li{:class => "nav-header"}= t('menu.language')
-                  %li= link_to "Català", locale: "ca"
-                  %li= link_to "English", locale: "en"
-                  %li= link_to "Español", locale: "es"
-              - unless current_user.nil?
+      - unless current_user.nil?
+        #header{:class => "navbar navbar-inner"}
+          .container
+            .nav-collapse
+              %ul.nav
+                %li= link_to t('menu.news'), root_path
                 %li.divider-vertical
-                = form_tag root_path, :method => :get, :class => "form-search pull-right" do
-                  = text_field_tag :search, params[:search], :placeholder => t('menu.find'), value: "", :class => "search-query span2"
-                  %i{:class => "icon-search"}
-              - else
-                #nil_title
-                  %h1= t('menu.nil_title')
+                %li= link_to t('menu.spaces'), teacher_web_spaces_path(current_user)
+                %li.divider-vertical
+                %li= link_to t('menu.personal'), teachers_path
+                %li.divider-vertical
+                %li{:class => "dropdown", :id =>"menu1"}
+                  %a{:class => 'btn-mini dropdown-toggle', "data-toggle" => 'dropdown', :href => '#'}
+                    = current_user.name + " " + current_user.surname
+                    %i{:class => 'icon-chevron-down'}
+                  %ul{:class => "dropdown-menu"}
+                    %li{:class => "nav-header"}= t('menu.actions')
+                    %li= link_to t('menu.edit'), edit_teacher_path(current_user)
+                    %li= link_to t('menu.my_spaces'), teacher_my_spaces_path(current_user)
+                    %li= link_to t('menu.exit'), destroy_user_session_path
+                    %li.divider
+                    %li{:class => "nav-header"}= t('menu.language')
+                    %li= link_to "Català", locale: "ca"
+                    %li= link_to "English", locale: "en"
+                    %li= link_to "Español", locale: "es"
+                - unless current_user.nil?
+                  %li.divider-vertical
+                  = form_tag root_path, :method => :get, :class => "form-search pull-right" do
+                    = text_field_tag :search, params[:search], :placeholder => t('menu.find'), value: "", :class => "search-query span2"
+                    %i{:class => "icon-search"}
+                - else
+                  #nil_title
+                    %h1= t('menu.nil_title')
       #content.container
         - unless flash[:notice].nil?
           #success{:class => "alert alert-success"}

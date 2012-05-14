@@ -12,19 +12,14 @@ class TeachersController < AuthorizedController
   end
 
   def update
+    if params[:teacher][:password].blank? || params[:teacher][:password_confirmation].blank?
+      params[:teacher][:password] = nil
+      params[:teacher][:password_confirmation] = nil
+    end
     update! do |format|
       format.html do
-        unless params[:oauth_token].nil?
-          # Don't update password if it is blank
-          params[:teacher][:password] = nil if params[:teacher][:password].blank?
-          params[:teacher][:password_confirmation] = nil if params[:teacher][:password].blank?
-          flash[:notice] = t('alerts.profile_updated')
-          redirect_to root_path
-        else
-          #ENV['omniauth.auth']['info'].inspect
-          #current_user.update_attribute(uid, ENV['omniauth.auth']['uid'])
-          #current_user.update_attribute(access_token, ENV['omniauth.auth']['credentials']['token'])
-        end
+        # Don't update password if it is blank
+        redirect_to edit_teacher_path(current_user), notice: t('alerts.profile_updated')
       end
     end
   end

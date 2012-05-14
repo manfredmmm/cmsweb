@@ -9,10 +9,10 @@
     = f.text_field :surname
 
     = f.label t('.email')
-    = f.text_field :email
+    = f.text_field :email, autocomplete: "off"
 
     = f.label t('.password')
-    = f.password_field :password
+    = f.password_field :password, autocomplete: "off"
 
     = f.label t('.confirmation')
     = f.password_field :password_confirmation
