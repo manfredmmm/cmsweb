@@ -60,4 +60,3 @@
           - if user_signed_in? && current_user.admin?
             %li= link_to(t('menu.teachers'), admin_teachers_path)
             %li= link_to(t('menu.departments'), admin_departments_path)
-            %li.out= link_to(t('menu.exit'), destroy_user_session_path)

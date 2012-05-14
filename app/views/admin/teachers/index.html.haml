@@ -2,7 +2,7 @@
 
 #admin_table
   %table
-    %tr
+    %thead
       %th Nom
       %th Cognom
       %th Data neixament
@@ -12,21 +12,22 @@
       %th Despatx
       %th Avatar
 
-    - @teachers.each do |teacher|
-      %tr.class= cycle('odd', 'even')
-        %td= teacher.name
-        %td= teacher.surname
-        %td= teacher.birthday
-        %td= teacher.email
-        %td= teacher.department.try(:name)
-        %td= teacher.research_area
-        %td= teacher.office
-        - unless teacher.avatar_url.nil?
-          %td= image_tag teacher.avatar_url.to_s
-        - else
-          %td
-        %td= link_to 'Veure perfil', admin_teacher_path(teacher)
-        %td= link_to 'Editar', edit_admin_teacher_path(teacher)
-        %td= link_to 'Eliminar', admin_teacher_path(teacher), :confirm => 'Estàs segur?', :method => :delete
+    %tbody
+      - @teachers.each do |teacher|
+        %tr.class= cycle('odd', 'even')
+          %td= teacher.name
+          %td= teacher.surname
+          %td= teacher.birthday
+          %td= teacher.email
+          %td= teacher.department.try(:name)
+          %td= teacher.research_area
+          %td= teacher.office
+          - unless teacher.avatar_url.nil?
+            %td= image_tag teacher.avatar_url.to_s
+          - else
+            %td
+          %td= link_to 'Veure perfil', admin_teacher_path(teacher)
+          %td= link_to 'Editar', edit_admin_teacher_path(teacher)
+          %td= link_to 'Eliminar', admin_teacher_path(teacher), :confirm => 'Estàs segur?', :method => :delete
 
   = link_to 'Donar d\'alta un professor', new_admin_teacher_path
