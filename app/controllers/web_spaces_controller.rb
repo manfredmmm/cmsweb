@@ -14,6 +14,15 @@ class WebSpacesController < AuthorizedController
     flash[:notice] = t('alerts.new_web')
   end
 
+  def update
+    update! do |format|
+      format.html do
+        flash[:notice] = "S'ha actualitzat correctament l'espai web"
+        redirect_to teacher_my_spaces_path(current_user)
+      end
+    end
+  end
+
   def create
     create! do |format|
       format.html do
