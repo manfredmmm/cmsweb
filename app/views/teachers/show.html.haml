@@ -18,7 +18,7 @@
   %b= t('.office')
   = @teacher.office
 
-%p= mail_to @teacher.email, t('.contact'), :subject => t('.subject'),:target => "_blank"
+%p= mail_to @teacher.email, t('.contact'), :subject => t('.subject'),:target => "_blank", :class => "btn btn-primary"
 
 - unless @teacher.web_spaces.empty?
   %h2= t('.webspaces')
@@ -27,4 +27,4 @@
       - @teacher.web_spaces.each do |web_space|
         %tr
           %td= link_to web_space.name, teacher_web_space_page_path(@teacher, web_space, web_space.pages.first)
-          %td= "HI FALTA EL CONTENT!!!!!!!!!!!!!! COM A DESCRIPCIÓ"
+          %td= web_space.content

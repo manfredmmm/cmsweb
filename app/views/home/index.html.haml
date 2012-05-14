@@ -36,7 +36,7 @@
 - else
   %h1= t('.title')
 
-  #webspaces.span5
+  #webspaces.span6
     %h3= t('.webspaces')
 
     %table{:class => "table table-striped"}
@@ -46,7 +46,7 @@
             %td= link_to espai.name.upcase, teacher_web_space_page_path(espai.teacher, espai, espai.pages.first)
             %td= espai.content
             %td= image_tag espai.teacher.avatar_url
-            %td= link_to "#{espai.teacher.name} " "  #{espai.teacher.surname}", teacher_path(espai.teacher)
+            %td= link_to "#{espai.teacher.name}", teacher_path(espai.teacher)
             %td= "[#{espai.updated_at.strftime('%d/%m/%Y')}]"
 
   #teachers.span5
@@ -61,7 +61,7 @@
             %td= teacher.research_area
             %td= "[" + teacher.created_at.strftime('%d/%m/%Y').to_s + "]"
 
-  #tweets.span10
+  #tweets.span11
     %h3 Latests tweets
     %table{:class => "table table-bordered"}
       %tbody

@@ -33,14 +33,14 @@
                     %li= link_to "Català", locale: "ca"
                     %li= link_to "English", locale: "en"
                     %li= link_to "Español", locale: "es"
-                - unless current_user.nil?
-                  %li.divider-vertical
-                  = form_tag root_path, :method => :get, :class => "form-search pull-right" do
-                    = text_field_tag :search, params[:search], :placeholder => t('menu.find'), value: "", :class => "search-query span2"
-                    %i{:class => "icon-search"}
-                - else
-                  #nil_title
-                    %h1= t('menu.nil_title')
+                %li.divider-vertical
+            - unless current_user.nil?
+              = form_tag root_path, :method => :get, :class => "form-search pull-right" do
+                = text_field_tag :search, params[:search], :placeholder => t('menu.find'), value: "", :class => "search-query span3"
+                %i{:class => "icon-search"}
+            - else
+              #nil_title
+                %h1= t('menu.nil_title')
       #content.container
         - unless flash[:notice].nil?
           #success{:class => "alert alert-success"}
