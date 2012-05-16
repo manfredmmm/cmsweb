@@ -1,26 +1,33 @@
-<div id="sign_in">
-  <h2>Entra al teu compte:</h2>
+<div class="span4">
+  <div class="hero-unit">
+    <h2><a :href = "#">UAB CMS WEB</a></h2>
+    <h3>Entra al teu compte</h3>
 
-  <div id="in">
-    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-      <%= f.label :email  %>
-      <%= f.email_field :email %>
+    <fieldset class="">
+      <div>
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+          <%= f.label :email  %>
+          <%= f.email_field :email %>
 
-      <%= f.label :contrasenya %>
-      <%= f.password_field :password %>
+          <%= f.label :contrasenya %>
+          <%= f.password_field :password %>
 
-      <%= f.submit "Entrar" %>
-    <% end %>
+          <%= f.submit "Entrar", :class => "btn btn-success pull right" %>
+        <% end %>
+      </div>
+    </fieldset>
   </div>
 </div>
-<div id="cover">
-  <p id="title">El portal web pels investigadors i professors et permet:</p>
-  <ul>
-    <li class="odd"> Crear i gestionar els teus espais web </li>
-    <li class="even"> Utilitzar el teu espai com vulguis </li>
-    <li class="odd"> Buscar contactes </li>
-    <li class="even"> Visitar els espais d'altres investigadors i professors </li>
-    <li class="odd"> Editar el teu perfil d'usuari </li>
-    <li class="even"> Veure les últimes notícies </li>
-  </ul>
+<div class="span7">
+  <blockquote>
+    <span class="label"> El portal web pels investigadors i professors et permet: </span>
+    <p><i class="icon-pencil"></i> Crear i gestionar els teus espais web.</p>
+    <p><i class="icon-file"></i> Posar el contingut que vulguis en els teus espais.</p>
+    <p><i class="icon-user"></i> Editar el teu perfil.</p>
+    <p><i class="icon-envelope"></i> Facilitar la búsqueda de contactes.</p>
+    <p><i class="icon-eye-open"></i> Visitar els espais d'altres investigadors i professors universitaris.</p>
+    <p><i class="icon-th-list"></i> Consultar les últimes notícies.</p>
+    <p><i class="icon-retweet"></i> Compartir a twitter les pàgines dels espais web.</p>
+    <p><i class="icon-font"></i> Disponible en anglés, català i castellà.</p>
+  </blockquote>
 </div>

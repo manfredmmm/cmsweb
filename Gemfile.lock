@@ -158,7 +158,6 @@ GEM
     mini_magick (3.3)
       subexec (~> 0.1.0)
     multi_json (1.0.3)
-    mysql2 (0.3.10)
     nokogiri (1.5.0)
     oauth (0.4.6)
     omniauth (1.1.0)
@@ -313,7 +312,6 @@ DEPENDENCIES
   mercury-rails!
   meta_search
   mini_magick
-  mysql2
   omniauth-twitter
   passenger
   progress_bar

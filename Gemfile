@@ -1,3 +1,5 @@
+#ruby=1.9.2
+#ruby-gemset=cmsweb
 source 'http://rubygems.org'
 
 gem "rails", "3.1.0"
@@ -48,6 +50,6 @@ group :test do
   gem 'guard-passenger'
 end
 
-group :production do
-  gem 'mysql2'
-end
+#group :production do
+#  gem 'mysql2'
+#end

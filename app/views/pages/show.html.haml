@@ -5,22 +5,22 @@
     #page_content.mercury-region{:data => {:type => "editable"}}= raw @page.content
 
   .span2
+    = twitter_share_button(request.url)
     - if @teacher == current_user
       .nav
         = link_to t('.add'), new_teacher_web_space_page_path(@teacher, @web_space), :class => "btn btn-primary btn-small"
-        %br= ""
-        = twitter_share_button(request.url)
 
     %ul{:class => "nav nav-list"}
       - @web_space.pages.each do |page|
         %li= link_to page.name, teacher_web_space_page_path(@teacher, @web_space, page), :class => "nav-header"
-        %li
-          %a{ :href => '/editor' + teacher_web_space_page_path(@teacher, @web_space, page), id: "#{page == @page ? 'edit_link' : ''}", data: {save_url: mercury_update_teacher_web_space_page_path(@teacher, @web_space, page)} }
-            %i.icon-pencil
-            = t('.edit')
-        - unless @web_space.pages.count == 1
-          //%li= link_to t('.delete'), teacher_web_space_page_path(@teacher, @web_space, page), :confirm => t('alerts.sure'), :method => :delete, :notice => t('.doit')
+        - if @teacher == current_user
           %li
-            %a{:href => teacher_web_space_page_path(@teacher, @web_space, page), :method => :delete, :confirm => t('alerts.sure')}
-              %i.icon-remove
-              = t('.delete')
+            %a{ :href => '/editor' + teacher_web_space_page_path(@teacher, @web_space, page), id: "#{page == @page ? 'edit_link' : ''}", data: {save_url: mercury_update_teacher_web_space_page_path(@teacher, @web_space, page)} }
+              %i.icon-pencil
+              = t('.edit')
+          - unless @web_space.pages.count == 1
+            //%li= link_to t('.delete'), teacher_web_space_page_path(@teacher, @web_space, page), :confirm => t('alerts.sure'), :method => :delete, :notice => t('.doit')
+            %li
+              %a{:href => teacher_web_space_page_path(@teacher, @web_space, page), :method => :delete, :confirm => t('alerts.sure')}
+                %i.icon-remove
+                = t('.delete')

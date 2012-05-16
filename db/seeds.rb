@@ -11,7 +11,8 @@ puts "Creating teachers..."
 
 departments = Department.all
 Teacher.destroy_all
-5.times {|n| Teacher.create(
+5.times do |n|
+  t = Teacher.create(
     :email => 'teacher' + (n).to_s + '@example.com',
     :password => 'example',
     :password_confirmation => 'example',
@@ -21,7 +22,8 @@ Teacher.destroy_all
     :birthday => '1986-12-26'.to_date,
     :research_area => 'Web developers',
     :office => 'Q3/1011',
-    :avatar => File.new(Rails.root.to_s+"/examples/" + (n).to_s + ".jpg")) }
+    :avatar => File.new(Rails.root.to_s+"/examples/" + (n).to_s + ".jpg"))
+end
 
 5.times {|n| Teacher.create(
     :email => 'teacher' + (n+5).to_s + '@example.com',
