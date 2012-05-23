@@ -148,7 +148,7 @@ ca:
     deleted: Pàgina ha estat eliminada
     delete: Esborra l'espai web
     profile_updated: El perfil s'ha actualitzat correctament
-    new_web: Posi un títol per l'espai web
+    new_web: Posi un títol i descripció per l'espai web
     deleted_web: L'espai web ha estat eliminat
 
   will_paginate:

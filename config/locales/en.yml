@@ -98,6 +98,72 @@ en:
       webspaces: Last spaces updated
       latest: Last users created
 
+  teachers:
+    my_spaces:
+      title: Manage my web spaces
+      delete: Delete
+      change: Change title
+      create: Create web space
+    index:
+      title: Teachers and researchers directory
+      profile: Profile
+      name: Name
+      surname: Surname
+      email: Email
+      research: Research area
+      actions: Actions
+      see: See profile
+      update: Update profile
+    edit:
+      title: Edit your profile
+      name: Name
+      surname: Surname
+      email: Email
+      password: Password
+      confirmation: Password confirmation
+      birthday: Birthday
+      department: Deparment
+      research: Research area
+      office: Office
+      avatar: Profile photo
+      update: Update dates
+      twitter: Link Twitter
+    show:
+      birthday: Birthday
+      department: Departament
+      research: Research area
+      office: Office
+      contact: Concact!
+      webspaces: Web Spaces
+      subject: PFC CMS - Contact
+
+  web_spaces:
+    index:
+      title: Web spaces directory
+      owner: Owner
+      research: Research area
+      content: Content
+      show: Show
+      administration: Web space management
+      name: Title
+
+  pages:
+    show:
+      add: Add page
+      edit: Edit
+      delete: Delete
+      doit: Page deleted
+
+  alerts:
+    sure: Are you sure?
+    updated: Page has been updated
+    insert: Insert title and content for this page
+    deleted: Page has been deleted
+    delete: Delete web space
+    profile_updated: Profile has been updated
+    new_web: Insert title and description for new web space
+    deleted_web: Web spaces has been deleted
+
   will_paginate:
     previous_label: "&#8592;"
     next_label: "&#8594;"

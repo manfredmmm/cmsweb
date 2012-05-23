@@ -97,7 +97,7 @@ es:
       name: Nombre
       surname: Apellido
       email: Email
-      research: Área recerca
+      research: Área de investigación
       actions: Acciones
       see: Ver perfil
       update: Modificar datos
@@ -123,6 +123,33 @@ es:
       contact: Contacta!
       webspaces: Espacios webs
       subject: PFC CMS - Contacto
+
+  web_spaces:
+    index:
+      title: Directorio de espacios web
+      owner: Propietario
+      research: Área de investigación
+      content: Contenido
+      show: Mostrar
+      administration: Administrar espacio
+      name: Título
+
+  pages:
+    show:
+      add: Añadir página
+      edit: Editar
+      delete: Eliminar
+      doit: La página se ha eliminado
+
+  alerts:
+    sure: Estás seguro?
+    updated: Página actualizada correctamente
+    insert: Ponga un título y contenido para la página
+    deleted: La página se ha eliminado
+    delete: Elimine el espacio web
+    profile_updated: El perfil se ha actualizado correctamente
+    new_web: Ponga un título y descripción para el espacio web
+    deleted_web: El espacio web ha sido eliminado
 
   will_paginate:
     previous_label: "&#8592;"
