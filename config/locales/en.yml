@@ -97,6 +97,7 @@ en:
       title: News
       webspaces: Last spaces updated
       latest: Last users created
+      tweets: Latest tweets
 
   teachers:
     my_spaces:
@@ -143,9 +144,11 @@ en:
       owner: Owner
       research: Research area
       content: Content
-      show: Show
+      show: Show webspace
       administration: Web space management
       name: Title
+      description: Description
+      actions: Actions
 
   pages:
     show:

@@ -63,7 +63,7 @@
             %td= "[" + teacher.created_at.strftime('%d/%m/%Y').to_s + "]"
 
   #tweets.span11
-    %h3 Latests tweets
+    %h3= t('.tweets')
     %table{:class => "table table-bordered"}
       %tbody
         %tr

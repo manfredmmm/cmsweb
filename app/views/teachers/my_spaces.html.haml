@@ -2,9 +2,9 @@
 
 %table{:class => "table table-striped"}
   %thead
-    %td Title
-    %td Description
-    %td Actions
+    %td= t('web_spaces.index.title')
+    %td= t('web_spaces.index.description')
+    %td= t('web_spaces.index.actions')
   %tbody
     - @my_web_spaces.each do |web_space|
       %tr

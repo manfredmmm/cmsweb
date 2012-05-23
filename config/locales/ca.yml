@@ -84,6 +84,7 @@ ca:
       title: Novetats
       webspaces: Últims espais modificats
       latest: Últims usuaris donats d'alta
+      tweets: Últims tweets
 
   teachers:
     my_spaces:
@@ -133,6 +134,8 @@ ca:
       show: Mostrar
       administration: Administrar espai
       name: Títol
+      description: Descripció
+      actions: Accions
 
   pages:
     show:

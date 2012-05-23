@@ -84,6 +84,7 @@ es:
       title: Novedades
       webspaces: Últimos espacios actualizados
       latest: Últimos usuarios creados
+      tweets: Últimos tweets
 
   teachers:
     my_spaces:
@@ -130,9 +131,11 @@ es:
       owner: Propietario
       research: Área de investigación
       content: Contenido
-      show: Mostrar
+      show: Mostrar espacio web
       administration: Administrar espacio
       name: Título
+      description: Descripción
+      actions: Acciones
 
   pages:
     show:
