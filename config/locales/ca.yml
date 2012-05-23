@@ -138,6 +138,9 @@ ca:
       actions: Accions
 
   pages:
+    new:
+      create: Creació de la pàgina
+      add: Posi un títol per la pàgina
     show:
       add: Afegir pàgina
       edit: Editar

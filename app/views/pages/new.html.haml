@@ -1,9 +1,9 @@
-%h1= "Creació de la pàgina"
+%h1= t('.create')
 
 = form_for [@teacher, @web_space, @page], :validate => true do |f|
   .name
-    = f.label :name, "Títol de la pàgina"
     %br
+    = f.label :name, t('.add')
     = f.text_field :name
   .actions
-    = f.submit "Seguir"
+    = f.submit "Seguir", :class => "btn btn-primary"

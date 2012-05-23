@@ -151,6 +151,9 @@ en:
       actions: Actions
 
   pages:
+    new:
+      create: Page creation
+      add: Insert title for page
     show:
       add: Add page
       edit: Edit

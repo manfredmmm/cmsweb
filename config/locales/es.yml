@@ -138,6 +138,9 @@ es:
       actions: Acciones
 
   pages:
+    new:
+      create: Creación de la página
+      add: Ponga un título para la página
     show:
       add: Añadir página
       edit: Editar
