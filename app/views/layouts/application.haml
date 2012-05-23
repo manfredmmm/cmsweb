@@ -11,8 +11,10 @@
       - unless current_user.nil?
         #header{:class => "navbar navbar-inner"}
           .container
+            = link_to "CMS - Web", "#", :class => "brand"
             .nav-collapse
               %ul.nav
+                %li.divider-vertical
                 %li= link_to t('menu.news'), root_path
                 %li.divider-vertical
                 %li= link_to t('menu.spaces'), teacher_web_spaces_path(current_user)

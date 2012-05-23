@@ -150,3 +150,8 @@ ca:
     profile_updated: El perfil s'ha actualitzat correctament
     new_web: Posi un títol per l'espai web
     deleted_web: L'espai web ha estat eliminat
+
+  will_paginate:
+    previous_label: "&#8592;"
+    next_label: "&#8594;"
+    page_gap: "&hellip;"

@@ -1,4 +1,71 @@
 es:
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: Debe ser aceptado
+      blank: No puede estar en blanco
+      confirmation: No coinciden
+      empty: No puede estar vacío
+      equal_to: Debe ser igual a %{count}
+      even: Debe ser par
+      exclusion: Está reservado
+      greater_than: Debe ser más grande que %{count}
+      greater_than_or_equal_to: Debe ser más grande o igual a %{count}
+      inclusion: No está incluido a la lista
+      invalid: No es válido
+      less_than: Debe ser menor a %{count}
+      less_than_or_equal_to: Debe ser menor o igual a %{count}
+      not_a_number: No es un número
+      not_an_integer: Debe ser un entero
+      odd: Debe ser impar
+      record_invalid: ! 'La validación ha fallado: %{errors}'
+      taken: No está disponible
+      too_long: Es demasiado largo (%{count} carácteres màximos)
+      too_short: Es demasiado corto (%{count} carácteres mínimos)
+      wrong_length: No té la longitud correcte (%{count} caràcters exactament)
+    template:
+      body: ! 'Hi ha hagut problemes amb els següents camps:'
+      header:
+        one: No s'ha pogut desar aquest/a %{model} perquè hi ha 1 error
+        other: No s'ha pogut desar aquest/a %{model} perquè hi ha hagut %{count} errors
+  devise:
+    failure:
+      already_authenticated: 'You are already signed in.'
+      unauthenticated: 'Acceda con su usuario antes de seguir.'
+      unconfirmed: 'You have to confirm your account before continuing.'
+      locked: 'Your account is locked.'
+      invalid: 'Email o contraseña incorrecta.'
+      invalid_token: 'Invàlid authentication token.'
+      timeout: 'Tu sesión ha expirado, por favor vuelva a intentarlo.'
+      inactive: 'Tu perfil aún no ha sido activado.'
+    sessions:
+      signed_in: 'Has entrado correctamente al Gestor de Contenido.'
+      signed_out: 'Has salido del Gestor de Contingut.'
+    passwords:
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Your password was changed successfully. You are now signed in.'
+    confirmations:
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+    registrations:
+      signed_up: 'Bienvenido! Revise sus datos de perfil antes de seguir.'
+      inactive_signed_up: 'You have signed up successfully. However, we could not sign you in because your account is %{reason}.'
+      updated: 'Su perfil se ha actualizado correctamente.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+    omniauth_callbacks:
+      success: 'Successfully authorized from %{kind} account.'
+      failure: 'Could not authorize you from %{kind} because "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Confirmation instructions'
+      reset_password_instructions:
+        subject: 'Reset password instructions'
+      unlock_instructions:
+        subject: 'Unlock Instructions'
+
   menu:
     nil_title: PFC ETSE UAB | CMS - Portal web para personal universitario
     find: Buscar
@@ -17,3 +84,47 @@ es:
       title: Novedades
       webspaces: Últimos espacios actualizados
       latest: Últimos usuarios creados
+
+  teachers:
+    my_spaces:
+      title: Gestionar mis espacios web
+      delete: Eliminar
+      change: Cambiar el título
+      create: Crear espacio web
+    index:
+      title: Directorio de profesores y investigadores
+      profile: Perfil
+      name: Nombre
+      surname: Apellido
+      email: Email
+      research: Área recerca
+      actions: Acciones
+      see: Ver perfil
+      update: Modificar datos
+    edit:
+      title: Edita tu perfil
+      name: Nombre
+      surname: Apellidos
+      email: Email
+      password: Contraseña
+      confirmation: Repite contraseña
+      birthday: Data nacimiento
+      department: Departamento
+      research: Área de recerca
+      office: Oficina
+      avatar: Foto de perfil
+      update: Actualitzar datos
+      twitter: Enlazar con Twitter
+    show:
+      birthday: Data nacimiento
+      department: Departamento
+      research: Área de recerca
+      office: Oficina
+      contact: Contacta!
+      webspaces: Espacios webs
+      subject: PFC CMS - Contacto
+
+  will_paginate:
+    previous_label: "&#8592;"
+    next_label: "&#8594;"
+    page_gap: "&hellip;"
