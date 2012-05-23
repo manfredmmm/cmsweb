@@ -24,6 +24,7 @@ gem 'bootstrap-will_paginate'
 gem 'omniauth-twitter'
 gem 'sunspot_solr'
 gem "jquery-rails"
+gem 'quiet_assets', :group => :development
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
@@ -49,7 +50,3 @@ group :test do
   gem 'guard-rspec'
   gem 'guard-passenger'
 end
-
-#group :production do
-#  gem 'mysql2'
-#end
