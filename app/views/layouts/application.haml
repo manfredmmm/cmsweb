@@ -3,6 +3,7 @@
   %head
     %title PFC - CMS
     %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     = csrf_meta_tag
     = javascript_include_tag 'application'
     = stylesheet_link_tag 'application'
@@ -12,7 +13,7 @@
         #header{:class => "navbar navbar-inner"}
           .container
             = link_to "CMS - Web", "#", :class => "brand"
-            .nav-collapse
+            .nav-collapse_in_collapse
               %ul.nav
                 %li.divider-vertical
                 %li= link_to t('menu.news'), root_path
