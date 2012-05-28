@@ -18,6 +18,11 @@ class HomeController < ApplicationController
         fulltext params[:search]
       end
       @web_search = @web_search.results
+
+      @pages_search = Page.solr_search do
+        fulltext params[:search]
+      end
+      @pages_search = @pages_search.results
     end
   end
 end

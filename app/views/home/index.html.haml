@@ -2,7 +2,7 @@
   %h1 Resultats de la búsqueda
 
   #search_bar
-    - unless @web_search.empty?
+    - unless @web_search.empty? && @pages_search.empty?
       .span5
         %h3 Espais web
         %table{:class => "table table-striped"}
@@ -16,6 +16,11 @@
                 %td=link_to "#{w.name.upcase}", teacher_web_space_page_path(w.teacher.id,w,w.pages.first)
                 %td= w.content
                 %td=link_to "#{w.teacher.name} #{w.teacher.surname}", teacher_path(w.teacher.id)
+            - @pages_search.each do |p|
+              %tr
+                %td= link_to "#{p.name.upcase}", teacher_web_space_page_path(p.web_space.teacher.id,p.web_space.id,p)
+                %td= p.content.html_safe
+                %td= link_to "#{p.web_space.teacher.name}", teacher_path(p.web_space.teacher.id)
 
     - unless @search.empty?
       .span5
@@ -33,6 +38,9 @@
                 %td= link_to "#{s.name} #{s.surname}", teacher_path(s)
                 %td= s.research_area
                 %td= s.email
+
+    - if @search.empty? && @pages_search.empty? && @web_search.empty?
+      %p= "No s'han trobat resultat amb la búsqueda realitzada"
 
 - else
   %h1= t('.title')
