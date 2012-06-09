@@ -56,7 +56,9 @@ Admin.create(
     :email => 'admin@example.com',
     :password => 'example',
     :password_confirmation => 'example',
-    :name => 'Admin',
+    :name => 'Administrator',
     :surname => 'Surname',
+    :department_id => Department.first,
     :birthday => '1986-12-26'.to_date,
+    :research_area => 'None',
     :avatar => File.new(Rails.root.to_s+"/examples/0.jpg"))

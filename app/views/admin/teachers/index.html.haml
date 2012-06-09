@@ -14,7 +14,7 @@
 
     %tbody
       - @teachers.each do |teacher|
-        %tr.class= cycle('odd', 'even')
+        %tr
           %td= teacher.name
           %td= teacher.surname
           %td= teacher.birthday
