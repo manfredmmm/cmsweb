@@ -25,7 +25,7 @@
                 %li{:class => "dropdown", :id =>"menu1"}
                   %a{:class => 'btn-mini dropdown-toggle', "data-toggle" => 'dropdown', :href => '#'}
                     - unless current_user.admin?
-                      = current_user.name + " " + current_user.surname
+                      = "#{current_user.name} #{current_user.surname}"
                       %i{:class => 'icon-chevron-down'}
                     - else
                       = "Admin"

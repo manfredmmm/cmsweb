@@ -1,6 +1,6 @@
 Feature: Teacher create a webspace
   In order to I want create webspace
-  As an teacher
+  As a teacher
   I want to create a new webspace
 
   @javascript
