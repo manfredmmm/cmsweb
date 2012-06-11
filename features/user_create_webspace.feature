@@ -1,5 +1,5 @@
 Feature: Teacher create a webspace
-  In order to I want create webspace
+  In order to share some content with webspace
   As a teacher
   I want to create a new webspace
 
@@ -7,5 +7,5 @@ Feature: Teacher create a webspace
   Scenario: Create webspace
     Given I am logged in
     When I create a webspace
-    And I fill in the index page
+    And I save the index page
     Then I should see the webspace with one page
