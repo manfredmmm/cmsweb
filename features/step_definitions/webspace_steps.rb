@@ -24,7 +24,6 @@ When /^I create a webspace$/ do
 end
 
 When /^I save the index page$/ do
-  #page.execute_script("$('#page_content.mercury-region').append('<p>Lore ipsum content</p>');")
   #sleep 5
   page.execute_script("$('.mercury-save-button').click();")
 end
