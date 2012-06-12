@@ -36,17 +36,7 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'
-  gem 'spork'
   gem 'capybara-webkit'
   gem 'launchy'
   gem 'database_cleaner'
-
-  # Growl notify
-  gem 'ruby_gntp'
-
-  gem 'guard-bundler'
-  gem 'guard-spork'
-  gem 'guard-cucumber'
-  gem 'guard-rspec'
-  gem 'guard-passenger'
 end
