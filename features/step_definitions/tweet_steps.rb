@@ -1,18 +1,22 @@
-Given /^there is a one webspace$/ do
+Given /^I visit my webspace section$/ do
+  click_link "Manfred Miravitllas"
+  click_link "Els meus espais web"
 end
 
-Given /^I visit some webspace$/ do
+Given /^I enter on webspace$/ do
   click_link "WEBSPACE TEST"
 end
 
-When /^I want share some page content$/ do
-  click_link "Tweet"
-  save_and_open_page
-  fill_in "username_or_email", :with => "mkmanfred@gmail.com"
-  fill_in "password", :with => "grisamlrsmm"
-  click_button "commit"
+When /^I create a new page$/ do
+  click_link "Afegir"
 end
 
-Then /^I write tweet$/ do
-  fill_in "status", :with => "Tweet Test!"
+When /^I write a title for page$/ do
+  fill_in "page_name", :with => "New page test"
+  click_on "Seguir"
+  page.execute_script("$('.mercury-save-button').click();")
+end
+
+Then /^I should see the new page$/ do
+  page.should have_content "New page test"
 end
