@@ -20,6 +20,5 @@ When /^I write a title for page$/ do
 end
 
 Then /^I should see the new page$/ do
-  save_and_open_page
   page.should have_content "New page test"
 end
