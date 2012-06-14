@@ -2,11 +2,11 @@ class ChangeTeachersToSti < ActiveRecord::Migration
   def self.up
     drop_table :teachers
     add_column :users, :name, :string
-    add_column :users, :surname, :string  
+    add_column :users, :surname, :string
     add_column :users, :birthday, :date
     add_column :users, :department_id, :integer
     add_column :users, :research_area, :string
-    add_column :users, :office, :string  
+    add_column :users, :office, :string
   end
 
   def self.down

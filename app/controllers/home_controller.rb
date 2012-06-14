@@ -4,8 +4,8 @@ class HomeController < ApplicationController
       current_user.update_attribute(:type, "Teacher")
     end
 
-    @webspaces = WebSpace.order(:updated_at).limit(10).all
-    @teachers  = Teacher.order(:updated_at).limit(10).all
+    @webspaces = WebSpace.order('updated_at DESC').limit(10).all
+    @teachers  = Teacher.order('updated_at DESC').limit(10).all
     @search = nil
 
     if params[:search]

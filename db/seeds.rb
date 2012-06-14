@@ -10,6 +10,7 @@ Department.destroy_all
 puts "Creating teachers..."
 
 departments = Department.all
+User.destroy_all
 Teacher.destroy_all
 5.times do |n|
   t = Teacher.create(
@@ -26,28 +27,28 @@ Teacher.destroy_all
 end
 
 5.times {|n| Teacher.create(
-    :email => 'teacher' + (n+5).to_s + '@example.com',
+    :email => 'researcher' + (n+5).to_s + '@example.com',
     :password => 'example',
     :password_confirmation => 'example',
     :name => 'Teacher' + (n+5).to_s,
     :surname => 'Surname' + (n+5).to_s,
     :department_id =>  departments.shuffle.first.id,
-    :birthday => '1986-12-26'.to_date,
-    :research_area => 'Web design',
+    :birthday => '1973-12-02'.to_date,
+    :research_area => 'Software developers',
     :office => 'Q5/0011',
     :avatar => File.new(Rails.root.to_s+"/examples/" + (n+5).to_s + ".jpg")) }
 
-3.times {|n| Teacher.create(
-    :email => 'teacher' + (n+10).to_s + '@example.com',
+5.times {|n| Teacher.create(
+    :email => 'researcher' + (n+10).to_s + '@example.com',
     :password => 'example',
     :password_confirmation => 'example',
     :name => 'Teacher' + (n+10).to_s,
     :surname => 'Surname' + (n+10).to_s,
-    :department_id => Department.first,
-    :birthday => '1986-12-26'.to_date,
-    :research_area => 'Game developers',
-    :office => 'Q1/3011',
-    :avatar => File.new(Rails.root.to_s+"/examples/" + (n).to_s + ".jpg")) }
+    :department_id =>  departments.shuffle.first.id,
+    :birthday => '1973-12-02'.to_date,
+    :research_area => 'Hardware',
+    :office => 'Q5/0011',
+    :avatar => File.new(Rails.root.to_s+"/examples/" + (n+5).to_s + ".jpg")) }
 
 # Admin seed
 puts "Creating administrator user..."
