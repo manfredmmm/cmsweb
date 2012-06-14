@@ -63,3 +63,15 @@ Admin.create(
     :birthday => '1986-12-26'.to_date,
     :research_area => 'None',
     :avatar => File.new(Rails.root.to_s+"/examples/0.jpg"))
+
+# Creating webspaces
+puts "Creating webspaces examples..."
+WebSpace.destroy_all
+teacher = Teacher.all
+
+15.times { |n| WebSpace.create(
+  :name => "Web #{n}",
+  :teacher_id => teacher.shuffle.first.id,
+  :content => "Lorem ipsum dolor sit amet." )}
+
+#<WebSpace id: 1, name: "Espai 1", teacher_id: 27, created_at: "2012-06-14 14:14:10", updated_at: "2012-06-14 14:14:10", content: "Desenvolupament web">, #<WebSpace id: 2, name: "TDD", teacher_id: 23, created_at: "2012-06-14 14:17:33", updated_at: "2012-06-14 14:17:33", content: "explicació de com es fa TDD i BDD">, #<WebSpace id: 3, name: "Control de versions", teacher_id: 24, created_at: "2012-06-14 14:23:59", updated_at: "2012-06-14 14:23:59", content: "Explicació de què és git i el seu funcionament">, #<WebSpace id: 4, name: "Vídeos", teacher_id: 25, created_at: "2012-06-14 14:27:15", updated_at: "2012-06-14 14:27:15", content: "Disseny i il·lustració de vídeos">
