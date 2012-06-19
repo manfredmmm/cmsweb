@@ -39,4 +39,6 @@ Web::Application.configure do
 
   # This config option was shown in the episode but is actually not used, so don't bother adding it.
   config.assets.allow_debugging = true
+
+  config.active_record.mass_assignment_sanitizer = :strict
 end

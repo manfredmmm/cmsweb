@@ -1,8 +1,8 @@
 .row
   .span10
     %h1
-      %span#page_name.mercury-region{:data => {:type => "editable"}}= raw @page.name
-    #page_content.mercury-region{:data => {:type => "editable"}}= raw @page.content
+      %span#page_name{:data => {:mercury => "full"}}= raw @page.name
+    #page_content{:data => {:mercury => "full"}}= raw @page.content
 
   .span2
     = twitter_share_button(request.url)
@@ -19,8 +19,4 @@
               %i.icon-pencil
               = t('.edit')
           - unless @web_space.pages.count == 1
-            //%li= link_to t('.delete'), teacher_web_space_page_path(@teacher, @web_space, page), :confirm => t('alerts.sure'), :method => :delete, :notice => t('.doit')
-            %li
-              %a{:href => teacher_web_space_page_path(@teacher, @web_space, page), :method => :delete, :confirm => t('alerts.sure')}
-                %i.icon-remove
-                = t('.delete')
+            %li= link_to '<i class="icon-remove"></i> Eliminar'.html_safe, teacher_web_space_page_path(@teacher, @web_space, page), :confirm => t('alerts.sure'), :method => :delete, :notice => t('.doit')

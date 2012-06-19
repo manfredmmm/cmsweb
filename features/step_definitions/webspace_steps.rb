@@ -1,6 +1,6 @@
 Given /^I am logged in$/ do
   @department = Department.create(:name => "Department 1")
-  @teacher = Teacher.create(:name => "Manfred", :surname => "Miravitllas", :email => "example@example.com", :password => "example", :password_confirmation => 'example', :department_id => @department.id, :office => 'Q3/1011', :birthday => '1986-12-26'.to_date, :research_area => "Web developers")
+  @teacher = User.create(:email => "example@example.com", :password => "example", :password_confirmation => 'example', :name => "Manfred", :surname => "Miravitllas", :type => "Teacher", :department => @department.id)#, :department_id => @department.id, :type => "Teacher", :name => "Manfred")
   @webspace = WebSpace.create(:name => "WebSpace Test", :teacher_id => @teacher.id, :content => "WebSpace Content Test")
   visit '/users/sign_in'
   fill_in "user_email", :with => "example@example.com"

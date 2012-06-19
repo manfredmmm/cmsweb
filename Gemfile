@@ -2,7 +2,8 @@
 #ruby-gemset=cmsweb
 source 'http://rubygems.org'
 
-gem "rails", "3.1.0"
+#gem "rails", "3.1.0"
+gem 'rails', '3.2.0'
 
 gem 'sqlite3'
 gem "simple-navigation"
@@ -17,9 +18,9 @@ gem 'compass', "0.12.alpha.0"
 gem 'sunspot_rails'
 gem 'progress_bar'
 gem 'client_side_validations'
-gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: 'a2b16bcdc9'
+#gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury.git', ref: '6d9c99fe20958ed87e4f1a05e9de19825af702ef'
+gem 'mercury-rails', :git => 'git://github.com/jejacks0n/mercury.git'
 gem 'meta_search'
-#gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'omniauth-twitter'
 gem 'sunspot_solr'
@@ -27,16 +28,16 @@ gem "jquery-rails"
 gem 'quiet_assets', :group => :development
 
 group :assets do
-  gem 'sass-rails', "  ~> 3.1.0"
-  gem 'coffee-rails', "~> 3.1.0"
-  gem 'uglifier'
+  gem 'therubyracer'
+  gem 'sass-rails', "  ~> 3.2.3"
+  gem 'coffee-rails', "~> 3.2.1"
+  gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
 end
 
 group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'
-  gem 'capybara-webkit'
   gem 'launchy'
   gem 'database_cleaner'
 end

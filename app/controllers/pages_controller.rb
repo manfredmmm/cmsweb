@@ -32,7 +32,7 @@ class PagesController < AuthorizedController
     destroy! do |format|
       format.html do
         flash[:notice] = t('alerts.deleted')
-        redirect_to teacher_my_spaces_path(@teacher)
+        redirect_to teacher_web_space_page_path(@teacher, @web_space, @web_space.pages.last)
       end
     end
   end

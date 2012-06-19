@@ -4,7 +4,6 @@
 //= require jquery-ui
 //= require rails.validations
 //= require_self
-//= require_directory .
 
 $(function() {
   $('.dropdown-toogle').dropdown();

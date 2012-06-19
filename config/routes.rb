@@ -1,5 +1,7 @@
 Web::Application.routes.draw do
 
+  mount Mercury::Engine => '/'
+
   # Support both GET and POST for callbacks
   %w(get post).each do |method|
     send method, "/auth/:provider/callback" => "teachers#update"
@@ -16,7 +18,7 @@ Web::Application.routes.draw do
       get :my_spaces
       resources :web_spaces do
         resources :pages do
-          member { post :mercury_update }
+          member { put :mercury_update }
         end
       end
     end
